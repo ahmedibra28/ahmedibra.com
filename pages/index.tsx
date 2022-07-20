@@ -27,7 +27,7 @@ const Home: NextPage = () => {
             className='text-decoration-none text-info'
             href='tel:+252615301507'
           >
-            📱 +252615301507
+            📱 +252 (0) 61 530 1507
           </a>
         </p>
       </div>
