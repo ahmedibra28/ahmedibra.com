@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 const Home: NextPage = () => {
   return (
     <div className='d-flex justify-content-center align-items-center vh-100   flex-column position-relative'>
@@ -31,6 +32,10 @@ const Home: NextPage = () => {
           </a>
         </p>
       </div>
+
+      <Link href='/blog' className='mt-5'>
+        <a className='text-decoration-none text-info'>simple blog post</a>
+      </Link>
 
       <footer className='position-absolute bottom-0 mb-5'>
         <a
