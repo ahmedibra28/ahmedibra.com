@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Hero from '../components/Hero'
+import Clients from '../components/Clients'
 
 const Home: NextPage = () => {
   return (
@@ -13,6 +14,9 @@ const Home: NextPage = () => {
         />
       </Head>
       <Hero />
+      <div className='bg-light py-4'>
+        <Clients />
+      </div>
     </div>
   )
 }
