@@ -22,7 +22,7 @@ const Posts = ({ posts }: any) => {
         {posts?.map((post: PostProps) => (
           <div key={post.slug} className='col-12'>
             <Link href={`/blog/${post.slug}`}>
-              <a className='text-decoration-none text-light'>{post.title}</a>
+              <a className='text-decoration-none'>{post.title}</a>
             </Link>
           </div>
         ))}
