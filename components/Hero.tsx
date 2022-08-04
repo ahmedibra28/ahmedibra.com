@@ -4,19 +4,9 @@ import Image from 'next/image'
 const Hero: NextComponentType = () => {
   return (
     <div className='container py-5'>
-      <div className='mb-2'>
-        <Image
-          width='200'
-          height='53'
-          src='/logo.png'
-          alt='hero image'
-          className='img-fluid'
-        />
-      </div>
-
       <div className='row'>
         <div className='col-lg-7 col-12 my-auto pb-5'>
-          <p className='fs-1'>HI,</p>
+          <h6 className='fs-1'>HI,</h6>
           <h1 className='fw-bold  display-1'>I AM AHMED IBRAHIM</h1>
           <p className='fs-3'>
             A Freelance Full-Stack Developer From Mogadishu.

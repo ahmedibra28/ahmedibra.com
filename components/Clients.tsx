@@ -5,32 +5,32 @@ const clients: { _id: string; name: string; logo: string }[] = [
   {
     _id: '1',
     name: 'Client One',
-    logo: '/icon.png',
+    logo: '/logo.png',
   },
   {
     _id: '2',
     name: 'Client Two',
-    logo: '/icon.png',
+    logo: '/logo.png',
   },
   {
     _id: '3',
     name: 'Client Three',
-    logo: '/icon.png',
+    logo: '/logo.png',
   },
   {
     _id: '4',
     name: 'Client Four',
-    logo: '/icon.png',
+    logo: '/logo.png',
   },
   {
     _id: '5',
     name: 'Client Five',
-    logo: '/icon.png',
+    logo: '/logo.png',
   },
   {
     _id: '6',
     name: 'Client Six',
-    logo: '/icon.png',
+    logo: '/logo.png',
   },
 ]
 
