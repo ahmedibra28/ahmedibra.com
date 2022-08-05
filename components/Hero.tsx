@@ -6,17 +6,19 @@ const Hero: NextComponentType = () => {
     <div className='container py-5'>
       <div className='row'>
         <div className='col-lg-7 col-12 my-auto pb-5'>
-          <h6 className='fs-1'>HI,</h6>
+          {/* <h6 className='fs-1'>HI,</h6> */}
           <h1 className='fw-bold  display-1'>I AM AHMED IBRAHIM</h1>
           <p className='fs-3'>
             A Freelance Full-Stack Developer From Mogadishu.
           </p>
-          <button
-            onClick={() => alert('The file is not ready yet!')}
-            className='btn btn-warning rounded-pill btn-lg mt-3 shadow'
+          <a
+            href='resume.pdf'
+            target='_blank'
+            // onClick={() => alert('The file is not ready yet!')}
+            className='btn btn-warning rounded-0 btn-lg mt-3 shadow'
           >
             Download Resume
-          </button>
+          </a>
         </div>
         <div className='col-lg-5 col-12 '>
           <Image

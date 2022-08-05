@@ -1,55 +1,103 @@
 import { NextComponentType } from 'next'
 import Image from 'next/image'
+import Carousel from 'react-multi-carousel'
+import 'react-multi-carousel/lib/styles.css'
 
 const clients: { _id: string; name: string; logo: string }[] = [
   {
     _id: '1',
-    name: 'Client One',
-    logo: '/logo.png',
+    name: 'Yardimeli Hospital',
+    logo: '/clients/yardimeli.png',
   },
   {
     _id: '2',
-    name: 'Client Two',
-    logo: '/logo.png',
+    name: 'CeRID Org.',
+    logo: '/clients/cerid.png',
   },
   {
     _id: '3',
-    name: 'Client Three',
-    logo: '/logo.png',
+    name: 'Farshaxan Media',
+    logo: '/clients/farshaxan.png',
   },
   {
     _id: '4',
-    name: 'Client Four',
-    logo: '/logo.png',
+    name: 'SaMTEC College',
+    logo: '/clients/samtec.png',
   },
   {
     _id: '5',
-    name: 'Client Five',
-    logo: '/logo.png',
+    name: 'Valleyseed Enterprise',
+    logo: '/clients/valleyseed.png',
   },
   {
     _id: '6',
-    name: 'Client Six',
-    logo: '/logo.png',
+    name: 'WIRDO Org.',
+    logo: '/clients/wirdo.png',
+  },
+  {
+    _id: '7',
+    name: 'Ligo Medical',
+    logo: '/clients/ligo.png',
+  },
+  {
+    _id: '8',
+    name: 'Mamos Business',
+    logo: '/clients/mamos.png',
+  },
+  {
+    _id: '9',
+    name: 'SADO Org.',
+    logo: '/clients/sado.png',
   },
 ]
+
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 6,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 992 },
+    items: 6,
+  },
+  tablet: {
+    breakpoint: { max: 992, min: 768 },
+    items: 4,
+  },
+  largeMobile: {
+    breakpoint: { max: 768, min: 576 },
+    items: 3,
+  },
+  mobile: {
+    breakpoint: { max: 576, min: 0 },
+    items: 2,
+  },
+}
 
 const Clients: NextComponentType = () => {
   return (
     <div className='container'>
       <div className='row'>
-        {clients?.map((client) => (
-          <div key={client._id} className='col-auto mx-auto'>
-            <Image
-              width='100'
-              height='100'
-              src={client?.logo}
-              alt={client?.logo}
-              className='img-fluid'
-            />
-            <h5 className='text-center'>{client?.name}</h5>
-          </div>
-        ))}
+        <Carousel
+          responsive={responsive}
+          infinite={true}
+          itemClass='shadow-sm text-center'
+          autoPlay={true}
+        >
+          {clients?.map((client) => (
+            <div key={client._id} className='col-auto mx-auto'>
+              <Image
+                width='100'
+                height='100'
+                src={client?.logo}
+                alt={client?.name}
+                className='img-fluid opacity-75'
+              />
+              <h5 className='fs-6 text-primary'>{client?.name}</h5>
+            </div>
+          ))}
+        </Carousel>
       </div>
     </div>
   )
