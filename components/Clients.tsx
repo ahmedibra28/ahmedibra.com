@@ -78,12 +78,18 @@ const responsive = {
 const Clients: NextComponentType = () => {
   return (
     <div className='container'>
+      <p className='text-center mb-3'>
+        The image is important, but the quality with which it is made, even
+        more! This is why my work has made a valuable contribution to many
+        realities:
+      </p>
       <div className='row'>
         <Carousel
           responsive={responsive}
           infinite={true}
           itemClass='shadow-sm text-center'
           autoPlay={true}
+          arrows={false}
         >
           {clients?.map((client) => (
             <div key={client._id} className='col-auto mx-auto'>

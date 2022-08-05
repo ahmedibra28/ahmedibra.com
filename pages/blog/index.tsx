@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
@@ -7,15 +6,13 @@ import Link from 'next/link'
 import { GetStaticProps } from 'next'
 
 import { PostProps } from '../../types'
+import Meta from '../../components/Meta'
 
 const Posts = ({ posts }: any) => {
   return (
     <div className='container'>
       <div className='container text-primary mb-5 mt-2'>
-        <Head>
-          <title>Blog News</title>
-          <meta property='og:title' content='Blog News' key='title' />
-        </Head>
+        <Meta title='Blog' description='Blog Posts' author={''} image={''} />
       </div>
 
       <div className='row'>

@@ -1,20 +1,23 @@
-import Head from 'next/head'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { PostProps } from '../../types'
 import MarkdownIt from 'markdown-it'
+import Meta from '../../components/Meta'
 
 const Post = (post: PostProps) => {
   const md = new MarkdownIt()
   return (
     <div className='container'>
       <>
-        <Head>
-          <title>{post?.title}</title>
-          <meta property='og:title' content={post?.title} key='title' />
-        </Head>
+        <Meta
+          title={post?.title}
+          description={post?.title}
+          author={''}
+          image={''}
+        />
+
         <div className='row'>
           <div className='col-md-9 col-12 mx-auto'>
             <div className='card-body'>
