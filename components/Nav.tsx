@@ -3,24 +3,24 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const Nav: NextComponentType = () => {
+  const items: { _id: string; title: string; link: string }[] = [
+    {
+      _id: '1',
+      title: 'Github',
+      link: 'https://github.com/ahmaat19',
+    },
+    {
+      _id: '2',
+      title: 'About',
+      link: '#',
+    },
+    {
+      _id: '3',
+      title: 'Contact',
+      link: '#',
+    },
+  ]
   return (
-    // <nav className='navbar bg-light'>
-    //   <div className='container'>
-    //     <Link href='/'>
-    //       <a className='navbar-brand'>
-    //         <Image
-    //           width='24'
-    //           height='24'
-    //           src='/logo.png'
-    //           alt='hero image'
-    //           className='d-inline-block align-text-top'
-    //         />
-    //         <span> Ahmed Ibrahim</span>
-    //       </a>
-    //     </Link>
-    //   </div>
-    // </nav>
-
     <nav className='navbar navbar-expand-lg bg-light'>
       <div className='container'>
         <Link href='/'>
@@ -53,13 +53,18 @@ const Nav: NextComponentType = () => {
         </button>
         <div className='collapse navbar-collapse' id='navbarNav'>
           <ul className='navbar-nav ms-auto'>
-            <li className='nav-item'>
-              <Link href='https://github.com/ahmaat19'>
-                <a className='nav-link active text-primary' aria-current='page'>
-                  Github
-                </a>
-              </Link>
-            </li>
+            {items?.map((item) => (
+              <li key={item?._id} className='nav-item'>
+                <Link href={item?.link}>
+                  <a
+                    className='nav-link active text-primary'
+                    aria-current='page'
+                  >
+                    {item?.title}
+                  </a>
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

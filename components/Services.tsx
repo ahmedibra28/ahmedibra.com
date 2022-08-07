@@ -54,14 +54,14 @@ const Services: NextComponentType = () => {
   return (
     <div id='services' className='pt-5'>
       <div className='container my-5 text-center'>
-        <h2 className='fw-bold'>Check My Services</h2>
+        <h3>Available Services</h3>
         <div className='row g-3 pt-3'>
           {services.map((service) => (
             <div
               key={service?._id}
               className='col-lg-4 col-md-6 col-sm-12 col-12 '
             >
-              <div className='card bg-transparent border-0  d-flex align-items-center'>
+              <div className='card bg-light border-0  d-flex align-items-center'>
                 <Image
                   priority
                   width='80'
