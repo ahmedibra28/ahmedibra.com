@@ -9,16 +9,16 @@ const Nav: NextComponentType = () => {
       title: 'Github',
       link: 'https://github.com/ahmaat19',
     },
-    {
-      _id: '2',
-      title: 'About',
-      link: '#',
-    },
-    {
-      _id: '3',
-      title: 'Contact',
-      link: '#',
-    },
+    // {
+    //   _id: '2',
+    //   title: 'About',
+    //   link: '#',
+    // },
+    // {
+    //   _id: '3',
+    //   title: 'Contact',
+    //   link: '#',
+    // },
   ]
   return (
     <nav className='navbar navbar-expand-lg bg-light'>

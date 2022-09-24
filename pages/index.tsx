@@ -8,7 +8,12 @@ import Meta from '../components/Meta'
 const Home: NextPage = () => {
   return (
     <div className=''>
-      <Meta title={''} description={''} author={''} image={''} />
+      <Meta
+        title={'Full-Stack Developer In Somalia | Ahmed Ibrahim'}
+        description={`I'm a Full Stack Developer with 9+ years of experience in designing and developing user interfaces, testing, debugging, and training staff within modern technologies. Proven ability in optimizing web functionalities that improve data retrieval and workflow efficiencies.`}
+        author={'Ahmed Ibrahim'}
+        image='/logo.png'
+      />
       <Nav />
       <Hero />
       <div className='bg-light py-4'>
