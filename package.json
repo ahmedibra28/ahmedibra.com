@@ -9,11 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
     "gray-matter": "^4.0.3",
     "markdown-it": "^13.0.1",
     "moment": "^2.29.4",
     "next": "12.2.2",
+    "nodemailer": "^6.7.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
@@ -24,6 +26,7 @@
   "devDependencies": {
     "@types/markdown-it": "^12.2.3",
     "@types/node": "18.0.6",
+    "@types/nodemailer": "^6.4.6",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
     "eslint": "8.20.0",

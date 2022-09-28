@@ -54,7 +54,7 @@ const Services: NextComponentType = () => {
   return (
     <div id='services' className='pt-5'>
       <div className='container my-5 text-center'>
-        <h3>Available Services</h3>
+        <h3 className='font-custom fs-2'>Available Services</h3>
         <div className='row g-3 pt-3'>
           {services.map((service) => (
             <div

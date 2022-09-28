@@ -4,6 +4,7 @@ import Clients from '../components/Clients'
 import Nav from '../components/Nav'
 import Services from '../components/Services'
 import Meta from '../components/Meta'
+import Contact from '../components/Contact'
 
 const Home: NextPage = () => {
   return (
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
         <Clients />
       </div>
       <Services />
+      <Contact />
     </div>
   )
 }

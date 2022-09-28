@@ -5,20 +5,20 @@ import Link from 'next/link'
 const Nav: NextComponentType = () => {
   const items: { _id: string; title: string; link: string }[] = [
     {
+      _id: '2',
+      title: 'Courses',
+      link: '/courses',
+    },
+    {
       _id: '1',
       title: 'Github',
       link: 'https://github.com/ahmaat19',
     },
-    // {
-    //   _id: '2',
-    //   title: 'About',
-    //   link: '#',
-    // },
-    // {
-    //   _id: '3',
-    //   title: 'Contact',
-    //   link: '#',
-    // },
+    {
+      _id: '3',
+      title: 'Contact',
+      link: '/#contact',
+    },
   ]
   return (
     <nav className='navbar navbar-expand-lg bg-light'>
@@ -33,10 +33,6 @@ const Nav: NextComponentType = () => {
                 alt='hero image'
                 className='d-inline-block align-text-top'
               />
-              <span className='fw-light fs-4 ms-2 text-primary border border-warning px-2'>
-                <span className='fw-bold'>A</span>
-                hmed <span className='fw-bold text-warning'>I</span>brahim
-              </span>
             </div>
           </a>
         </Link>
@@ -59,6 +55,7 @@ const Nav: NextComponentType = () => {
                   <a
                     className='nav-link active text-primary'
                     aria-current='page'
+                    target={item?.title === 'Github' ? '_blank' : '_self'}
                   >
                     {item?.title}
                   </a>
