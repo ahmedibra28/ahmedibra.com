@@ -1,23 +1,23 @@
-import Meta from '../components/Meta'
-import Nav from '../components/Nav'
+import Meta from '../../components/Meta'
+import Nav from '../../components/Nav'
 import axios from 'axios'
-import { RootObject } from '../types'
+import { RootObject } from '../../types/playlistItems'
 import Image from 'next/image'
 import moment from 'moment'
 
-const Courses = (props: { playlists: RootObject }) => {
+const PlayListVideos = (props: { videos: RootObject }) => {
   return (
     <div className=''>
       <Meta
-        title={'Youtube Playlist Courses | Ahmed Ibrahim'}
-        description={`Ahmed Ibrahim Channel Playlist | Courses`}
+        title={'Youtube Playlist Videos | Ahmed Ibrahim'}
+        description={`Ahmed Ibrahim Channel Playlist | Videos`}
         author={'Ahmed Ibrahim'}
         image='/logo.png'
       />
       <Nav />
       <div className='container pt-3 mb-4'>
         <div className='row g-4'>
-          {props?.playlists?.items?.map((playlist) => (
+          {props?.videos?.items?.map((playlist) => (
             <div key={playlist?.id} className='col-lg-4 col-md-6 col-12'>
               <div className='card border-0'>
                 <Image
@@ -33,7 +33,7 @@ const Courses = (props: { playlists: RootObject }) => {
                     <small>
                       {moment(playlist?.snippet?.publishedAt).format('lll')}
                     </small>
-                    <p>{playlist?.snippet?.description}</p>
+                    {/* <p>{playlist?.snippet?.description}</p> */}
                   </div>
                 </div>
               </div>
@@ -45,17 +45,17 @@ const Courses = (props: { playlists: RootObject }) => {
   )
 }
 
-export default Courses
+export default PlayListVideos
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context: { params: { id: string } }) {
   try {
     const { data } = await axios.get(
-      `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&channelId=${process.env.CHANNEL_ID}&maxResults=25&key=${process.env.GOOGLE_API_KEY}`
+      `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&channelId=${process.env.CHANNEL_ID}&playlistId=${context?.params?.id}&maxResults=100&key=${process.env.GOOGLE_API_KEY}`
     )
 
     return {
       props: {
-        playlists: data,
+        videos: data,
       },
     }
   } catch (error: any) {
