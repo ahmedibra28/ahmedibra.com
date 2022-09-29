@@ -37,10 +37,7 @@ const Contact: NextComponentType = () => {
     }
     const sendMessage = async () => {
       setLoading(true)
-      const { data } = await axios.post(
-        `http://localhost:3000/api/contact`,
-        obj
-      )
+      const { data } = await axios.post(`/api/contact`, obj)
       setLoading(false)
       return await data
     }
