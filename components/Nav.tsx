@@ -1,8 +1,9 @@
+import axios from 'axios'
 import { NextComponentType } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const Nav: NextComponentType = () => {
+const Nav: NextComponentType = (props) => {
   const items: { _id: string; title: string; link: string }[] = [
     {
       _id: '2',
@@ -13,6 +14,11 @@ const Nav: NextComponentType = () => {
       _id: '1',
       title: 'Github',
       link: 'https://github.com/ahmaat19',
+    },
+    {
+      _id: '4',
+      title: 'Youtube',
+      link: 'https://www.youtube.com/barocoding/SeattleWebSearch?sub_confirmation=1',
     },
     {
       _id: '3',
@@ -55,7 +61,11 @@ const Nav: NextComponentType = () => {
                   <a
                     className='nav-link active text-primary'
                     aria-current='page'
-                    target={item?.title === 'Github' ? '_blank' : '_self'}
+                    target={
+                      item?.title === 'Github' || item?.title === 'Youtube'
+                        ? '_blank'
+                        : '_self'
+                    }
                   >
                     {item?.title}
                   </a>

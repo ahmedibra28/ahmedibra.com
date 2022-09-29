@@ -16,6 +16,10 @@ const PlayListVideos = (props: { videos: RootObject }) => {
       />
       <Nav />
       <div className='container pt-3 mb-4'>
+        <h3 className='text-center text-muted text-uppercase fw-bold'>
+          Youtube Playlist Videos [{props?.videos?.pageInfo?.totalResults}]
+        </h3>
+        <hr />
         <div className='row g-4'>
           {props?.videos?.items?.map((playlist) => (
             <div key={playlist?.id} className='col-lg-4 col-md-6 col-12'>
