@@ -6,9 +6,11 @@ import Image from 'next/image'
 import moment from 'moment'
 import { FaYoutube } from 'react-icons/fa'
 import Link from 'next/link'
+// import { YoutubePlayer } from '../../components/YoutubePlayer'
 
 const PlayListVideos = (props: { videos: RootObject }) => {
-  console.log(props?.videos?.items[0].snippet.resourceId.kind)
+  console.log(props?.videos?.items[0].snippet.resourceId.videoId)
+
   return (
     <div className=''>
       <Meta
@@ -18,6 +20,7 @@ const PlayListVideos = (props: { videos: RootObject }) => {
         image='/logo.png'
       />
       <Nav />
+
       <div className='container pt-3 mb-4'>
         <h3 className='text-center text-muted text-uppercase fw-bold'>
           Youtube Playlist Videos [{props?.videos?.pageInfo?.totalResults}]
@@ -34,6 +37,8 @@ const PlayListVideos = (props: { videos: RootObject }) => {
                   className='card-img-top'
                   alt='...'
                 />
+                {/* <YoutubePlayer videoId={playlist.snippet.resourceId.videoId} /> */}
+
                 <div className='card-body'>
                   <h5 className='card-title'>{playlist?.snippet?.title}</h5>
                   <div className='card-text d-flex justify-content-between align-items-center'>
