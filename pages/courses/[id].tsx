@@ -4,8 +4,11 @@ import axios from 'axios'
 import { RootObject } from '../../types/playlistItems'
 import Image from 'next/image'
 import moment from 'moment'
+import { FaYoutube } from 'react-icons/fa'
+import Link from 'next/link'
 
 const PlayListVideos = (props: { videos: RootObject }) => {
+  console.log(props?.videos?.items[0].snippet.resourceId.kind)
   return (
     <div className=''>
       <Meta
@@ -33,11 +36,21 @@ const PlayListVideos = (props: { videos: RootObject }) => {
                 />
                 <div className='card-body'>
                   <h5 className='card-title'>{playlist?.snippet?.title}</h5>
-                  <div className='card-text'>
+                  <div className='card-text d-flex justify-content-between align-items-center'>
                     <small>
                       {moment(playlist?.snippet?.publishedAt).format('lll')}
                     </small>
-                    {/* <p>{playlist?.snippet?.description}</p> */}
+                    <Link
+                      href={`https://www.youtube.com/watch?v=${playlist.snippet.resourceId.videoId}`}
+                    >
+                      <a
+                        target='_blank'
+                        className='btn btn-danger btn-sm border-0'
+                      >
+                        <FaYoutube className='mb-1 me-1' />
+                        Watch Video
+                      </a>
+                    </Link>
                   </div>
                 </div>
               </div>

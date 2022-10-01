@@ -5,9 +5,10 @@ import { RootObject } from '../../types/playlist'
 import Image from 'next/image'
 import moment from 'moment'
 import Link from 'next/link'
-import { FaListAlt } from 'react-icons/fa'
+import { FaListAlt, FaYoutube } from 'react-icons/fa'
 
 const Courses = (props: { playlists: RootObject }) => {
+  console.log(props.playlists.items[0].id)
   return (
     <div className=''>
       <Meta
@@ -19,7 +20,7 @@ const Courses = (props: { playlists: RootObject }) => {
       <Nav />
       <div className='container pt-3 mb-4'>
         <h3 className='text-center text-muted text-uppercase fw-bold'>
-          Youtube Playlist Courses [{props?.playlists?.pageInfo?.totalResults}]
+          Youtube Playlists [{props?.playlists?.pageInfo?.totalResults}]
         </h3>
         <hr />
         <div className='row g-4'>
@@ -48,6 +49,17 @@ const Courses = (props: { playlists: RootObject }) => {
                       </div>
                     </div>
                   </div>
+                </a>
+              </Link>
+              <Link
+                href={`https://www.youtube.com/watch?list=${props.playlists.items[0].id}`}
+              >
+                <a
+                  target='_blank'
+                  className='btn btn-danger btn-sm border-0 w-100'
+                >
+                  <FaYoutube className='mb-1 me-1 fs-5' />
+                  Check Playlist Video
                 </a>
               </Link>
             </div>
