@@ -49,6 +49,11 @@ const clients: { _id: string; name: string; logo: string }[] = [
     name: 'SADO Org.',
     logo: '/clients/sado.png',
   },
+  {
+    _id: '10',
+    name: 'Wadaag',
+    logo: '/clients/wadaag.png',
+  },
 ]
 
 const responsive = {

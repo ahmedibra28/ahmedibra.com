@@ -167,17 +167,17 @@ const Contact: NextComponentType = () => {
         </div>
 
         <div className='row g-3 pt-3'>
-          <div className='col-lg-10 col-md-10 col-12 mx-auto bg-light p-3'>
+          <div className='col-lg-10 col-md-10 col-12 mx-auto  p-3'>
             <form
               onSubmit={(e) => handleSubmit(e as FormEvent)}
               className='p-3'
             >
               <div className='row g-3'>
-                <div className='col-lg-6 col-12 text-start'>
-                  <div className='mb-3 input-group'>
-                    <span className='input-group-text bg-transparent' id='name'>
-                      <FaUser className='text-warning' />
-                    </span>
+                <div className='col-lg-7 col-12 text-start mx-auto'>
+                  <div className='mb-3'>
+                    <label htmlFor='name' className='text-muted'>
+                      Name
+                    </label>
                     <input
                       required
                       onChange={(e) => setName(e.target.value)}
@@ -189,13 +189,10 @@ const Contact: NextComponentType = () => {
                     />
                   </div>
 
-                  <div className='mb-1 input-group'>
-                    <span
-                      className='input-group-text bg-transparent'
-                      id='emailHelp'
-                    >
-                      <FaEnvelope className='text-warning' />
-                    </span>
+                  <div className='mb-1'>
+                    <label htmlFor='email' className='text-muted'>
+                      Email
+                    </label>
                     <input
                       required
                       type='email'
@@ -212,10 +209,10 @@ const Contact: NextComponentType = () => {
                     className='form-text mb-3'
                   >{`We'll never share your email with anyone else.`}</div>
 
-                  <div className='mb-3 input-group'>
-                    <span className='input-group-text bg-transparent' id='name'>
-                      <FaPhoneAlt className='text-warning' />
-                    </span>
+                  <div className='mb-3'>
+                    <label htmlFor='phone' className='text-muted'>
+                      Phone
+                    </label>
                     <input
                       required
                       type='text'
@@ -226,13 +223,14 @@ const Contact: NextComponentType = () => {
                       placeholder='Enter phone'
                     />
                   </div>
-                </div>
-                <div className='col-lg-6 col-12 text-start'>
-                  <div className='mb-3 input-group'>
+                  <div className='mb-3'>
+                    <label htmlFor='message' className='text-muted'>
+                      Message
+                    </label>
                     <textarea
                       required
                       cols={30}
-                      rows={7}
+                      rows={9}
                       onChange={(e) => setMessage(e.target.value)}
                       value={message}
                       className='form-control p-2 rounded-0 shadow-none'
@@ -240,34 +238,35 @@ const Contact: NextComponentType = () => {
                       placeholder='Enter message'
                     />
                   </div>
-                </div>
-                <div className='col-auto text-start'>
-                  <h5 className='font-monospace'>Services</h5>
-                  <ul className='list-group border-0'>
-                    <div className='row gy-2'>
+                  <div className='my-3'>
+                    <h5 className='font-monospace text-muted'>Services</h5>
+                    <ul className='list-group border-0'>
                       {services?.map((service) => (
-                        <div key={service?._id} className='col-md-6 col-12'>
-                          <li className='list-group-item border-0 mb-1'>
-                            <input
-                              onChange={service?.onChange}
-                              className='form-check-input me-1'
-                              type='checkbox'
-                              value=''
-                              checked={service?.checked}
-                              id={service?._id}
-                            />
-                            <label
-                              className='form-check-label'
-                              htmlFor={service?._id}
-                            >
-                              {service?.name}
-                            </label>
-                          </li>
-                        </div>
+                        <li
+                          key={service?._id}
+                          className='list-group-item border-0 mb-1'
+                        >
+                          <input
+                            onChange={service?.onChange}
+                            className='form-check-input me-1'
+                            type='checkbox'
+                            value=''
+                            checked={service?.checked}
+                            id={service?._id}
+                          />
+                          <label
+                            className='form-check-label'
+                            htmlFor={service?._id}
+                          >
+                            {service?.name}
+                          </label>
+                        </li>
                       ))}
-                    </div>
-                  </ul>
+                    </ul>
+                  </div>
                 </div>
+
+                <div className='col-auto text-start'></div>
 
                 <div className='col-12 text-center mt-5'>
                   {success && (
@@ -282,7 +281,7 @@ const Contact: NextComponentType = () => {
                   )}
                   <button
                     disabled={loading}
-                    className='btn btn-warning btn-lg text-light'
+                    className='btn btn-warning text-light rounded-0'
                   >
                     {loading ? (
                       <span className='spinner-border' />
