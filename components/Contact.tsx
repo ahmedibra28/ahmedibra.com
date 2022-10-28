@@ -115,9 +115,9 @@ const Contact: NextComponentType = () => {
   return (
     <div id='contact' className='pt-5'>
       <div className='container my-5 text-center'>
-        <h1 className='font-custom display-1'>Get in touch!</h1>
-        <p className='font-monospace'>
-          I will help to achieve your goals and to grow your business
+        <h1 className=' display-6'>Get in touch!</h1>
+        <p className=''>
+          I will help to achieve your goals and grow your business
         </p>
         <div className='row pt-3'>
           <div className='col-lg-8 col-md-10 col-12 mx-auto'>
@@ -176,7 +176,7 @@ const Contact: NextComponentType = () => {
           <form onSubmit={(e) => handleSubmit(e as FormEvent)} className='p-3'>
             <div className='row g-3'>
               <div className='col-lg-8 col-md-10 col-12 text-start mx-auto shadow-sm bg-white p-5'>
-                <p className='mb-3 text-center font-monospace'>
+                <p className='mb-3 text-center '>
                   Please fill out the contact form below to get in touch with
                   me, and I will do my best to respond to you as soon as I can.
                 </p>
@@ -251,7 +251,7 @@ const Contact: NextComponentType = () => {
                   />
                 </div>
                 <div className='my-3'>
-                  <h5 className='font-monospace text-muted'>Services</h5>
+                  <h5 className=' text-muted'>Services</h5>
                   <ul className='list-group border-0'>
                     {services?.map((service) => (
                       <li

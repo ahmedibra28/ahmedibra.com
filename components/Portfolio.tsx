@@ -8,7 +8,7 @@ const Portfolio = () => {
       _id: '1',
       title: 'Halcyon Theme',
       description: (
-        <div className='font-monospace'>
+        <div className=''>
           A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and
           more. Available on Visual Studio Marketplace, Package Control, Atom
           Package Manager, and npm.
@@ -26,11 +26,9 @@ const Portfolio = () => {
   return (
     <div id='portfolio' className='pt-5 mb-5 pb-5'>
       <div className='container my-5'>
-        <h3 className='font-custom fs-2 text-center'>Projects</h3>
+        <h3 className=' fs-2 text-center'>Projects</h3>
 
-        <p className='text-center font-monospace mb-3'>
-          Some things I have built
-        </p>
+        <p className='text-center  mb-3'>Some things I have built</p>
 
         {items?.map((item, index) => (
           <div key={item?._id} className='row gy-3'>
@@ -52,13 +50,11 @@ const Portfolio = () => {
                       <span className='border border-warning p-2 shadow-lg'>
                         {index + 1}
                       </span>
-                      <h6 className='text-warning text-end font-monospace'>
+                      <h6 className='text-warning text-end '>
                         Feature Project
                       </h6>
                     </div>
-                    <h5 className='cad-title font-monospace fw-bold'>
-                      {item?.title}
-                    </h5>
+                    <h5 className='cad-title  fw-bold'>{item?.title}</h5>
                     <div className=''>{item?.description}</div>
                     <div className='mt-4 text-center'>
                       {item?.techs?.map((tech) => (

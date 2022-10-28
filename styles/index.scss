@@ -7,6 +7,10 @@ $warning: $warning-color;
 
 @import '../node_modules/bootstrap/scss/bootstrap';
 
+body {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono' !important;
+}
+
 .custom-width {
   margin-left: auto;
   margin-right: auto;

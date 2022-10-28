@@ -83,13 +83,13 @@ const responsive = {
 const Clients: NextComponentType = () => {
   return (
     <>
-      <p className='text-center mb-3 font-monospace'>
+      <p className='text-center mb-3 '>
         I collaborate with these businesses, <br /> and some of the work I
         accomplished for them included <br /> creating websites, online and
         offline web applications, mobile apps, brands, and other things.
       </p>
       <div className='bg-white py-4'>
-        <div className='container'>
+        <div className='container-fluid'>
           <div className='row'>
             <Carousel
               responsive={responsive}

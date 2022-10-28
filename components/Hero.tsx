@@ -4,16 +4,24 @@ import Link from 'next/link'
 
 const Hero: NextComponentType = () => {
   return (
-    <div className='container py-5'>
+    <div className='container py-5 mb-5'>
       <div className='row'>
         <div className='col-lg-7 col-12 my-auto pb-5'>
-          <h1 className='fw-bold  display-1 font-custom'>{`I'm Ahmed Ibrahim`}</h1>
-          <p style={{ lineHeight: '2rem' }} className='font-monospace'>
-            {/* A Freelance Full-Stack Developer From Mogadishu. <br />I Offer
-            Modern Web & Mobile Solutions For Growing Your Business. */}
-            {`
-            I'm a Full Stack Developer with 9+ years of experience in designing and developing user interfaces, testing, debugging, and training staff within modern technologies. Proven ability in optimizing web & mobile functionalities that improve data retrieval and workflow efficiencies.
-            `}
+          <h1 className='fw-bold  display-5 font-customs'>{`I'm Ahmed Ibrahim`}</h1>
+          <p style={{ lineHeight: '2rem' }} className='mt-3'>
+            <span>
+              A Full Stack Developer with 9+ years of experience in
+              <strong> designing </strong>
+              and <strong> developing user interfaces</strong>,
+              <strong> testing</strong>,<strong> debugging</strong>, and
+              <strong> training staff </strong> within modern technologies.
+            </span>
+            <br />
+            <span>
+              Proven ability in optimizing <strong> web & mobile </strong>
+              functionalities that improve data retrieval and workflow
+              efficiencies.
+            </span>
           </p>
           <a
             href='resume.pdf'

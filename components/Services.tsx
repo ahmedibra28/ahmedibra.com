@@ -27,14 +27,14 @@ const Services: NextComponentType = () => {
       image: '/services/ecommerce.png',
       title: 'E-commerce',
       description:
-        'I build your online store using a flexible, modular platform that allows you to expand your business.',
+        'I build your online store using a flexible, modular platform to expand your business.',
     },
     {
       _id: '4',
       image: '/services/seo.png',
       title: 'SEO Optimization',
       description:
-        'Optimizing our web designs to rank on the first page of google is our specialty.',
+        'Optimizing your website to rank on the first page of google is my specialty.',
     },
     {
       _id: '5',
@@ -48,13 +48,13 @@ const Services: NextComponentType = () => {
       image: '/services/branding.png',
       title: 'Branding',
       description:
-        'A solid brand strategy, logo and guidelines help you to get you recognized',
+        'A solid brand strategy, logo and guidelines help you to get you recognized.',
     },
   ]
   return (
     <div id='services' className='pt-5'>
       <div className='container my-5 text-center'>
-        <h3 className='font-custom fs-2'>Available Services</h3>
+        <h3 className=' fs-2'>Available Services</h3>
         <div className='row g-3 pt-3'>
           {services.map((service) => (
             <div
@@ -74,7 +74,7 @@ const Services: NextComponentType = () => {
                   <h5 className='card-title custom-text-primary'>
                     {service?.title}{' '}
                   </h5>
-                  <p className='card-text'>{service?.description}</p>
+                  <small className='card-text'>{service?.description}</small>
                 </div>
               </div>
             </div>
