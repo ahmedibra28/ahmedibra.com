@@ -82,35 +82,39 @@ const responsive = {
 
 const Clients: NextComponentType = () => {
   return (
-    <div className='container'>
-      <p className='text-center mb-3'>
-        The image is important, but the quality with which it is made, even
-        more! This is why my work has made a valuable contribution to many
-        realities:
+    <>
+      <p className='text-center mb-3 font-monospace'>
+        I collaborate with these businesses, <br /> and some of the work I
+        accomplished for them included <br /> creating websites, online and
+        offline web applications, mobile apps, brands, and other things.
       </p>
-      <div className='row'>
-        <Carousel
-          responsive={responsive}
-          infinite={true}
-          itemClass='shadow-sm text-center'
-          autoPlay={true}
-          arrows={false}
-        >
-          {clients?.map((client) => (
-            <div key={client._id} className='col-auto mx-auto'>
-              <Image
-                width='100'
-                height='100'
-                src={client?.logo}
-                alt={client?.name}
-                className='img-fluid opacity-75'
-              />
-              <h5 className='fs-6 text-primary'>{client?.name}</h5>
-            </div>
-          ))}
-        </Carousel>
+      <div className='bg-white py-4'>
+        <div className='container'>
+          <div className='row'>
+            <Carousel
+              responsive={responsive}
+              infinite={true}
+              itemClass='shadow-sm text-center'
+              autoPlay={true}
+              arrows={false}
+            >
+              {clients?.map((client) => (
+                <div key={client._id} className='col-auto mx-auto'>
+                  <Image
+                    width='100'
+                    height='100'
+                    src={client?.logo}
+                    alt={client?.name}
+                    className='img-fluid opacity-75'
+                  />
+                  <h5 className='fs-6 text-primary'>{client?.name}</h5>
+                </div>
+              ))}
+            </Carousel>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

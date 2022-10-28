@@ -11,9 +11,9 @@ const Services: NextComponentType = () => {
     {
       _id: '1',
       image: '/services/web_design.png',
-      title: 'Web Design',
+      title: 'Web & Mobile Design',
       description:
-        'Powerful web design that will out-perform your strongest competitors.',
+        'Powerful web and mobile design that will out-perform your strongest competitors.',
     },
     {
       _id: '2',
@@ -27,7 +27,7 @@ const Services: NextComponentType = () => {
       image: '/services/ecommerce.png',
       title: 'E-commerce',
       description:
-        'We build your online store using a flexible, modular platform that allows you to expand your business.',
+        'I build your online store using a flexible, modular platform that allows you to expand your business.',
     },
     {
       _id: '4',
@@ -41,7 +41,7 @@ const Services: NextComponentType = () => {
       image: '/services/marketing.png',
       title: 'Marketing',
       description:
-        'We use strategic marketing tactics that have been proven to work.',
+        'I use strategic marketing tactics that have been proven to work.',
     },
     {
       _id: '6',
@@ -61,7 +61,7 @@ const Services: NextComponentType = () => {
               key={service?._id}
               className='col-lg-4 col-md-6 col-sm-12 col-12 '
             >
-              <div className='card bg-light border-0  d-flex align-items-center'>
+              <div className='card bg-white border-0  d-flex align-items-center'>
                 <Image
                   priority
                   width='80'

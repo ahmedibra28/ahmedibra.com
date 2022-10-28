@@ -116,159 +116,167 @@ const Contact: NextComponentType = () => {
     <div id='contact' className='pt-5'>
       <div className='container my-5 text-center'>
         <h1 className='font-custom display-1'>Get in touch!</h1>
-        <p>I will help to achieve your goals and to grow your business</p>
-        <div className='row g-3 pt-3'>
-          <div className='col-lg-4 col-md-6 col-12 mx-auto'>
-            <div className='card border-0 bg-transparent'>
-              <div className='card-body'>
-                <div className='card-img-top'>
-                  <FaMapMarkedAlt className='fs-1 text-warning' />
-                </div>
-                <div className='card-text my-2'>Makka al mukarramah</div>
-              </div>
-            </div>
-          </div>
-
-          <div className='col-lg-4 col-md-6 col-12 mx-auto'>
-            <div className='card border-0 bg-transparent'>
-              <div className='card-body'>
-                <div className='card-img-top'>
-                  <FaPhoneAlt className='fs-1 text-warning' />
-                </div>
-                <div className='card-text my-2'>
-                  <a
-                    className='text-primary text-decoration-none'
-                    href='tel:+252615301507'
-                  >
-                    +252 (0) 61 530 1507
-                  </a>
+        <p className='font-monospace'>
+          I will help to achieve your goals and to grow your business
+        </p>
+        <div className='row pt-3'>
+          <div className='col-lg-8 col-md-10 col-12 mx-auto'>
+            <div className='row g-3'>
+              <div className='col-lg-4 col-md-6 col-12 mx-auto'>
+                <div className='card border-0 rounded-0 shadow-sm'>
+                  <div className='card-body'>
+                    <div className='card-img-top'>
+                      <FaMapMarkedAlt className='fs-1 text-warning' />
+                    </div>
+                    <div className='card-text my-2'>Makka al mukarramah</div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <div className='col-lg-4 col-md-6 col-12 mx-auto'>
-            <div className='card border-0 bg-transparent'>
-              <div className='card-body'>
-                <div className='card-img-top'>
-                  <FaEnvelope className='fs-1 text-warning' />
+              <div className='col-lg-4 col-md-6 col-12 mx-auto'>
+                <div className='card border-0 rounded-0 shadow-sm'>
+                  <div className='card-body'>
+                    <div className='card-img-top'>
+                      <FaPhoneAlt className='fs-1 text-warning' />
+                    </div>
+                    <div className='card-text my-2'>
+                      <a
+                        className='text-primary text-decoration-none'
+                        href='tel:+252615301507'
+                      >
+                        +252 (0) 61 530 1507
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <div className='card-text my-2'>
-                  <a
-                    className='text-primary text-decoration-none'
-                    href='mailto:info@ahmedibra.com'
-                  >
-                    info@ahmedibra.com
-                  </a>
+              </div>
+
+              <div className='col-lg-4 col-md-6 col-12 mx-auto'>
+                <div className='card border-0 rounded-0 shadow-sm'>
+                  <div className='card-body'>
+                    <div className='card-img-top'>
+                      <FaEnvelope className='fs-1 text-warning' />
+                    </div>
+                    <div className='card-text my-2'>
+                      <a
+                        className='text-primary text-decoration-none'
+                        href='mailto:info@ahmedibra.com'
+                      >
+                        info@ahmedibra.com
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className='row g-3 pt-3'>
-          <div className='col-lg-10 col-md-10 col-12 mx-auto  p-3'>
-            <form
-              onSubmit={(e) => handleSubmit(e as FormEvent)}
-              className='p-3'
-            >
-              <div className='row g-3'>
-                <div className='col-lg-7 col-12 text-start mx-auto'>
-                  <div className='mb-3'>
-                    <label htmlFor='name' className='text-muted'>
-                      Name
-                    </label>
-                    <input
-                      required
-                      onChange={(e) => setName(e.target.value)}
-                      value={name}
-                      type='text'
-                      className='form-control p-2 rounded-0 shadow-none'
-                      id='name'
-                      placeholder='Enter name'
-                    />
-                  </div>
-
-                  <div className='mb-1'>
-                    <label htmlFor='email' className='text-muted'>
-                      Email
-                    </label>
-                    <input
-                      required
-                      type='email'
-                      onChange={(e) => setEmail(e.target.value)}
-                      value={email}
-                      className='form-control p-2 rounded-0 shadow-none'
-                      id='email'
-                      placeholder='Enter email address'
-                      aria-describedby='emailHelp'
-                    />
-                  </div>
-                  <div
-                    id='emailHelp'
-                    className='form-text mb-3'
-                  >{`We'll never share your email with anyone else.`}</div>
-
-                  <div className='mb-3'>
-                    <label htmlFor='phone' className='text-muted'>
-                      Phone
-                    </label>
-                    <input
-                      required
-                      type='text'
-                      onChange={(e) => setPhone(e.target.value)}
-                      value={phone}
-                      className='form-control p-2 rounded-0 shadow-none'
-                      id='phone'
-                      placeholder='Enter phone'
-                    />
-                  </div>
-                  <div className='mb-3'>
-                    <label htmlFor='message' className='text-muted'>
-                      Message
-                    </label>
-                    <textarea
-                      required
-                      cols={30}
-                      rows={9}
-                      onChange={(e) => setMessage(e.target.value)}
-                      value={message}
-                      className='form-control p-2 rounded-0 shadow-none'
-                      id='message'
-                      placeholder='Enter message'
-                    />
-                  </div>
-                  <div className='my-3'>
-                    <h5 className='font-monospace text-muted'>Services</h5>
-                    <ul className='list-group border-0'>
-                      {services?.map((service) => (
-                        <li
-                          key={service?._id}
-                          className='list-group-item border-0 mb-1'
-                        >
-                          <input
-                            onChange={service?.onChange}
-                            className='form-check-input me-1'
-                            type='checkbox'
-                            value=''
-                            checked={service?.checked}
-                            id={service?._id}
-                          />
-                          <label
-                            className='form-check-label'
-                            htmlFor={service?._id}
-                          >
-                            {service?.name}
-                          </label>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+        <div className='pt-3'>
+          <form onSubmit={(e) => handleSubmit(e as FormEvent)} className='p-3'>
+            <div className='row g-3'>
+              <div className='col-lg-8 col-md-10 col-12 text-start mx-auto shadow-sm bg-white p-5'>
+                <p className='mb-3 text-center font-monospace'>
+                  Please fill out the contact form below to get in touch with
+                  me, and I will do my best to respond to you as soon as I can.
+                </p>
+                <div className='mb-3'>
+                  <label htmlFor='name' className='text-muted'>
+                    Name
+                  </label>
+                  <input
+                    required
+                    onChange={(e) => setName(e.target.value)}
+                    value={name}
+                    type='text'
+                    className='form-control p-2 rounded-0 shadow-none'
+                    id='name'
+                    placeholder='Enter name'
+                  />
                 </div>
 
-                <div className='col-auto text-start'></div>
+                <div className='mb-1'>
+                  <label htmlFor='email' className='text-muted'>
+                    Email
+                  </label>
+                  <input
+                    required
+                    type='email'
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                    className='form-control p-2 rounded-0 shadow-none'
+                    id='email'
+                    placeholder='Enter email address'
+                    aria-describedby='emailHelp'
+                  />
+                </div>
+                <div
+                  id='emailHelp'
+                  className='form-text mb-3'
+                >{`I'll never share your email with anyone else.`}</div>
 
-                <div className='col-12 text-center mt-5'>
+                <div className='mb-1'>
+                  <label htmlFor='phone' className='text-muted'>
+                    Phone
+                  </label>
+                  <input
+                    required
+                    type='text'
+                    onChange={(e) => setPhone(e.target.value)}
+                    value={phone}
+                    className='form-control p-2 rounded-0 shadow-none'
+                    id='phone'
+                    placeholder='Enter phone'
+                    aria-describedby='phoneHelp'
+                  />
+                </div>
+                <div
+                  id='phoneHelp'
+                  className='form-text mb-3'
+                >{`Your phone number will never be given to a third party.`}</div>
+
+                <div className='mb-3'>
+                  <label htmlFor='message' className='text-muted'>
+                    Message
+                  </label>
+                  <textarea
+                    required
+                    cols={30}
+                    rows={9}
+                    onChange={(e) => setMessage(e.target.value)}
+                    value={message}
+                    className='form-control p-2 rounded-0 shadow-none'
+                    id='message'
+                    placeholder='Enter message'
+                  />
+                </div>
+                <div className='my-3'>
+                  <h5 className='font-monospace text-muted'>Services</h5>
+                  <ul className='list-group border-0'>
+                    {services?.map((service) => (
+                      <li
+                        key={service?._id}
+                        className='list-group-item border-0 shadow-sm rounded-0 mb-1'
+                      >
+                        <input
+                          onChange={service?.onChange}
+                          className='form-check-input me-1'
+                          type='checkbox'
+                          value=''
+                          checked={service?.checked}
+                          id={service?._id}
+                        />
+                        <label
+                          className='form-check-label'
+                          htmlFor={service?._id}
+                        >
+                          {service?.name}
+                        </label>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className='my-3 text-center'>
                   {success && (
                     <div className='alert alert-success' role='alert'>
                       {success}
@@ -281,7 +289,7 @@ const Contact: NextComponentType = () => {
                   )}
                   <button
                     disabled={loading}
-                    className='btn btn-warning text-light rounded-0'
+                    className='btn btn-warning text-light rounded-0 p-3'
                   >
                     {loading ? (
                       <span className='spinner-border' />
@@ -291,8 +299,8 @@ const Contact: NextComponentType = () => {
                   </button>
                 </div>
               </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>

@@ -6,28 +6,34 @@ import Link from 'next/link'
 const Nav: NextComponentType = (props) => {
   const items: { _id: string; title: string; link: string }[] = [
     {
-      _id: '2',
-      title: 'Courses',
-      link: '/courses',
-    },
-    {
       _id: '1',
-      title: 'Github',
-      link: 'https://github.com/ahmaat19',
+      title: 'Contact',
+      link: '/#contact',
     },
     {
-      _id: '4',
+      _id: '2',
       title: 'Youtube',
       link: 'https://www.youtube.com/barocoding/SeattleWebSearch?sub_confirmation=1',
     },
     {
       _id: '3',
-      title: 'Contact',
-      link: '/#contact',
+      title: 'Github',
+      link: 'https://github.com/ahmaat19',
     },
-  ]
+    {
+      _id: '4',
+      title: 'Courses',
+      link: '/courses',
+    },
+    // {
+    //   _id: '5',
+    //   title: 'Portfolio',
+    //   link: '/portfolio',
+    // },
+  ].reverse()
+
   return (
-    <nav className='navbar navbar-expand-lg bg-light'>
+    <nav className='navbar navbar-expand-lg bg-white'>
       <div className='container'>
         <Link href='/'>
           <a className='navbar-brand'>

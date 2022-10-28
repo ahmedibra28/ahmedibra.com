@@ -8,7 +8,7 @@ const Hero: NextComponentType = () => {
       <div className='row'>
         <div className='col-lg-7 col-12 my-auto pb-5'>
           <h1 className='fw-bold  display-1 font-custom'>{`I'm Ahmed Ibrahim`}</h1>
-          <p style={{ lineHeight: '2rem' }}>
+          <p style={{ lineHeight: '2rem' }} className='font-monospace'>
             {/* A Freelance Full-Stack Developer From Mogadishu. <br />I Offer
             Modern Web & Mobile Solutions For Growing Your Business. */}
             {`
@@ -28,10 +28,10 @@ const Hero: NextComponentType = () => {
             </a>
           </Link>
         </div>
-        <div className='col-lg-5 col-12 '>
+        <div className='col-lg-5 col-12 text-center '>
           <Image
-            width='711.1879'
-            height='669.68268'
+            width='411.1879'
+            height='369.68268'
             src='/feeling_proud.svg'
             alt='hero image'
             className='img-fluid'
