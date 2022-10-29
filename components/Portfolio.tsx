@@ -122,7 +122,7 @@ const Portfolio = () => {
                         {index + 1}
                       </span>
                       <h6 className='text-warning text-end '>
-                        Feature Project
+                        Featured Project
                       </h6>
                     </div>
                     <h5 className='cad-title fw-bold text-uppercase'>
