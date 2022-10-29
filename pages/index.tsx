@@ -5,7 +5,7 @@ import Nav from '../components/Nav'
 import Services from '../components/Services'
 import Meta from '../components/Meta'
 import Contact from '../components/Contact'
-// import Portfolio from '../components/Portfolio'
+import Portfolio from '../components/Portfolio'
 
 const Home: NextPage = () => {
   return (
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
       <Hero />
 
       <Clients />
-      {/* <Portfolio /> */}
+      <Portfolio />
       <Services />
       <Contact />
     </div>

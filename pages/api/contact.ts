@@ -20,7 +20,7 @@ export default async function handler(
         mobileDevelopment,
         seoOptimization,
         webDesign,
-        webDevelopment,
+        dbDevelopment,
         brand,
       },
     } = req.body
@@ -30,7 +30,7 @@ export default async function handler(
     if (mobileDevelopment) services.push('Mobile Development')
     if (seoOptimization) services.push('SEO Optimization')
     if (webDesign) services.push('Web Design')
-    if (webDevelopment) services.push('Web Development')
+    if (dbDevelopment) services.push('Database Development')
     if (brand) services.push('Branding')
 
     const msg = eTemplate({
@@ -49,7 +49,7 @@ export default async function handler(
 
     if (await result)
       return res.status(200).json({
-        message: `Thank you for contacting us, we'll be in touch very soon.`,
+        message: `Thank you for contacting me, I'll be in touch very soon.`,
       })
   } catch (error: any) {
     return res.status(400).json({ error: error.message })

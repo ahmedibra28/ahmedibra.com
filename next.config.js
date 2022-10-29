@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['www.websom.dev', 'colorlib.com', 'i.ytimg.com'],
+    domains: ['www.websom.dev', 'colorlib.com', 'i.ytimg.com', 'ithemes.com'],
   },
 }
 

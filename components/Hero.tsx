@@ -1,6 +1,7 @@
 import { NextComponentType } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { FaCloudDownloadAlt, FaMailBulk } from 'react-icons/fa'
 
 const Hero: NextComponentType = () => {
   return (
@@ -26,12 +27,14 @@ const Hero: NextComponentType = () => {
           <a
             href='resume.pdf'
             target='_blank'
-            className='btn btn-warning rounded-0 mt-3 px-3 py-2 text-light'
+            className='btn btn-warning rounded-pill mt-3 px-4 py-2 text-light'
           >
-            Download Resume
+            <FaCloudDownloadAlt className='mb-1 me-1' />
+            Resume
           </a>
           <Link href='/#contact'>
-            <a className='btn btn-outline-warning rounded-0 mt-3 px-3 py-2 ms-3'>
+            <a className='btn btn-outline-warning rounded-pill mt-3 px-4 py-2 ms-3'>
+              <FaMailBulk className='mb-1 me-1' />
               Contact Me
             </a>
           </Link>

@@ -2,7 +2,7 @@ import axios from 'axios'
 import { NextComponentType } from 'next'
 // import Image from 'next/image'
 import { FormEvent, useState } from 'react'
-import { FaMapMarkedAlt, FaPhoneAlt, FaEnvelope, FaUser } from 'react-icons/fa'
+import { FaMapMarkedAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
 
 const Contact: NextComponentType = () => {
   const [name, setName] = useState<string>('')
@@ -11,7 +11,7 @@ const Contact: NextComponentType = () => {
   const [message, setMessage] = useState<string>('')
   const [webDesign, setWebDesign] = useState<boolean>(false)
   const [eCommerce, setECommerce] = useState<boolean>(false)
-  const [webDevelopment, setWebDevelopment] = useState<boolean>(false)
+  const [dbDevelopment, setDBDevelopment] = useState<boolean>(false)
   const [seoOptimization, setSeoOptimization] = useState<boolean>(false)
   const [mobileDevelopment, setMobileDevelopment] = useState<boolean>(false)
   const [brand, setBrand] = useState<boolean>(false)
@@ -29,7 +29,7 @@ const Contact: NextComponentType = () => {
       service: {
         webDesign,
         eCommerce,
-        webDevelopment,
+        dbDevelopment,
         seoOptimization,
         mobileDevelopment,
         brand,
@@ -51,7 +51,7 @@ const Contact: NextComponentType = () => {
         setMessage('')
         setWebDesign(false)
         setECommerce(false)
-        setWebDevelopment(false)
+        setDBDevelopment(false)
         setSeoOptimization(false)
         setMobileDevelopment(false)
         setBrand(false)
@@ -78,10 +78,10 @@ const Contact: NextComponentType = () => {
     },
     {
       _id: '2',
-      name: 'Web Development',
-      value: 'Web Development',
-      onChange: (e: any) => setWebDevelopment(e.target.checked),
-      checked: webDevelopment,
+      name: 'Database Development',
+      value: 'Database Development',
+      onChange: (e: any) => setDBDevelopment(e.target.checked),
+      checked: dbDevelopment,
     },
     {
       _id: '3',
@@ -289,7 +289,7 @@ const Contact: NextComponentType = () => {
                   )}
                   <button
                     disabled={loading}
-                    className='btn btn-warning text-light rounded-0 p-3'
+                    className='btn btn-warning text-light rounded-pill py-2 px-3'
                   >
                     {loading ? (
                       <span className='spinner-border' />

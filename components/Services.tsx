@@ -52,7 +52,7 @@ const Services: NextComponentType = () => {
     },
   ]
   return (
-    <div id='services' className='pt-5'>
+    <div id='services' className='pt-5' style={{ marginTop: -150 }}>
       <div className='container my-5 text-center'>
         <h3 className=' fs-2'>Available Services</h3>
         <div className='row g-3 pt-3'>
@@ -61,7 +61,7 @@ const Services: NextComponentType = () => {
               key={service?._id}
               className='col-lg-4 col-md-6 col-sm-12 col-12 '
             >
-              <div className='card bg-white border-0  d-flex align-items-center'>
+              <div className='card bg-white border-0  d-flex align-items-center shadow-sm rounded-0'>
                 <Image
                   priority
                   width='80'
