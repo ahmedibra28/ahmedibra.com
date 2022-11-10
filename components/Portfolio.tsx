@@ -140,10 +140,11 @@ const Portfolio = () => {
                       {item?.links?.map((link, index) => (
                         <span key={index} className='ms-3'>
                           {link?.url ? (
-                            <Link href={link?.url}>
-                              <a className='text-decoration-none'>
-                                {link?.icon} {link?.name}
-                              </a>
+                            <Link
+                              href={link?.url}
+                              className='text-decoration-none'
+                            >
+                              {link?.icon} {link?.name}
                             </Link>
                           ) : (
                             <>

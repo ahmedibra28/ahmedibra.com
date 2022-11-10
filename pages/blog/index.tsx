@@ -7,19 +7,27 @@ import { GetStaticProps } from 'next'
 
 import { PostProps } from '../../types'
 import Meta from '../../components/Meta'
+import PostCard from '../../components/PostCard'
+import readingTime from 'reading-time'
 
 const Posts = ({ posts }: any) => {
   return (
-    <div className='container'>
-      <div className='container text-primary mb-5 mt-2'>
-        <Meta title='Blog' description='Blog Posts' author={''} image={''} />
+    <div className='mt-2'>
+      <div className='container text-primary'>
+        <Meta
+          title={'Web & Mobile Development Blog'}
+          description={`Offcial Ahmed Ibrahim Blog; stay updated with my web and mobile app development tips, latest technology news, and much more.
+        `}
+          author={'Ahmed Ibrahim'}
+          image='/logo.png'
+        />
       </div>
 
       <div className='row'>
         {posts?.map((post: PostProps) => (
-          <div key={post.slug} className='col-12'>
-            <Link href={`/blog/${post.slug}`}>
-              <a className='text-decoration-none'>{post.title}</a>
+          <div key={post.slug} className='col-lg-7 col-md-8 col-12 mx-auto'>
+            <Link href={`/blog/${post.slug}`} className='text-decoration-none'>
+              <PostCard post={post} />
             </Link>
           </div>
         ))}
@@ -39,9 +47,10 @@ export const getStaticProps: GetStaticProps = async () => {
       path.join('data/posts', filename),
       'utf-8'
     )
-    const { data } = matter(markdownWithMeta)
+    const { data, content } = matter(markdownWithMeta)
+    const stats = readingTime(content)
 
-    return { ...data, slug }
+    return { ...data, slug, stats }
   })
 
   return {

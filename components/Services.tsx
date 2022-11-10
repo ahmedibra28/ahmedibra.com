@@ -64,11 +64,11 @@ const Services: NextComponentType = () => {
               <div className='card bg-white border-0  d-flex align-items-center shadow-sm rounded-0'>
                 <Image
                   priority
-                  width='80'
-                  height='80'
+                  width={80}
+                  height={80}
                   src={service?.image}
                   alt={service?.title}
-                  className='card-img-top img-fluid  mx-auto service-img p-2 '
+                  className='img-fluid  mx-auto service-img p-2 '
                 />
                 <div className='card-body'>
                   <h5 className='card-title custom-text-primary'>

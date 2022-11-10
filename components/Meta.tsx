@@ -1,17 +1,21 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-const Meta = (props: {
-  title: string
-  description: string
-  author: string
-  image: string
-}) => {
-  const router = useRouter()
+interface Props {
+  title?: string
+  description?: string
+  author?: string
+  image?: string
+}
+
+const Meta = (props: Props) => {
+  const { pathname } = useRouter()
+
   const title = 'Full-Stack Developer In Somalia | Ahmed Ibrahim'
-  const description = `I'm a Full Stack Developer with 9+ years of experience in designing and developing user interfaces, testing, debugging, and training staff within modern technologies. Proven ability in optimizing web functionalities that improve data retrieval and workflow efficiencies.`
+  const description = `I'm a Full Stack Developer with 9+ years of experience in designing and developing user interfaces, testing, debugging, and training staff within modern technologies. Proven ability in optimizing web functionalities that improve data retrieval and workflow efficiencies.
+  `
   const image = 'https://www.ahmedibra.com/logo.png'
-  const url = `https://www.ahmedibra.com${router.asPath}`
+  const url = `https://www.ahmedibra.com${pathname}`
   const author = 'Ahmed Ibrahim'
 
   return (
@@ -36,12 +40,12 @@ const Meta = (props: {
 
       <meta
         name='keywords'
-        content='Web, Mobile, Web Mobile, App, Development Company, App Development, Web Development, Mobile Application Development Company, Mobile Application Development, agency, Design Agency, Digital Age, Digital Agency, Web Design Development Agency, Web Design, eCommerce, Websites, Website, Ahmed, Web Som, ahmedibra.com, ahmedibra, ahmed ibrahim, ahmed ibrahim samow, ahmaat19, dev, Design, Web Solutions, Empowering Business Growth With The Power Of Web Development, Business Growth, Business, Growth, Software Development Company, Web Development Company, Custom Software Development, custom software development company, Custom Web, Custom Design, Somalia, Web Design Company in Somalia, Somali Web Design, Somali Web Development, SEO Optimization, Marketing, Branding, E-commerce, Development'
+        content='ahmedibra, ahmedibra.com, https://ahmedibra.com, https://github.com/ahmaat19, github.com/ahmaat19, next.js, next-ts, typescript, next-typescript, boilerplate, next-ts-boilerplate, next-boilerplate, next.js-boilerplate Web & Mobile Development Blog, nextjs.13, Web, Mobile, Web Mobile, App, Development Company, App Development, Web Development, Mobile Application Development Company, Mobile Application Development, agency, Design Agency, Digital Age, Digital Agency, Web Design Development Agency, Web Design, eCommerce, Websites, Website, Ahmed, Web Som, ahmedibra.com, ahmedibra, ahmed ibrahim, ahmed ibrahim samow, ahmaat19, dev, Design, Web Solutions, Empowering Business Growth With The Power Of Web Development, Business Growth, Business, Growth, Software Development Company, Web Development Company, Custom Software Development, custom software development company, Custom Web, Custom Design, Somalia, Web Design Company in Somalia, Somali Web Design, Somali Web Development, SEO Optimization, Marketing, Branding, E-commerce, Development'
       />
       <meta name='author' content={props?.author ? props?.author : author} />
       <meta name='publisher' content={props?.author ? props?.author : author} />
       <meta name='robots' content='index, follow' />
-      <link rel='icon' href='/logo.png' />
+      <link rel='icon' href='/favicon.png' />
       <link
         rel='shortcut icon'
         type='image/vnd.microsoft.icon'

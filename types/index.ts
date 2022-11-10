@@ -1,12 +1,17 @@
 export declare interface PostProps {
-  author: string
   title: string
-  tags: string[]
-  image: string
-  caption: string
-  createdAt: string
   slug: string
+  category: string
+  image: string
+  excerpt: string
   content: string
+  mdxSource: string
+  author: string
+  avatar: string
+  createdAt: string
+  stats: {
+    text: string
+  }
 }
 
 export declare interface SortProps {

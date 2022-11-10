@@ -1,0 +1,38 @@
+---
+    title: "The simplest guide to error handling in Rust"
+    slug: "the-simplest-guide-to-error-handling-in-rust"
+    category: 'Programming'
+    image: 'https://images.pexels.com/photos/7534104/pexels-photo-7534104.jpeg?auto=compress&cs=tinysrgb&w=800'
+    excerpt: 'Rust is loved for its reliability, and a good chunk of its reliability comes from its error handling ergonomics.'
+    author: 'Ahmed Ibrahim'
+    avatar: 'https://github.com/ahmaat19.png'
+    createdAt: '2022-11-10'
+---
+
+I know that there already are a few guides about error handling in Rust, but I found these guides to be too long and not straight to the point.
+
+So here is the simplest and most straightforward guide to learn how to handle errors in Rust. The guide I would have loved to have if I started Rust today.
+
+## Overview
+
+There are 2 types of errors in Rust:
+
+- Non-recoverable errors (e.g., non-checked out of bounds array access)
+- Recoverable errors (e.g., function failed)
+
+> Want to learn Rust, applied Cryptography and Security? Take a look at my book [Black Hat Rust](https://kerkour.com/black-hat-rust).\
+> [Get 42% off until Friday, November 11 with the coupon 1311B892](https://dev.to/sylvainkerkour/black-hat-rust-book-discount-for-devto-432p)
+
+## Non-recoverable errors
+
+For errors that can't be handled and would bring your program into an unrecoverable state, we use the [panic!](https://doc.rust-lang.org/std/macro.panic.html) macro.
+
+```Rust
+fn encrypt(key: &[u8], data: &[u8]) -> Vec<u8> {
+  if key.len() != 32 {
+    panic!("encrypt: key length is invalid");
+  }
+  // ...
+}
+
+```

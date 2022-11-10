@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import Hero from '../components/Hero'
 import Clients from '../components/Clients'
-import Nav from '../components/Nav'
 import Services from '../components/Services'
 import Meta from '../components/Meta'
 import Contact from '../components/Contact'
@@ -16,7 +15,6 @@ const Home: NextPage = () => {
         author={'Ahmed Ibrahim'}
         image='/logo.png'
       />
-      <Nav />
       <Hero />
 
       <Clients />

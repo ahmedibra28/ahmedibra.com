@@ -32,17 +32,18 @@ const Hero: NextComponentType = () => {
             <FaCloudDownloadAlt className='mb-1 me-1' />
             Resume
           </a>
-          <Link href='/#contact'>
-            <a className='btn btn-outline-warning rounded-pill mt-3 px-4 py-2 ms-3'>
-              <FaMailBulk className='mb-1 me-1' />
-              Contact Me
-            </a>
+          <Link
+            href='/#contact'
+            className='btn btn-outline-warning rounded-pill mt-3 px-4 py-2 ms-3'
+          >
+            <FaMailBulk className='mb-1 me-1' />
+            Contact Me
           </Link>
         </div>
         <div className='col-lg-5 col-12 text-center '>
           <Image
-            width='411.1879'
-            height='369.68268'
+            width={411}
+            height={369}
             src='/feeling_proud.svg'
             alt='hero image'
             className='img-fluid'
