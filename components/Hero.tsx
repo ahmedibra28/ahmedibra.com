@@ -43,7 +43,7 @@ const Hero: NextComponentType = () => {
         <div className='col-lg-5 col-12 text-center mx-auto'>
           <Image
             src='https://github.com/ahmaat19.png'
-            alt='author'
+            alt='Ahmed Ibrahim Samow'
             width={300}
             quality={100}
             height={300}
