@@ -44,10 +44,10 @@ const Hero: NextComponentType = () => {
           <Image
             src='https://github.com/ahmaat19.png'
             alt='author'
-            width={400}
+            width={300}
             quality={100}
-            height={400}
-            className='rounded-pill img-fluid'
+            height={300}
+            className='rounded-pill img-fluid img-thumbnail'
           />
         </div>
       </div>
