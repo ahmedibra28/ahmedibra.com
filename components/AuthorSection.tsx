@@ -12,6 +12,7 @@ const AuthorSection = ({ item }: { item: PostProps }) => {
             src={item?.avatar}
             alt='author'
             width={50}
+            quality={100}
             height={50}
             className='rounded-pill'
           />

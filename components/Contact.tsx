@@ -174,129 +174,134 @@ const Contact: NextComponentType = () => {
 
         <div className='pt-3'>
           <form onSubmit={(e) => handleSubmit(e as FormEvent)} className='p-3'>
-            <div className='row g-3'>
-              <div className='col-lg-8 col-md-10 col-12 text-start mx-auto shadow-sm bg-white p-5'>
-                <p className='mb-3 text-center '>
-                  Please fill out the contact form below to get in touch with
-                  me, and I will do my best to respond to you as soon as I can.
-                </p>
-                <div className='mb-3'>
-                  <label htmlFor='name' className='text-muted'>
-                    Name
-                  </label>
-                  <input
-                    required
-                    onChange={(e) => setName(e.target.value)}
-                    value={name}
-                    type='text'
-                    className='form-control p-2 rounded-0 shadow-none'
-                    id='name'
-                    placeholder='Enter name'
-                  />
-                </div>
+            <div className='row'>
+              <div className='col-lg-8 col-md-10 col-12 text-start mx-auto bg-white py-5'>
+                <div className='row g-3'>
+                  <div className='col-12 text-start mx-auto'>
+                    <p className='mb-3 text-center'>
+                      Please fill out the contact form below to get in touch
+                      with me, and I will do my best to respond to you as soon
+                      as I can.
+                    </p>
+                    <div className='mb-3'>
+                      <label htmlFor='name' className='text-muted'>
+                        Name
+                      </label>
+                      <input
+                        required
+                        onChange={(e) => setName(e.target.value)}
+                        value={name}
+                        type='text'
+                        className='form-control p-2 rounded-0 shadow-none'
+                        id='name'
+                        placeholder='Enter name'
+                      />
+                    </div>
 
-                <div className='mb-1'>
-                  <label htmlFor='email' className='text-muted'>
-                    Email
-                  </label>
-                  <input
-                    required
-                    type='email'
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email}
-                    className='form-control p-2 rounded-0 shadow-none'
-                    id='email'
-                    placeholder='Enter email address'
-                    aria-describedby='emailHelp'
-                  />
-                </div>
-                <div
-                  id='emailHelp'
-                  className='form-text mb-3'
-                >{`I'll never share your email with anyone else.`}</div>
+                    <div className='mb-1'>
+                      <label htmlFor='email' className='text-muted'>
+                        Email
+                      </label>
+                      <input
+                        required
+                        type='email'
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={email}
+                        className='form-control p-2 rounded-0 shadow-none'
+                        id='email'
+                        placeholder='Enter email address'
+                        aria-describedby='emailHelp'
+                      />
+                    </div>
+                    <div
+                      id='emailHelp'
+                      className='form-text mb-3'
+                    >{`I'll never share your email with anyone else.`}</div>
 
-                <div className='mb-1'>
-                  <label htmlFor='phone' className='text-muted'>
-                    Phone
-                  </label>
-                  <input
-                    required
-                    type='text'
-                    onChange={(e) => setPhone(e.target.value)}
-                    value={phone}
-                    className='form-control p-2 rounded-0 shadow-none'
-                    id='phone'
-                    placeholder='Enter phone'
-                    aria-describedby='phoneHelp'
-                  />
-                </div>
-                <div
-                  id='phoneHelp'
-                  className='form-text mb-3'
-                >{`Your phone number will never be given to a third party.`}</div>
+                    <div className='mb-1'>
+                      <label htmlFor='phone' className='text-muted'>
+                        Phone
+                      </label>
+                      <input
+                        required
+                        type='text'
+                        onChange={(e) => setPhone(e.target.value)}
+                        value={phone}
+                        className='form-control p-2 rounded-0 shadow-none'
+                        id='phone'
+                        placeholder='Enter phone'
+                        aria-describedby='phoneHelp'
+                      />
+                    </div>
+                    <div
+                      id='phoneHelp'
+                      className='form-text mb-3'
+                    >{`Your phone number will never be given to a third party.`}</div>
 
-                <div className='mb-3'>
-                  <label htmlFor='message' className='text-muted'>
-                    Message
-                  </label>
-                  <textarea
-                    required
-                    cols={30}
-                    rows={9}
-                    onChange={(e) => setMessage(e.target.value)}
-                    value={message}
-                    className='form-control p-2 rounded-0 shadow-none'
-                    id='message'
-                    placeholder='Enter message'
-                  />
-                </div>
-                <div className='my-3'>
-                  <h5 className=' text-muted'>Services</h5>
-                  <ul className='list-group border-0'>
-                    {services?.map((service) => (
-                      <li
-                        key={service?._id}
-                        className='list-group-item border-0 shadow-sm rounded-0 mb-1'
+                    <div className='mb-3'>
+                      <label htmlFor='message' className='text-muted'>
+                        Message
+                      </label>
+                      <textarea
+                        required
+                        cols={30}
+                        rows={9}
+                        onChange={(e) => setMessage(e.target.value)}
+                        value={message}
+                        className='form-control p-2 rounded-0 shadow-none'
+                        id='message'
+                        placeholder='Enter message'
+                      />
+                    </div>
+                    <div className='my-3'>
+                      <h5 className=' text-muted'>Services</h5>
+                      <ul className='list-group border-0'>
+                        {services?.map((service) => (
+                          <li
+                            key={service?._id}
+                            className='list-group-item border-0 shadow-sm rounded-0 mb-1'
+                          >
+                            <input
+                              onChange={service?.onChange}
+                              className='form-check-input me-1'
+                              type='checkbox'
+                              value=''
+                              checked={service?.checked}
+                              id={service?._id}
+                            />
+                            <label
+                              className='form-check-label'
+                              htmlFor={service?._id}
+                            >
+                              {service?.name}
+                            </label>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className='my-3 text-center'>
+                      {success && (
+                        <div className='alert alert-success' role='alert'>
+                          {success}
+                        </div>
+                      )}
+                      {error && (
+                        <div className='alert alert-danger' role='alert'>
+                          {error}
+                        </div>
+                      )}
+                      <button
+                        disabled={loading}
+                        className='btn btn-warning text-light rounded-pill py-2 px-3'
                       >
-                        <input
-                          onChange={service?.onChange}
-                          className='form-check-input me-1'
-                          type='checkbox'
-                          value=''
-                          checked={service?.checked}
-                          id={service?._id}
-                        />
-                        <label
-                          className='form-check-label'
-                          htmlFor={service?._id}
-                        >
-                          {service?.name}
-                        </label>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className='my-3 text-center'>
-                  {success && (
-                    <div className='alert alert-success' role='alert'>
-                      {success}
+                        {loading ? (
+                          <span className='spinner-border' />
+                        ) : (
+                          <span>Send Message</span>
+                        )}
+                      </button>
                     </div>
-                  )}
-                  {error && (
-                    <div className='alert alert-danger' role='alert'>
-                      {error}
-                    </div>
-                  )}
-                  <button
-                    disabled={loading}
-                    className='btn btn-warning text-light rounded-pill py-2 px-3'
-                  >
-                    {loading ? (
-                      <span className='spinner-border' />
-                    ) : (
-                      <span>Send Message</span>
-                    )}
-                  </button>
+                  </div>
                 </div>
               </div>
             </div>

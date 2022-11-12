@@ -12,6 +12,7 @@ const PostCard = ({ post }: { post: PostProps }) => {
             src={post?.image}
             width={200}
             height={200}
+            quality={100}
             alt={post?.title}
             style={{ objectFit: 'cover' }}
             className='card-img rounded-0'

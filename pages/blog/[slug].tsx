@@ -32,6 +32,7 @@ const Post = (post: PostProps) => {
             <div className='my-3'>
               <Image
                 src={post?.image}
+                quality={100}
                 width={200}
                 height={200}
                 alt={post?.title}

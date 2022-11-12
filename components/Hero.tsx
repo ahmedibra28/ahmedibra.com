@@ -40,13 +40,14 @@ const Hero: NextComponentType = () => {
             Contact Me
           </Link>
         </div>
-        <div className='col-lg-5 col-12 text-center '>
+        <div className='col-lg-5 col-12 text-center mx-auto'>
           <Image
-            width={411}
-            height={369}
-            src='/feeling_proud.svg'
-            alt='hero image'
-            className='img-fluid'
+            src='https://github.com/ahmaat19.png'
+            alt='author'
+            width={400}
+            quality={100}
+            height={400}
+            className='rounded-pill img-fluid'
           />
         </div>
       </div>
