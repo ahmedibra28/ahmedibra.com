@@ -1,7 +1,7 @@
 export declare interface PostProps {
   title: string
   slug: string
-  category: string
+  tags: string[]
   image: string
   excerpt: string
   content: string

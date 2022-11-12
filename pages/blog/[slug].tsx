@@ -5,19 +5,19 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { PostProps } from '../../types'
 import Meta from '../../components/Meta'
 import Image from 'next/image'
-import moment from 'moment'
 import readingTime from 'reading-time'
 
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
-import rehypeHighlight from 'rehype-highlight'
+// import rehypeHighlight from 'rehype-highlight'
 import rehypeSlug from 'rehype-slug'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+// import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import AuthorSection from '../../components/AuthorSection'
 
 const Post = (post: PostProps) => {
   return (
     <div className='row mt-2'>
-      <div className='col-lg-7 col-md-8 col-12 mx-auto'>
+      <div className='col-lg-7 col-md-8 col-12 mx-auto bg-white'>
         <div className='container'>
           <Meta
             title={post?.title}
@@ -27,31 +27,7 @@ const Post = (post: PostProps) => {
           />
 
           <div className='card-body'>
-            <div className='d-flex align-items-center'>
-              <div className='bg-white rounded-pill'>
-                <Image
-                  src={post?.avatar}
-                  alt='author'
-                  width={30}
-                  height={30}
-                  className='rounded-pill'
-                />
-              </div>
-              <div className='ms-2'>
-                <label className='text-muted'>{post?.author}</label>
-                <p className='card-text'>
-                  <small className='text-muted'>
-                    {moment(post?.createdAt).format('MMM D')}
-                  </small>
-                  <span className='mx-2'>-</span>
-                  <small className='text-muted'>{post?.stats?.text}</small>
-                  <span className='mx-2'>-</span>
-                  <small className='badge bg-warning px-2 rounded-pill'>
-                    {post?.category}
-                  </small>
-                </p>
-              </div>
-            </div>
+            <AuthorSection item={post} />
 
             <div className='my-3'>
               <Image
@@ -105,8 +81,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     mdxOptions: {
       rehypePlugins: [
         rehypeSlug,
-        [rehypeAutolinkHeadings, { behavior: 'wrap' }],
-        rehypeHighlight,
+        // [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+        // rehypeHighlight,
       ],
     },
   })

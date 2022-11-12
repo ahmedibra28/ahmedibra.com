@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import React from 'react'
 import { PostProps } from '../types'
-import moment from 'moment'
+import AuthorSection from './AuthorSection'
 
 const PostCard = ({ post }: { post: PostProps }) => {
   return (
     <div className='card mb-3 border-0 rounded-0'>
       <div className='row g-0'>
-        <div className='col-lg-4'>
+        <div className='col-lg-4 my-auto'>
           <Image
             src={post?.image}
             width={200}
@@ -17,23 +17,14 @@ const PostCard = ({ post }: { post: PostProps }) => {
             className='card-img rounded-0'
           />
         </div>
-        <div className='col-lg-8'>
-          <div className='card-body'>
-            <h5 className='card-title fw-bold'>{post?.title}</h5>
-            <p className='card-text'>{`${post?.excerpt?.slice(0, 120)}...`}</p>
-            <p className='card-text'>
-              <small className='text-muted '>{post?.author}</small>
-              <span className='mx-2'>-</span>
-              <small className='text-muted'>
-                {moment(post?.createdAt).format('MMM D')}
-              </small>
-              <span className='mx-2'>-</span>
-              <small className='text-muted'>{post?.stats?.text}</small>
-              <span className='mx-2'>-</span>
-              <small className='badge bg-warning px-2 rounded-pill'>
-                {post?.category}
-              </small>
-            </p>
+        <div className='col-lg-8 my-autso d-flex flex-column justify-content-around'>
+          <div className='card-body py-2 px-3 '>
+            <AuthorSection item={post} />
+            <h1 className='card-title fw-bold fs-6'>{post?.title}</h1>
+            <p
+              className='card-text text-muted'
+              style={{ fontSize: '85%' }}
+            >{`${post?.excerpt?.slice(0, 100)}...`}</p>
           </div>
         </div>
       </div>
