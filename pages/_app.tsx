@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=G-DTX3R04S4J`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_M_ID}`}
         strategy='lazyOnload'
       />
       <Script id='google-analytics' strategy='lazyOnload'>
@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-DTX3R04S4J');
+          gtag('config', '${process.env.NEXT_PUBLIC_M_ID}');
         `}
       </Script>
 
@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-5C7QCDH');`}
+          })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GTM}');`}
       </Script>
 
       <Layout>
