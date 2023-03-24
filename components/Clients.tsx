@@ -54,6 +54,11 @@ const clients: { _id: string; name: string; logo: string }[] = [
     name: 'Wadaag',
     logo: '/clients/wadaag.png',
   },
+  {
+    _id: '11',
+    name: 'eBallan',
+    logo: '/clients/eballan.png',
+  },
 ]
 
 const responsive = {
@@ -82,39 +87,45 @@ const responsive = {
 
 const Clients: NextComponentType = () => {
   return (
-    <>
-      <p className='text-center mb-3 '>
-        I collaborate with these businesses, <br /> and some of the work I
-        accomplished for them included <br /> creating websites, online and
-        offline web applications, mobile apps, brands, and other things.
+    <div className='mb-20 sm:mb-32 '>
+      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase dark:text-primary mb-4 mt-5 sm:mt-0'>
+        Clients
+      </h2>
+      <p className='text-center container px-4 mx-auto'>
+        I collaborate with these businesses, and some of the work I accomplished
+        for them included <br /> creating websites, online and offline web
+        applications, mobile apps, brands, and other things.
       </p>
-      <div className='bg-white py-4'>
-        <div className='container-fluid'>
-          <div className='row'>
-            <Carousel
-              responsive={responsive}
-              infinite={true}
-              itemClass='shadow-sm text-center'
-              autoPlay={true}
-              arrows={false}
-            >
-              {clients?.map((client) => (
-                <div key={client._id} className='col-auto mx-auto'>
-                  <Image
-                    width='100'
-                    height='100'
-                    src={client?.logo}
-                    alt={client?.name}
-                    className='img-fluid opacity-75'
-                  />
-                  <h5 className='fs-6 text-primary'>{client?.name}</h5>
-                </div>
-              ))}
-            </Carousel>
-          </div>
+      <div className='py-4 mx-auto'>
+        <div className='mx-auto'>
+          {/* <div className='column'> */}
+          <Carousel
+            responsive={responsive}
+            infinite={true}
+            itemClass='text-center'
+            autoPlay={true}
+            arrows={false}
+          >
+            {clients?.map((client) => (
+              <div
+                key={client._id}
+                className='flex justify-between items-center py-11 flex-col text-center dark:bg-natural-focus border border-primary rounded-3xl mx-4 shadow-lg shadow-primary m-5 dark:bg-gray-200'
+              >
+                <Image
+                  width={100}
+                  height={100}
+                  src={client?.logo}
+                  alt={client?.name}
+                  className=''
+                />
+                {/* <h5 className='text-natural text-center'>{client?.name}</h5> */}
+              </div>
+            ))}
+          </Carousel>
+          {/* </div> */}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

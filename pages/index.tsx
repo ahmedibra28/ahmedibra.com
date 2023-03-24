@@ -5,21 +5,25 @@ import Services from '../components/Services'
 import Meta from '../components/Meta'
 import Contact from '../components/Contact'
 import Portfolio from '../components/Portfolio'
+import Skills from '../components/Skills'
 
 const Home: NextPage = () => {
   return (
-    <div className=''>
+    <div className='scroll-smooth hover:scroll-auto'>
       <Meta
         title={'Full-Stack Developer In Somalia | Ahmed Ibrahim'}
         description={`I'm a Full Stack Developer with 9+ years of experience in designing and developing user interfaces, testing, debugging, and training staff within modern technologies. Proven ability in optimizing web functionalities that improve data retrieval and workflow efficiencies.`}
         author={'Ahmed Ibrahim'}
         image='/logo.png'
       />
-      <Hero />
+      <div className='container px-4 mx-auto'>
+        <Hero />
+      </div>
 
       <Clients />
-      <Portfolio />
+      <Skills />
       <Services />
+      <Portfolio />
       <Contact />
     </div>
   )

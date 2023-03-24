@@ -1,14 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import {
-  FaAndroid,
-  FaAppStore,
-  FaDatabase,
-  FaGithubAlt,
-  FaGlobe,
-  FaReact,
-} from 'react-icons/fa'
+import { FaDatabase, FaGithubAlt, FaGlobe, FaReact } from 'react-icons/fa'
 
 const Portfolio = () => {
   const items = [
@@ -43,7 +36,7 @@ const Portfolio = () => {
     //     },
     //     {
     //       name: 'Github',
-    //       url: 'https://github.com/ahmaat19/wadaag',
+    //       url: 'https://github.com/ahmedibradotcom/wadaag',
     //       icon: <FaGithubAlt className='mb-1 text-warning' />,
     //     },
     //     {
@@ -61,106 +54,90 @@ const Portfolio = () => {
       title: 'Cargo Management System',
       description: (
         <div className=''>
-          Mamos cargo management system, This management system has numerous
-          functions such as shipment tracking, shipment booking, employee
-          management, logistics management, and so on.
+          The cargo management system is a software solution designed to
+          streamline the process of managing cargo shipments, from booking to
+          delivery, and to provide real-time visibility into cargo status and
+          location.
         </div>
       ),
       image: '/projects/mamos.png',
       techs: [
         {
           name: 'Next.JS',
-          icon: <FaReact className='mb-1 text-warning' />,
+          icon: <FaReact className=' text-warning' />,
         },
         {
           name: 'MongoDB',
-          icon: <FaDatabase className='mb-1 text-warning' />,
+          icon: <FaDatabase className=' text-warning' />,
         },
       ],
       links: [
         {
           name: 'Live',
           url: 'http://fcl.mamosbusiness.com',
-          icon: <FaGlobe className='mb-1 text-warning' />,
+          icon: <FaGlobe className=' text-warning' />,
         },
         {
           name: 'Github',
-          url: 'https://github.com/ahmaat19/mamos',
-          icon: <FaGithubAlt className='mb-1 text-warning' />,
+          url: 'https://github.com/ahmedibradotcom/mamos',
+          icon: <FaGithubAlt className=' text-warning' />,
         },
       ],
     },
   ]
 
   return (
-    <div id='portfolio' className='py-5 mb-5'>
-      <div className='container my-5'>
-        <p className='text-center  mb-4'>{`Some of the most recent projects I've completed for my clients`}</p>
+    <div
+      className='mb-20 sm:mb-32 container px-4 mx-auto scroll-m-20'
+      id='portfolio'
+    >
+      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase dark:text-primary mb-4 mt-5 sm:mt-0'>
+        Recent Projects
+      </h2>
 
-        {items?.map((item, index) => (
-          <div
-            key={item?._id}
-            className='row gy-3 pb-5'
-            style={{ marginBottom: 230 }}
-          >
-            <div className='col-lg-6 col-12 mx-auto'>
-              <div className='card border-0 shadow'>
-                <Image
-                  src={item?.image}
-                  alt={item?.title}
-                  width={1000}
-                  height={524}
-                  className='img-fluid'
-                />
-                <div
-                  className='card-body position-absolute bg-white shadow-lg custom-width opacity'
-                  style={{ bottom: -220 }}
-                >
-                  <div className='text-center'>
-                    <div className='d-flex justify-content-between'>
-                      <span className='border border-warning p-2 shadow-lg'>
-                        {index + 1}
-                      </span>
-                      <h6 className='text-warning text-end '>
-                        Featured Project
-                      </h6>
-                    </div>
-                    <h5 className='cad-title fw-bold text-uppercase'>
-                      {item?.title}
-                    </h5>
-                    <div className=''>{item?.description}</div>
-                    <div className='mt-4 text-center'>
-                      {item?.techs?.map((tech, index) => (
-                        <span key={index} className='ms-3'>
-                          {tech?.icon} {tech?.name}
-                        </span>
-                      ))}
-                    </div>
-                    <div className='mt-2 text-center'>
-                      {item?.links?.map((link, index) => (
-                        <span key={index} className='ms-3'>
-                          {link?.url ? (
-                            <Link
-                              href={link?.url}
-                              className='text-decoration-none'
-                            >
-                              {link?.icon} {link?.name}
-                            </Link>
-                          ) : (
-                            <>
-                              {link?.icon} {link?.name}
-                            </>
-                          )}
-                        </span>
-                      ))}
-                    </div>
+      <p className='text-center mb-4'>{`Some of the most recent projects I've completed for my clients`}</p>
+
+      {items?.map((item, index) => (
+        <div
+          key={item?._id}
+          className='gy-3 pb-5'
+          style={{ marginBottom: 230 }}
+        >
+          <div className='flex flex-wrap  justify-center items-center mx-auto px-4 sm:px-0'>
+            <Image
+              src={item?.image}
+              alt={item?.title}
+              width={1000}
+              height={524}
+              className='sm:max-w-xl rounded-xl shadow-lg shadow-warning object-cover'
+            />
+            <div className='mt-7'>
+              <h6 className='dark:text-primary font-bold text-right mb-3 sm:text-xl'>
+                <span className='border border-warning p-2 shadow-lg mr-3'>
+                  {index + 1}
+                </span>
+                <span className='uppercase'> {item?.title}</span>
+              </h6>
+              <div className='max-w-lg sm:rounded-lg shadow-xl shadow-warning p-4 my-4 z-50 sm:-ml-36 bg-base-100 dark:bg-base-200 sm:text-end'>
+                {item?.description}
+              </div>
+              <div className='flex justify-end mt-8'>
+                <Link href='/portfolio/1'>
+                  <button className='btn btn-primary btn-outline px-10 h-3'>
+                    Read more
+                  </button>
+                </Link>
+                {/* {item?.techs?.map((tech, index) => (
+                  <div key={index} className='flex items-center mr-10'>
+                    <span className='mr-3'> {tech?.icon}</span>{' '}
+                    <span>{tech?.name}</span>
                   </div>
-                </div>
+                ))} */}
               </div>
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   )
 }

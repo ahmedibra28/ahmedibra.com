@@ -1,68 +1,99 @@
 import { NextComponentType } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { FaGithub, FaGithubAlt } from 'react-icons/fa'
 
 const Nav: NextComponentType = (props) => {
-  const items: { _id: string; title: string; link: string }[] = [
+  const items: { title: string; link: string }[] = [
     {
-      _id: '1',
-      title: 'Github',
-      link: 'https://github.com/ahmaat19',
+      title: 'Home',
+      link: '/#home',
     },
     {
-      _id: '2',
-      title: 'Blog',
-      link: '/blog',
+      title: 'About',
+      link: '/about',
     },
-  ].reverse()
+    {
+      title: 'Skills',
+      link: '/#skills',
+    },
+    {
+      title: 'Services',
+      link: '/#services',
+    },
+    {
+      title: 'Portfolio',
+      link: '/#portfolio',
+    },
+    // {
+    //   title: 'Blog',
+    //   link: '/blog',
+    // },
+    {
+      title: 'Contact',
+      link: '/#contact',
+    },
+  ]
 
   return (
-    <nav className='navbar navbar-expand-lg bg-white'>
-      <div className='container'>
-        <Link href='/' className='navbar-brand'>
-          <div className='d-flex align-items-center'>
-            <Image
-              width='30'
-              height='30'
-              src='/logo.png'
-              alt='hero image'
-              className='d-inline-block align-text-top'
-            />
-          </div>
-        </Link>
-        <button
-          className='navbar-toggler'
-          type='button'
-          data-bs-toggle='collapse'
-          data-bs-target='#navbarNav'
-          aria-controls='navbarNav'
-          aria-expanded='false'
-          aria-label='Toggle navigation'
-        >
-          <span className='navbar-toggler-icon'></span>
-        </button>
-        <div className='collapse navbar-collapse' id='navbarNav'>
-          <ul className='navbar-nav ms-auto'>
-            {items?.map((item) => (
-              <li key={item?._id} className='nav-item'>
-                <Link
-                  href={item?.link}
-                  className='nav-link active text-primary'
-                  aria-current='page'
-                  target={
-                    item?.title === 'Github' || item?.title === 'Youtube'
-                      ? '_blank'
-                      : '_self'
-                  }
-                >
-                  {item?.title}
-                </Link>
+    <div className='navbar bg-base-100 sticky top-0 z-50'>
+      <div className='navbar-start'>
+        <div className='dropdown'>
+          <label tabIndex={0} className='btn btn-ghost lg:hidden'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='h-5 w-5'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2'
+                d='M4 6h16M4 12h8m-8 6h16'
+              />
+            </svg>
+          </label>
+          <ul
+            tabIndex={0}
+            className='menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52'
+          >
+            {items?.map((item, index) => (
+              <li key={index}>
+                <Link href={item.link}>{item.title}</Link>
               </li>
             ))}
           </ul>
         </div>
+        <Link href='/#home' className='btn btn-ghost normal-case text-xl'>
+          <Image
+            width='30'
+            height='30'
+            src='/logo.png'
+            alt='hero image'
+            className='inline-block mr-3'
+          />
+          <span className=''>Ahmed Ibrahim</span>
+        </Link>
       </div>
-    </nav>
+      <div className='navbar-center hidden lg:flex'>
+        <ul className='menu menu-horizontal px-1'>
+          {items?.map((item, index) => (
+            <li key={index}>
+              <Link href={item.link}>{item.title}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className='navbar-end'>
+        <button className='btn btn-ghost btn-circle'>
+          <div className='indicator text-2xl'>
+            <FaGithub />
+          </div>
+        </button>
+      </div>
+    </div>
   )
 }
 
