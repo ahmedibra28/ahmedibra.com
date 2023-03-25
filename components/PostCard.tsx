@@ -5,29 +5,22 @@ import AuthorSection from './AuthorSection'
 
 const PostCard = ({ post }: { post: PostProps }) => {
   return (
-    <div className='card mb-3 border-0 rounded-0'>
-      <div className='row g-0'>
-        <div className='col-lg-4 my-auto'>
-          <Image
-            src={post?.image}
-            width={200}
-            height={200}
-            quality={100}
-            alt={post?.title}
-            style={{ objectFit: 'cover' }}
-            className='card-img rounded-0'
-          />
-        </div>
-        <div className='col-lg-8 my-autso d-flex flex-column justify-content-around'>
-          <div className='card-body py-2 px-3 '>
-            <AuthorSection item={post} />
-            <h1 className='card-title fw-bold fs-6'>{post?.title}</h1>
-            <p
-              className='card-text text-muted'
-              style={{ fontSize: '85%' }}
-            >{`${post?.excerpt?.slice(0, 100)}...`}</p>
-          </div>
-        </div>
+    <div className='card bg-base-100 shadow-xl'>
+      <figure className='h-48'>
+        <Image
+          src={post?.image}
+          width={1000}
+          height={1000}
+          quality={100}
+          alt={post?.title}
+          className='object-cover'
+        />
+      </figure>
+
+      <div className='card-body'>
+        <AuthorSection item={post} />
+        <h2 className='card-title text-center'>{post?.title}</h2>
+        <p className='text-sm text-center'>{post?.excerpt}</p>
       </div>
     </div>
   )

@@ -109,7 +109,7 @@ const Clients: NextComponentType = () => {
             {clients?.map((client) => (
               <div
                 key={client._id}
-                className='flex justify-between items-center py-11 flex-col text-center dark:bg-natural-focus border border-primary rounded-3xl mx-4 shadow-lg shadow-primary m-5 dark:bg-gray-200'
+                className='flex justify-between items-center py-11 flex-col text-center dark:bg-natural-focus border border-primary rounded-3xl mx-4 shadow-lg shadow-primary m-5 dark:bg-slate-200'
               >
                 <Image
                   width={100}

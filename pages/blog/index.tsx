@@ -12,21 +12,20 @@ import readingTime from 'reading-time'
 
 const Posts = ({ posts }: any) => {
   return (
-    <div className='mt-2'>
-      <div className='container text-primary'>
-        <Meta
-          title={'Web & Mobile Development Blog'}
-          description={`Offcial Ahmed Ibrahim Blog; stay updated with my web and mobile app development tips, latest technology news, and much more.
+    <div className='my-7 sm:mb-32 container px-4 md:w-[50%] sm:w-[80%] lg:w-[45%] mx-auto scroll-m-20'>
+      <Meta
+        title={'All Posts by Ahmed Ibrahim'}
+        description={`Browse through all the posts written by Ahmed Ibrahim, a full-stack developer with years of experience. From web development to cloud hosting and mobile apps, find inspiration and valuable insights from his journey.
         `}
-          author={'Ahmed Ibrahim'}
-          image='/logo.png'
-        />
-      </div>
+        author={'Ahmed Ibrahim'}
+        keyword={`All posts, Ahmed Ibrahim, full-stack developer, web development, cloud hosting, mobile apps, journey, insights, inspiration, HTML, CSS, JavaScript, React.js, Node.js, MongoDB, Django, Bootstrap, AWS, DigitalOcean, Google Cloud, Linode, React Native, Wadaag App, ride-sharing app, Somalia`}
+        image='/logo.png'
+      />
 
       <div className='row'>
         {posts?.map((post: PostProps) => (
-          <div key={post.slug} className='col-lg-7 col-md-8 col-12 mx-auto'>
-            <Link href={`/blog/${post.slug}`} className='text-decoration-none'>
+          <div key={post.slug} className='shadow-md shadow-primary'>
+            <Link href={`/blog/${post.slug}`}>
               <PostCard post={post} />
             </Link>
           </div>

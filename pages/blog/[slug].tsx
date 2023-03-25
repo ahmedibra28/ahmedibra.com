@@ -16,14 +16,15 @@ import AuthorSection from '../../components/AuthorSection'
 
 const Post = (post: PostProps) => {
   return (
-    <div className='row mt-2'>
-      <div className='col-lg-7 col-md-8 col-12 mx-auto bg-white'>
+    <div className='my-7 sm:mb-32 container px-4 md:w-[50%] sm:w-[80%] lg:w-[45%] mx-auto scroll-m-20'>
+      <div className='col-lg-7 col-md-8 col-12 mx-auto shadow-md shadow-primary'>
         <div className='container'>
           <Meta
             title={post?.title}
             description={post?.excerpt}
             author={post?.author}
             image={post?.image}
+            keyword={post?.keyword}
           />
 
           <div className='card-body'>
@@ -33,17 +34,16 @@ const Post = (post: PostProps) => {
               <Image
                 src={post?.image}
                 quality={100}
-                width={200}
-                height={200}
+                width={1000}
+                height={1000}
                 alt={post?.title}
-                style={{ objectFit: 'cover' }}
-                className='card-img rounded-0 h-auto'
+                className='card-img w-full object-cover'
               />
             </div>
 
             <h5 className='card-title fs-3 fw-bold mb-3'>{post?.title}</h5>
 
-            <p className='text-muted'>{post?.excerpt}</p>
+            {/* <p className='text-sm'>{post?.excerpt}</p> */}
 
             {/* @ts-ignore */}
             <MDXRemote {...post?.mdxSource} components={{}} />
@@ -77,6 +77,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   )
 
   const { data, content } = matter(markdownWithMeta)
+
   // const mdxSource = await serialize(content)
   const mdxSource = await serialize(content, {
     mdxOptions: {

@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
 import { FaDatabase, FaGithubAlt, FaGlobe, FaReact } from 'react-icons/fa'
 
@@ -122,11 +121,14 @@ const Portfolio = () => {
                 {item?.description}
               </div>
               <div className='flex justify-end mt-8'>
-                <Link href='/portfolio/1'>
-                  <button className='btn btn-primary btn-outline px-10 h-3'>
-                    Read more
+                <a href='http://fcl.mamosbusiness.com' target='_blank'>
+                  <button
+                    // disabled={true}
+                    className='btn btn-primary btn-outline px-10 h-3'
+                  >
+                    Check it now
                   </button>
-                </Link>
+                </a>
                 {/* {item?.techs?.map((tech, index) => (
                   <div key={index} className='flex items-center mr-10'>
                     <span className='mr-3'> {tech?.icon}</span>{' '}

@@ -4,6 +4,7 @@ export declare interface PostProps {
   tags: string[]
   image: string
   excerpt: string
+  keyword: string
   content: string
   mdxSource: string
   author: string

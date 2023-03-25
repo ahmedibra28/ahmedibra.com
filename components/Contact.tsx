@@ -114,7 +114,7 @@ const Contact: NextComponentType = () => {
   ]
   return (
     <div
-      className='mb-20 sm:mb-32 container px-4 mx-auto scroll-m-20 w-full  sm:w-4/5 lg:w-[70%]'
+      className='mb-20 sm:mb-32 container px-4 mx-auto scroll-m-20 w-full  sm:w-4/5  lg:w-[55%]'
       id='contact'
     >
       <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase dark:text-primary mb-4 mt-5 sm:mt-0'>

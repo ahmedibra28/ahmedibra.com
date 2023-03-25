@@ -1,7 +1,7 @@
 import { NextComponentType } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaGithub, FaGithubAlt } from 'react-icons/fa'
+import { FaGithub } from 'react-icons/fa'
 
 const Nav: NextComponentType = (props) => {
   const items: { title: string; link: string }[] = [
@@ -25,10 +25,10 @@ const Nav: NextComponentType = (props) => {
       title: 'Portfolio',
       link: '/#portfolio',
     },
-    // {
-    //   title: 'Blog',
-    //   link: '/blog',
-    // },
+    {
+      title: 'Blog',
+      link: '/blog',
+    },
     {
       title: 'Contact',
       link: '/#contact',
@@ -87,11 +87,13 @@ const Nav: NextComponentType = (props) => {
         </ul>
       </div>
       <div className='navbar-end'>
-        <button className='btn btn-ghost btn-circle'>
-          <div className='indicator text-2xl'>
-            <FaGithub />
-          </div>
-        </button>
+        <a href='https://github.com/ahmedibradotcom' target='_blank'>
+          <button className='btn btn-ghost btn-circle'>
+            <div className='indicator text-2xl'>
+              <FaGithub />
+            </div>
+          </button>
+        </a>
       </div>
     </div>
   )

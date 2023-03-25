@@ -51,7 +51,7 @@ const Skills = () => {
 
       <div className='flex flex-col sm:flex-row justify-center items-center text-center'>
         <div className='w-full lg:w-1/3 sm:mr-7'>
-          <h3 className='font-bold uppercase text-xl'>Frontend Developer</h3>
+          <h3 className='font-bold uppercase text-xl'>Frontend</h3>
           <hr className='mt-2 mb-4' />
           <ul className='flex flex-wrap'>
             {frontend.map((skill) => (
@@ -67,7 +67,7 @@ const Skills = () => {
           </ul>
         </div>
         <div className='w-full lg:w-1/3 mx-2 sm:ml-7'>
-          <h3 className='font-bold uppercase text-xl'>Backend Developer</h3>
+          <h3 className='font-bold uppercase text-xl'>Backend</h3>
           <hr className='mt-2 mb-4' />
           <ul className='flex flex-wrap'>
             {backend.map((skill) => (
