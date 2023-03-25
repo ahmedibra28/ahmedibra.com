@@ -5,7 +5,7 @@ import AuthorSection from './AuthorSection'
 
 const PostCard = ({ post }: { post: PostProps }) => {
   return (
-    <div className='card bg-base-100 shadow-xl'>
+    <div className='card bg-base-100 shadow-xl rounded-lg'>
       <figure className='h-48'>
         <Image
           src={post?.image}
