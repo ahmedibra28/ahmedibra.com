@@ -50,6 +50,41 @@ const Portfolio = () => {
     // },
     {
       _id: '2',
+      title: 'Wadaag App',
+      description: (
+        <div className=''>
+          This app offers a ride-sharing platform that connects passengers
+          traveling in the same direction, enabling them to share a ride and
+          split the fare, resulting in a more cost-effective and eco-friendly
+          transportation option
+        </div>
+      ),
+      image: '/projects/wadaag.png',
+      techs: [
+        {
+          name: 'Next.JS',
+          icon: <FaReact className=' text-warning' />,
+        },
+        {
+          name: 'MongoDB',
+          icon: <FaDatabase className=' text-warning' />,
+        },
+      ],
+      links: [
+        {
+          name: 'Live',
+          url: 'https://wadaag.app',
+          icon: <FaGlobe className=' text-warning' />,
+        },
+        {
+          name: 'Github',
+          url: 'https://github.com/ahmedibradotcom/mamos',
+          icon: <FaGithubAlt className=' text-warning' />,
+        },
+      ],
+    },
+    {
+      _id: '2',
       title: 'Cargo Management System',
       description: (
         <div className=''>
@@ -97,11 +132,7 @@ const Portfolio = () => {
       <p className='text-center mb-4'>{`Some of the most recent projects I've completed for my clients`}</p>
 
       {items?.map((item, index) => (
-        <div
-          key={item?._id}
-          className='gy-3 pb-5'
-          style={{ marginBottom: 230 }}
-        >
+        <div key={item?._id} className='gy-3 pb-5 mb-16'>
           <div className='flex flex-wrap  justify-center items-center mx-auto px-4 sm:px-0'>
             <Image
               src={item?.image}
@@ -121,7 +152,7 @@ const Portfolio = () => {
                 {item?.description}
               </div>
               <div className='flex justify-end mt-8'>
-                <a href='http://fcl.mamosbusiness.com' target='_blank'>
+                <a href={item?.links[0].url} target='_blank'>
                   <button
                     // disabled={true}
                     className='btn btn-primary btn-outline px-10 h-3'
