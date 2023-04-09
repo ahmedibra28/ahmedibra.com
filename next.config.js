@@ -4,7 +4,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: [
-      'www.websom.dev',
+      'ahmedibra.com',
       'colorlib.com',
       'i.ytimg.com',
       'ithemes.com',
