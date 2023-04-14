@@ -35,5 +35,9 @@ async function generateSitemap(): Promise<string> {
       <loc>https://ahmedibra.com/blog/my-journey-towards-becoming-a-full-stack-developer-a-guide-for-aspiring-developers</loc>
      <lastmod>${new Date('2023-04-09 10:14:22').toISOString()}</lastmod>
     </url>
+    <url>
+      <loc>https://ahmedibra.com/blog/how-to-stay-up-to-date-with-web-design-trends</loc>
+     <lastmod>${new Date('2023-04-014 13:49:00').toISOString()}</lastmod>
+    </url>
   </urlset>`
 }

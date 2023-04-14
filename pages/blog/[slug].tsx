@@ -16,8 +16,8 @@ import AuthorSection from '../../components/AuthorSection'
 
 const Post = (post: PostProps) => {
   return (
-    <div className='my-7 sm:mb-32 container px-4 md:w-[50%] sm:w-[80%] lg:w-[45%] mx-auto scroll-m-20'>
-      <div className='col-lg-7 col-md-8 col-12 mx-auto shadow-md shadow-primary'>
+    <div className='my-7 sm:mb-32 container px-4 md:w-[50%] sm:w-[80%] lg:w-[60%] mx-auto scroll-m-20'>
+      <div className='col-lg-7 col-md-8 col-12 mx-auto'>
         <div className='container'>
           <Meta
             title={post?.title}
@@ -30,7 +30,7 @@ const Post = (post: PostProps) => {
           <div className='card-body'>
             <AuthorSection item={post} />
 
-            <div className='my-3'>
+            <div className='mt-3 mb-5'>
               <Image
                 src={post?.image}
                 quality={100}
