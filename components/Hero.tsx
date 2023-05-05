@@ -1,15 +1,13 @@
 import { NextComponentType } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Fragment } from 'react'
-import { FaCloudDownloadAlt, FaMailBulk } from 'react-icons/fa'
 
 const Hero: NextComponentType = () => {
   return (
     <div className='hero min-h-screen scroll-m-40' id='home'>
       <div className='hero-content flex-col lg:flex-row-reverse'>
         <Image
-          src='https://github.com/ahmedibradotcom.png'
+          src='/profile.jpg'
           alt='Ahmed Ibrahim Samow'
           width={300}
           quality={100}

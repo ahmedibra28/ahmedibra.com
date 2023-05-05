@@ -14,7 +14,7 @@ const About = () => {
           className='shadow-2xl shadow-primary max-w-sm lg:w-[75%]'
         >
           <Image
-            src='https://github.com/ahmedibradotcom.png'
+            src='/profile.jpg'
             alt='Ahmed Ibrahim Samow'
             width={300}
             quality={100}
