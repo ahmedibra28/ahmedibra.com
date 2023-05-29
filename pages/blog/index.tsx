@@ -12,7 +12,7 @@ import readingTime from 'reading-time'
 
 const Posts = ({ posts }: any) => {
   return (
-    <div className='my-7 sm:mb-32 container px-4 md:w-[50%] sm:w-[80%] lg:w-[50%] mx-auto scroll-m-20'>
+    <div className='my-7 sm:mb-32 container px-4 mx-auto scroll-m-20 lg:max-w-6xl'>
       <Meta
         title={'All Posts by Ahmed Ibrahim'}
         description={`Browse through all the posts written by Ahmed Ibrahim, a full-stack developer with years of experience. From web development to cloud hosting and mobile apps, find inspiration and valuable insights from his journey.
@@ -22,9 +22,12 @@ const Posts = ({ posts }: any) => {
         image='/logo.png'
       />
 
-      <div className='row'>
+      <div className='flex flex-row justify-between flex-wrap'>
         {posts?.map((post: PostProps) => (
-          <div key={post.slug} className='shadow-md shadow-primary mb-10'>
+          <div
+            key={post.slug}
+            className='shadow-md shadow-primary mb-10  md:w-[70%] sm:w-[80%] lg:w-[48%] mx-auto lg:mx-0'
+          >
             <Link href={`/blog/${post.slug}`}>
               <PostCard post={post} />
             </Link>
