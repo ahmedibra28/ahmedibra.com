@@ -37,7 +37,11 @@ async function generateSitemap(): Promise<string> {
     </url>
     <url>
       <loc>https://ahmedibra.com/blog/how-to-stay-up-to-date-with-web-design-trends</loc>
-     <lastmod>${new Date('2023-04-014 13:49:00').toISOString()}</lastmod>
+     <lastmod>${new Date('2023-04-14 13:49:00').toISOString()}</lastmod>
+    </url>
+    <url>
+      <loc>https://ahmedibra.com/blog/learning-golang-as-a-complementary-language-for-web-development-my-experience-as-a-full-stack-developer</loc>
+     <lastmod>${new Date('2023-05-29 09:11:15').toISOString()}</lastmod>
     </url>
   </urlset>`
 }

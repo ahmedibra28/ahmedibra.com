@@ -10,13 +10,13 @@ interface Props {
 }
 
 const Meta = (props: Props) => {
-  const { pathname } = useRouter()
+  const { asPath } = useRouter()
 
   const title = 'Full-Stack Developer In Somalia | Ahmed Ibrahim'
   const description = `I'm a Full Stack Developer with 9+ years of experience in designing and developing user interfaces, testing, debugging, and training staff within modern technologies. Proven ability in optimizing web functionalities that improve data retrieval and workflow efficiencies.
   `
   const image = 'https://www.ahmedibra.com/logo.png'
-  const url = `https://www.ahmedibra.com${pathname}`
+  const url = `https://www.ahmedibra.com${asPath}`
   const author = 'Ahmed Ibrahim'
 
   return (
