@@ -28,7 +28,7 @@ const Nav: NextComponentType = (props) => {
   ]
 
   return (
-    <div className='navbar bg-white shadow-2xl sticky top-0 z-50 w-[95%] md:max-w-6xl mx-auto rounded-full my-10 h-[100px] flex items-center duration-1000'>
+    <div className='navbar bg-white shadow-2xl sticky top-0 z-50 w-[95%] md:max-w-6xl mx-auto rounded-full my-10 md:h-[100px] flex items-center duration-1000'>
       <div className='navbar-start flex items-center'>
         <div className='dropdown'>
           <label tabIndex={0} className='btn btn-ghost lg:hidden'>
@@ -67,9 +67,9 @@ const Nav: NextComponentType = (props) => {
             height={64}
             src='/logo.png'
             alt='hero image'
-            className='inline-block mr-1 w-[30%] md:w-auto duration-1000'
+            className='inline-block mr-1 w-[70%] md:w-auto duration-1000'
           />
-          <div className='flex flex-col -space-y-1'>
+          <div className='flexs flex-col -space-y-1 hidden md:flex'>
             <span className='text-primary text-xl md:text-2xl duration-1000'>
               Ahmed
             </span>
@@ -90,10 +90,10 @@ const Nav: NextComponentType = (props) => {
       </div>
       <div className='navbar-end m-2'>
         <a href='https://github.com/ahmedibra28' target='_blank'>
-          <button className='btn bg-primary text-white rounded-full w-32'>
+          <button className='btn bg-transparent border-0 md:border md:bg-primary text-white rounded-full md:w-32'>
             <div className='indicator flex justify-center items-center gap-2'>
-              <FaGithub className='text-white text-lg lg:text-2xl duration-1000' />
-              <span className='capitalize'>GitHub</span>
+              <FaGithub className='text-secondary md:text-white text-3xl lg:text-2xl duration-1000' />
+              <span className='capitalize hidden md:block'>GitHub</span>
             </div>
           </button>
         </a>

@@ -36,10 +36,7 @@ export default function Contact() {
     }
     const sendMessage = async () => {
       setLoading(true)
-      const data = await send(obj)
-      setLoading(false)
-
-      return data
+      return await send(obj)
     }
 
     sendMessage()
@@ -55,6 +52,7 @@ export default function Contact() {
         setSeoOptimization(false)
         setMobileDevelopment(false)
         setBrand(false)
+        setLoading(false)
 
         setTimeout(() => {
           setSuccess('')
@@ -63,6 +61,7 @@ export default function Contact() {
       .catch(({ message }) => {
         setError(message)
         setLoading(false)
+
         setTimeout(() => {
           setError('')
         }, 10000)
