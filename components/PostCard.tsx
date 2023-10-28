@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import React from 'react'
-import { PostProps } from '../types'
+import { PostMeta } from '../types'
 import AuthorSection from './AuthorSection'
 
-const PostCard = ({ post }: { post: PostProps }) => {
+const PostCard = ({ post }: { post: PostMeta }) => {
   return (
     <div className='card bg-base-100 rounded-lg'>
       <figure className='h-56'>

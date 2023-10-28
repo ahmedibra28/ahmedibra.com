@@ -1,1 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /private/
+
 Sitemap: https://ahmedibra.com/sitemap.xml

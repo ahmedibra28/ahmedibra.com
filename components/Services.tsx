@@ -1,64 +1,6 @@
-import { NextComponentType } from 'next'
 import Image from 'next/image'
 
-const Services: NextComponentType = () => {
-  // const services: {
-  //   _id: string
-  //   image: string
-  //   title: string
-  //   description: string
-  // }[] = [
-  //   {
-  //     _id: '1',
-  //     image: '/services/web_design.png',
-  //     title: 'Web & Mobile Design',
-  //     description:
-  //       'Powerful web and mobile design that will out-perform your strongest competitors.',
-  //   },
-  //   {
-  //     _id: '2',
-  //     image: '/services/development.png',
-  //     title: 'Development',
-  //     description:
-  //       ' Custom programming for most complex functions you can think.',
-  //   },
-  //   {
-  //     _id: '3',
-  //     image: '/services/ecommerce.png',
-  //     title: 'E-commerce',
-  //     description:
-  //       'I build your online store using a flexible, modular platform to expand your business.',
-  //   },
-  //   {
-  //     _id: '4',
-  //     image: '/services/seo.png',
-  //     title: 'SEO Optimization',
-  //     description:
-  //       'Optimizing your website to rank on the first page of google is my specialty.',
-  //   },
-  //   {
-  //     _id: '5',
-  //     image: '/services/marketing.png',
-  //     title: 'Marketing',
-  //     description:
-  //       'I use strategic marketing tactics that have been proven to work.',
-  //   },
-  //   {
-  //     _id: '6',
-  //     image: '/services/ussd.png',
-  //     title: 'USSD',
-  //     description:
-  //       'I provide expert USSD configuration services that can take your business to the next level',
-  //   },
-  //   {
-  //     _id: '7',
-  //     image: '/services/branding.png',
-  //     title: 'Branding',
-  //     description:
-  //       'A solid brand strategy, logo and guidelines help you to get you recognized.',
-  //   },
-  // ]
-
+export default function Services() {
   const newServices = [
     {
       title: `Web development`,
@@ -91,13 +33,12 @@ const Services: NextComponentType = () => {
       image: '/services/ussd.png',
     },
   ]
-
   return (
     <div
-      className='mb-20 sm:mb-32 container px-4 mx-auto scroll-m-20'
+      className='mb-20 sm:mb-32 container px-4 mx-auto scroll-m-28'
       id='services'
     >
-      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase dark:text-primary mb-4 mt-5 sm:mt-0'>
+      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase mb-4 mt-5 sm:mt-0 text-secondary'>
         Available Services
       </h2>
 
@@ -105,7 +46,7 @@ const Services: NextComponentType = () => {
         {newServices.map((service, i) => (
           <div
             key={i}
-            className='border border-primary sm:border-0 sm:shadow-sm sm:hover:shadow-xl sm:hover:shadow-primary sm:shadow-primary rounded-2xl sm:w-[30%] m-3 w-full'
+            className='border border-primary sm:border-0 sm:shadow-sm sm:hover:shadow-xl sm:hover:shadow-primary sm:shadow-primary rounded-2xl sm:w-[30%] m-3 w-full duration-1000 bg-white'
           >
             <Image
               priority
@@ -116,9 +57,7 @@ const Services: NextComponentType = () => {
               className='mx-auto p-2'
             />
             <div className='p-3 text-center'>
-              <h5 className='text-center dark:text-primary font-bold'>
-                {service?.title}
-              </h5>
+              <h5 className='text-center font-bold'>{service?.title}</h5>
               <p className='text-center'>{service?.description}</p>
             </div>
           </div>
@@ -127,5 +66,3 @@ const Services: NextComponentType = () => {
     </div>
   )
 }
-
-export default Services

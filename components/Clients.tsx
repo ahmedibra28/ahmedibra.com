@@ -1,4 +1,4 @@
-import { NextComponentType } from 'next'
+'use client'
 import Image from 'next/image'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
@@ -69,7 +69,7 @@ const responsive = {
   },
   desktop: {
     breakpoint: { max: 3000, min: 992 },
-    items: 6,
+    items: 5,
   },
   tablet: {
     breakpoint: { max: 992, min: 768 },
@@ -85,20 +85,19 @@ const responsive = {
   },
 }
 
-const Clients: NextComponentType = () => {
+export default function Clients() {
   return (
     <div className='mb-20 sm:mb-32 '>
-      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase dark:text-primary mb-4 mt-5 sm:mt-0'>
+      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase text-secondary mb-4 mt-5 sm:mt-0 duration-1000'>
         Clients
       </h2>
-      <p className='text-center container px-4 mx-auto'>
+      <p className='text-center container px-4 mx-auto w-full md:w-[75%] duration-1000'>
         I collaborate with these businesses, and some of the work I accomplished
-        for them included <br /> creating websites, online and offline web
+        for them included creating websites, online and offline web
         applications, mobile apps, brands, and other things.
       </p>
       <div className='py-4 mx-auto'>
         <div className='mx-auto'>
-          {/* <div className='column'> */}
           <Carousel
             responsive={responsive}
             infinite={true}
@@ -109,24 +108,20 @@ const Clients: NextComponentType = () => {
             {clients?.map((client) => (
               <div
                 key={client._id}
-                className='flex justify-between items-center py-11 flex-col text-center dark:bg-natural-focus border border-primary rounded-3xl mx-4 shadow-lg shadow-primary m-5 dark:bg-slate-200'
+                className='flex justify-between items-center py-10 flex-col text-center border border-white rounded-3xl mx-4 shadow-lg shadow-primary m-5 h-44 w-44'
               >
                 <Image
-                  width={100}
-                  height={100}
+                  width={200}
+                  height={200}
                   src={client?.logo}
                   alt={client?.name}
-                  className=''
+                  className='h-full w-full mx-auto object-contain'
                 />
-                {/* <h5 className='text-natural text-center'>{client?.name}</h5> */}
               </div>
             ))}
           </Carousel>
-          {/* </div> */}
         </div>
       </div>
     </div>
   )
 }
-
-export default Clients

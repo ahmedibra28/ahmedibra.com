@@ -18,3 +18,15 @@ export declare interface PostProps {
 export declare interface SortProps {
   createdAt: string
 }
+
+export interface PostMeta {
+  title: string
+  slug: string
+  tags: string[]
+  image: string
+  keyword: string
+  excerpt: string
+  author: string
+  avatar: string
+  createdAt: string
+}

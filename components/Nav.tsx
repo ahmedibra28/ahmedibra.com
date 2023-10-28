@@ -10,14 +10,6 @@ const Nav: NextComponentType = (props) => {
       link: '/#home',
     },
     {
-      title: 'About',
-      link: '/about',
-    },
-    {
-      title: 'Skills',
-      link: '/#skills',
-    },
-    {
       title: 'Services',
       link: '/#services',
     },
@@ -36,8 +28,8 @@ const Nav: NextComponentType = (props) => {
   ]
 
   return (
-    <div className='navbar bg-base-100 sticky top-0 z-50'>
-      <div className='navbar-start'>
+    <div className='navbar bg-white shadow-2xl sticky top-0 z-50 w-[95%] md:max-w-6xl mx-auto rounded-full my-10 h-[100px] flex items-center duration-1000'>
+      <div className='navbar-start flex items-center'>
         <div className='dropdown'>
           <label tabIndex={0} className='btn btn-ghost lg:hidden'>
             <svg
@@ -66,15 +58,25 @@ const Nav: NextComponentType = (props) => {
             ))}
           </ul>
         </div>
-        <Link href='/#home' className='btn btn-ghost normal-case text-xl'>
+        <Link
+          href='/#home'
+          className='btn btn-ghost normal-case text-xls h-auto  hover:bg-transparent'
+        >
           <Image
-            width='30'
-            height='30'
+            width={64}
+            height={64}
             src='/logo.png'
             alt='hero image'
-            className='inline-block mr-3'
+            className='inline-block mr-1 w-[30%] md:w-auto duration-1000'
           />
-          <span className=''>Ahmed Ibrahim</span>
+          <div className='flex flex-col -space-y-1'>
+            <span className='text-primary text-xl md:text-2xl duration-1000'>
+              Ahmed
+            </span>
+            <span className='text-secondary text-xl md:text-2xl duration-1000'>
+              Ibrahim
+            </span>
+          </div>
         </Link>
       </div>
       <div className='navbar-center hidden lg:flex'>
@@ -86,11 +88,12 @@ const Nav: NextComponentType = (props) => {
           ))}
         </ul>
       </div>
-      <div className='navbar-end'>
-        <a href='https://github.com/ahmedibradotcom' target='_blank'>
-          <button className='btn btn-ghost btn-circle'>
-            <div className='indicator text-2xl'>
-              <FaGithub />
+      <div className='navbar-end m-2'>
+        <a href='https://github.com/ahmedibra28' target='_blank'>
+          <button className='btn bg-primary text-white rounded-full w-32'>
+            <div className='indicator flex justify-center items-center gap-2'>
+              <FaGithub className='text-white text-lg lg:text-2xl duration-1000' />
+              <span className='capitalize'>GitHub</span>
             </div>
           </button>
         </a>

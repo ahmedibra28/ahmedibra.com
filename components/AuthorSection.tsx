@@ -1,9 +1,9 @@
-import moment from 'moment'
 import Image from 'next/image'
 import React from 'react'
-import { PostProps } from '../types'
+import { PostMeta } from '../types'
+import DateTime from '@/lib/dateTime'
 
-const AuthorSection = ({ item }: { item: PostProps }) => {
+const AuthorSection = ({ item }: { item: PostMeta }) => {
   return (
     <>
       <div className='flex items-center'>
@@ -21,9 +21,10 @@ const AuthorSection = ({ item }: { item: PostProps }) => {
           <label className='text-muted'>{item?.author}</label>
           <p className='text-sm'>
             <small className='text-muted'>
-              {moment(item?.createdAt).format('MMM D')}
+              {DateTime(item?.createdAt).format('MMM D')}
             </small>
             <span className='mx-2'>-</span>
+            {/* @ts-ignore */}
             <small className='text-muted'>{item?.stats?.text}</small>
             <br />
             {item?.tags?.map((t) => (

@@ -1,10 +1,10 @@
+'use client'
 import axios from 'axios'
-import { NextComponentType } from 'next'
 // import Image from 'next/image'
 import { FormEvent, useState } from 'react'
 import { FaMapMarkedAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
 
-const Contact: NextComponentType = () => {
+export default function Contact() {
   const [name, setName] = useState<string>('')
   const [email, setEmail] = useState<string>('')
   const [phone, setPhone] = useState<string>('')
@@ -114,10 +114,10 @@ const Contact: NextComponentType = () => {
   ]
   return (
     <div
-      className='mb-20 sm:mb-32 container px-4 mx-auto scroll-m-20 w-full  sm:w-4/5  lg:w-[55%]'
+      className='mb-20 sm:mb-32 container px-4 mx-auto scroll-m-28 w-full sm:w-4/5 lg:w-[65%]'
       id='contact'
     >
-      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase dark:text-primary mb-4 mt-5 sm:mt-0'>
+      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase  mb-4 mt-5 sm:mt-0 text-secondary'>
         Get in touch!
       </h2>
       <p className='text-center py-2'>
@@ -129,12 +129,12 @@ const Contact: NextComponentType = () => {
           {[
             {
               icon: <FaMapMarkedAlt className='text-4xl text-warning' />,
-              title: <a className='dark:text-primary'>Makka al mukarramah</a>,
+              title: <a className=''>Makka al mukarramah</a>,
             },
             {
               icon: <FaPhoneAlt className='text-4xl text-warning' />,
               title: (
-                <a className='dark:text-primary' href='tel:+252615301507'>
+                <a className='' href='tel:+252615301507'>
                   +252 (0) 61 530 1507
                 </a>
               ),
@@ -142,10 +142,7 @@ const Contact: NextComponentType = () => {
             {
               icon: <FaEnvelope className='text-4xl text-warning' />,
               title: (
-                <a
-                  className='dark:text-primary'
-                  href='mailto:info@ahmedibra.com'
-                >
+                <a className='' href='mailto:info@ahmedibra.com'>
                   info@ahmedibra.com
                 </a>
               ),
@@ -153,10 +150,10 @@ const Contact: NextComponentType = () => {
           ].map((item, i) => (
             <div
               key={i}
-              className='flex flex-wrap flex-col justify-center items-center shadow shadow-primary hover:shadow-xl hover:shadow-primary w-4/5 md:w-[30%] sm:w-[80%] p-4 m-5 md:m-0 mx-auto'
+              className='flex flex-wrap flex-col justify-center items-center shadow shadow-primary hover:shadow-xl hover:shadow-primary w-4/5 sm:w-[80%] md:w-[32%] p-4 m-5 md:m-0 mx-auto bg-white rounded-lg'
             >
               <div className='card-img-top'>{item.icon}</div>
-              <div className='card-text my-2'>{item.title}</div>
+              <div className='card-text my-2 text-center'>{item.title}</div>
             </div>
           ))}
         </div>
@@ -164,8 +161,8 @@ const Contact: NextComponentType = () => {
 
       <div className='pt-3'>
         <form onSubmit={(e) => handleSubmit(e as FormEvent)} className=''>
-          <div className='border border-primary p-5 mx-auto'>
-            <p className='mb-3 text-center w-full sm:w-3/4 mx-auto'>
+          <div className='p-5 mx-auto'>
+            <p className='mb-3 text-center w-full sm:w-[80%] mx-auto'>
               Please fill out the contact form below to get in touch with me,
               and I will do my best to respond to you as soon as I can.
             </p>
@@ -176,7 +173,7 @@ const Contact: NextComponentType = () => {
                 onChange={(e) => setName(e.target.value)}
                 value={name}
                 type='text'
-                className='w-full p-2 rounded border bg-gray-100'
+                className='w-full p-2 rounded border bg-white'
                 id='name'
                 placeholder='Enter name'
               />
@@ -191,7 +188,7 @@ const Contact: NextComponentType = () => {
                 type='email'
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
-                className='w-full p-2 rounded border bg-gray-100'
+                className='w-full p-2 rounded border bg-white'
                 id='email'
                 placeholder='Enter email address'
                 aria-describedby='emailHelp'
@@ -199,7 +196,7 @@ const Contact: NextComponentType = () => {
             </div>
             <div
               id='emailHelp'
-              className='form-text mb-4 text-sm'
+              className='form-text mb-4 text-xs'
             >{`I'll never share your email with anyone else.`}</div>
 
             <div className='my-1'>
@@ -209,7 +206,7 @@ const Contact: NextComponentType = () => {
                 type='text'
                 onChange={(e) => setPhone(e.target.value)}
                 value={phone}
-                className='w-full p-2 rounded border bg-gray-100'
+                className='w-full p-2 rounded border bg-white'
                 id='phone'
                 placeholder='Enter phone'
                 aria-describedby='phoneHelp'
@@ -217,7 +214,7 @@ const Contact: NextComponentType = () => {
             </div>
             <div
               id='phoneHelp'
-              className='form-text mb-5 text-sm'
+              className='form-text mb-5 text-xs'
             >{`Your phone number will never be given to a third party.`}</div>
 
             <div className='my-3'>
@@ -228,7 +225,7 @@ const Contact: NextComponentType = () => {
                 rows={9}
                 onChange={(e) => setMessage(e.target.value)}
                 value={message}
-                className='w-full p-2 rounded border bg-gray-100'
+                className='w-full p-2 rounded border bg-white'
                 id='message'
                 placeholder='Enter message'
               />
@@ -269,7 +266,7 @@ const Contact: NextComponentType = () => {
               )}
               <button
                 disabled={loading}
-                className='btn btn-primary rounded-pill py-2 px-8'
+                className='btn btn-ghost bg-white rounded-full py-2 px-8 shadow-lg hover:scale-90 duration-1000'
               >
                 {loading ? <span>Loading... </span> : <span>Send Message</span>}
               </button>
@@ -280,5 +277,3 @@ const Contact: NextComponentType = () => {
     </div>
   )
 }
-
-export default Contact
