@@ -1,6 +1,5 @@
 'use client'
-import axios from 'axios'
-// import Image from 'next/image'
+import { send } from '@/server/Contact'
 import { FormEvent, useState } from 'react'
 import { FaMapMarkedAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
 
@@ -37,9 +36,10 @@ export default function Contact() {
     }
     const sendMessage = async () => {
       setLoading(true)
-      const { data } = await axios.post(`/api/contact`, obj)
+      const data = await send(obj)
       setLoading(false)
-      return await data
+
+      return data
     }
 
     sendMessage()
@@ -62,6 +62,7 @@ export default function Contact() {
       })
       .catch(({ message }) => {
         setError(message)
+        setLoading(false)
         setTimeout(() => {
           setError('')
         }, 10000)

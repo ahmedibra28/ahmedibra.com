@@ -1,3 +1,4 @@
+import BlurImage from '@/components/BlurImage'
 import Clients from '@/components/Clients'
 import Contact from '@/components/Contact'
 import Portfolio from '@/components/Portfolio'
@@ -34,13 +35,12 @@ export default function Home() {
           </p>
         </div>
         <div className='w-[90%] md:w-[48%] lg:w-[30%] mx-auto'>
-          <Image
+          <BlurImage
             src='https://github.com/ahmedibra28.png'
             alt='Ahmed Ibrahim'
-            width={300}
-            height={300}
+            width={500}
+            height={500}
             className='rounded-full shadow-2xl mx-auto hover:scale-105 duration-1000'
-            priority
           />
         </div>
       </div>

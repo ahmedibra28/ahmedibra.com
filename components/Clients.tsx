@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
+import BlurImage from './BlurImage'
 
 const clients: { _id: string; name: string; logo: string }[] = [
   {
@@ -110,7 +111,7 @@ export default function Clients() {
                 key={client._id}
                 className='flex justify-between items-center py-10 flex-col text-center border border-white rounded-3xl mx-4 shadow-lg shadow-primary m-5 h-44 w-44'
               >
-                <Image
+                <BlurImage
                   width={200}
                   height={200}
                   src={client?.logo}
