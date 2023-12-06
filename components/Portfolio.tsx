@@ -4,14 +4,20 @@ import BlurImage from './BlurImage'
 export default function Portfolio() {
   const items = [
     {
-      title: 'Soomar App',
-      description: `  The cargo management system is a software solution designed to streamline the process of managing cargo shipments, from booking to delivery, and to provide real-time visibility into cargo status and location.`,
-      image: '/projects/soomar.svg',
+      title: 'Dankaab App',
+      description: `The cargo management system is a software solution designed to streamline the process of managing cargo shipments, from booking to delivery, and to provide real-time visibility into cargo status and location.`,
+      image: '/projects/dankaab.svg',
       new: true,
     },
     {
+      title: 'Soomar App',
+      description: `The cargo management system is a software solution designed to streamline the process of managing cargo shipments, from booking to delivery, and to provide real-time visibility into cargo status and location.`,
+      image: '/projects/soomar.svg',
+      new: false,
+    },
+    {
       title: 'Wadaag App',
-      description: ` This app offers a ride-sharing platform that connects passengers traveling in the same direction, enabling them to share a ride and split the fare, resulting in a more cost-effective and eco-friendly
+      description: `This app offers a ride-sharing platform that connects passengers traveling in the same direction, enabling them to share a ride and split the fare, resulting in a more cost-effective and eco-friendly
       transportation option`,
       image: '/projects/wadaag.svg',
       new: false,
@@ -32,7 +38,7 @@ export default function Portfolio() {
         {items?.map((item, index) => (
           <div
             key={index}
-            className='card w-full md:w-[48%] bg-white shadow-lg duration-1000 border'
+            className='card w-full md:w-[48%] bg-white shadow-lg duration-1000 border overflow-hidden'
           >
             <figure className='bg-gradient-to-r from-white to-primary'>
               <BlurImage
