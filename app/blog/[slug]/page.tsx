@@ -36,7 +36,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <div className='max-w-6xl mx-auto'>
-      <div className='card w-[80%] mx-auto'>
+      <div className='card w-full md:w-[80%] mx-auto'>
         <AuthorSection
           item={{
             author: post?.meta?.author,
@@ -48,7 +48,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
           }}
         />
 
-        <div className='mt-3 mb-5'>
+        <div className='mt-3 mb-5 px-2 mx-auto'>
           <figure>
             <Image
               src={post?.meta?.image}

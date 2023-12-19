@@ -9,7 +9,7 @@ interface Props {
 
 const Meta = ({
   title = 'Full-Stack Developer In Somalia | Ahmed Ibrahim',
-  description = `I'm a Full Stack Developer with 9+ years of experience in designing and developing user interfaces, testing, debugging, and training staff within modern technologies. Proven ability in optimizing web functionalities that improve data retrieval and workflow efficiencies.`,
+  description = `I'm a Full Stack Developer with 10+ years of experience in designing and developing user interfaces, testing, debugging, and training staff within modern technologies. Proven ability in optimizing web and mobile functionalities that improve data retrieval and workflow efficiencies.`,
   image: outsideImage = 'https://www.ahmedibra.com/logo.png',
   asPath = '/',
   author = 'Ahmed Ibrahim',
@@ -21,11 +21,6 @@ const Meta = ({
     : `https://ahmedibra.com/logo.png`
 
   return {
-    viewport: {
-      width: 'device-width',
-      initialScale: 1,
-      maximumScale: 1,
-    },
     title: title ? title : title,
     description: description ? description : description,
     manifest: '/manifest.json',
@@ -46,8 +41,7 @@ const Meta = ({
       description: description ? description : description,
     },
     keywords: [
-      `${keyword} Ahmed Ibrahim, Ahmed Ibrahim Samow, Next.js, Web & Mobile Development, App Development, Design Agency, Web Design, eCommerce, Websites, Web Solutions, Business Growth, Software Development, Custom Software Development, Custom Web Design, Somalia, Somali Web Design, Somali Web Development, SEO Optimization, Marketing,
-      Branding, USSD, EVC Plus`,
+      `${keyword} Ahmed Ibrahim, Ahmed Ibrahim Samow, Next.js, Web & Mobile Development, App Development, Design Agency, Web Design, eCommerce, Websites, Web Solutions, Business Growth, Software Development, Custom Software Development, Custom Web Design, Somalia, Somali Web Design, Somali Web Development, SEO Optimization, Marketing, Branding, USSD, EVC Plus, Web Development, scalable web applications, responsive web applications, Mobile App Development, cross-platform mobile applications, Full Stack Development, end-to-end web solutions, front-end and back-end development, API Development, robust APIs, different technologies, Database Management, SQL, NoSQL, PostgreSQL, MongoDB, optimize databases, Server Configuration and Deployment, server setup, app deployment, Docker, AWS, DigitalOcean, UI/UX Design and Development, visually appealing UI/UX, interactive experiences, E-commerce Solutions, secure e-commerce platforms, scalable e-commerce, Custom Software Development, tailor-made software solutions, specific business requirements, Code Review and Refactoring, code review, code refactoring, quality improvement`,
     ],
     authors: [
       {

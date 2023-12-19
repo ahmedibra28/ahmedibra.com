@@ -55,6 +55,7 @@ export async function send({
 
     return {
       message: `Thank you for contacting me, I'll be in touch very soon.`,
+      data: result,
     }
   } catch (err: any) {
     throw new Error(err?.message)

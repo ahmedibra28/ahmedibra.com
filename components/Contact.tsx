@@ -150,7 +150,7 @@ export default function Contact() {
           ].map((item, i) => (
             <div
               key={i}
-              className='flex flex-wrap flex-col justify-center items-center shadow shadow-primary hover:shadow-xl hover:shadow-primary w-4/5 sm:w-[80%] md:w-[32%] p-4 m-5 md:m-0 mx-auto bg-white rounded-lg'
+              className='flex flex-wrap flex-col justify-center items-center shadow shadow-primary hover:shadow-xl hover:shadow-primary w-4/5 sm:w-[80%] md:w-[32%] p-4 m-5 md:m-0 mx-auto bg-white rounded-lg duration-1000'
             >
               <div className='card-img-top'>{item.icon}</div>
               <div className='card-text my-2 text-center'>{item.title}</div>
@@ -173,7 +173,7 @@ export default function Contact() {
                 onChange={(e) => setName(e.target.value)}
                 value={name}
                 type='text'
-                className='w-full p-2 rounded border bg-white'
+                className='w-full p-2 rounded border bg-white focus:outline-primary'
                 id='name'
                 placeholder='Enter name'
               />
@@ -188,7 +188,7 @@ export default function Contact() {
                 type='email'
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
-                className='w-full p-2 rounded border bg-white'
+                className='w-full p-2 rounded border bg-white focus:outline-primary'
                 id='email'
                 placeholder='Enter email address'
                 aria-describedby='emailHelp'
@@ -206,7 +206,7 @@ export default function Contact() {
                 type='text'
                 onChange={(e) => setPhone(e.target.value)}
                 value={phone}
-                className='w-full p-2 rounded border bg-white'
+                className='w-full p-2 rounded border bg-white focus:outline-primary'
                 id='phone'
                 placeholder='Enter phone'
                 aria-describedby='phoneHelp'
@@ -225,7 +225,7 @@ export default function Contact() {
                 rows={9}
                 onChange={(e) => setMessage(e.target.value)}
                 value={message}
-                className='w-full p-2 rounded border bg-white'
+                className='w-full p-2 rounded border bg-white focus:outline-primary'
                 id='message'
                 placeholder='Enter message'
               />
@@ -240,7 +240,7 @@ export default function Contact() {
                   >
                     <input
                       onChange={service?.onChange}
-                      className='form-check-input mr-2'
+                      className='form-check-input mr-2 checkbox-primary'
                       type='checkbox'
                       value=''
                       checked={service?.checked}

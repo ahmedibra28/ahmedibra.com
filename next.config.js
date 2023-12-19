@@ -7,13 +7,13 @@ const nextConfig = {
     experimental: {},
     swcMinify: true,
     images: {
-        domains: [
-            'ahmedibra.com',
-            'colorlib.com',
-            'i.ytimg.com',
-            'ithemes.com',
-            'github.com',
-            'images.pexels.com',
+        remotePatterns: [
+            { protocol: 'https', hostname: 'ahmedibra.com' },
+            { protocol: 'https', hostname: 'colorlib.com' },
+            { protocol: 'https', hostname: 'i.ytimg.com' },
+            { protocol: 'https', hostname: 'ithemes.com' },
+            { protocol: 'https', hostname: 'github.com' },
+            { protocol: 'https', hostname: 'images.pexels.com' },
         ],
     },
 }

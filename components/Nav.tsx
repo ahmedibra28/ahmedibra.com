@@ -28,7 +28,7 @@ const Nav: NextComponentType = (props) => {
   ]
 
   return (
-    <div className='navbar bg-white shadow-2xl sticky top-0 z-50 w-[95%] md:max-w-6xl mx-auto rounded-full my-10 md:h-[100px] flex items-center duration-1000'>
+    <div className='navbar h-12 bg-white shadow-2xl sticky top-0 z-50 w-[95%] md:max-w-6xl mx-auto rounded-full my-5 md:my-10 md:h-[100px] flex items-center duration-1000'>
       <div className='navbar-start flex items-center'>
         <div className='dropdown'>
           <label tabIndex={0} className='btn btn-ghost lg:hidden'>
@@ -67,7 +67,7 @@ const Nav: NextComponentType = (props) => {
             height={64}
             src='/logo.png'
             alt='hero image'
-            className='inline-block mr-1 w-[70%] md:w-auto duration-1000'
+            className='mr-1 w-[70%] md:w-auto duration-1000 hidden md:block'
           />
           <div className='flexs flex-col -space-y-1 hidden md:flex'>
             <span className='text-primary text-xl md:text-2xl duration-1000'>

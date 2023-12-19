@@ -3,10 +3,10 @@ import {
   SiBun,
   SiCss3,
   SiDjango,
+  SiGo,
   SiHtml5,
   SiMongodb,
   SiNextdotjs,
-  SiNodedotjs,
   SiPython,
   SiSemanticuireact,
   SiTailwindcss,
@@ -30,9 +30,9 @@ export default function Skills() {
       icon: <BiLogoPostgresql className='text-3xl mr-2' />,
     },
     { name: 'Python', icon: <SiPython className='text-3xl mr-2' /> },
+    { name: 'Golang', icon: <SiGo className='text-3xl mr-2' /> },
     { name: 'Bun ', icon: <SiBun className='text-3xl mr-2' /> },
     { name: 'Django', icon: <SiDjango className='text-3xl mr-2' /> },
-    { name: 'Node.js', icon: <SiNodedotjs className='text-3xl mr-2' /> },
   ]
   return (
     <div

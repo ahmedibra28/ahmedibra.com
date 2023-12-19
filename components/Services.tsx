@@ -1,36 +1,71 @@
-import Image from 'next/image'
+import {
+  FaHtml5,
+  FaMobileAlt,
+  FaLayerGroup,
+  FaNetworkWired,
+  FaDatabase,
+  FaServer,
+  FaPaintBrush,
+  FaShoppingCart,
+  FaCogs,
+  FaCode,
+} from 'react-icons/fa'
 
 export default function Services() {
-  const newServices = [
+  const services = [
     {
-      title: `Web development`,
-      description: `Web development: designing UI, coding, testing, and deployment.`,
-      image: '/services/web.png',
+      title: 'Web Development',
+      description: 'Build scalable and responsive web applications.',
+      icon: <FaHtml5 className='mx-auto text-3xl text-primary' />,
     },
     {
-      title: `Mobile development`,
-      description: `Mobile app dev: UI design, coding, testing, deployment for Android/iOS.`,
-      image: '/services/mobile.png',
+      title: 'Mobile App Development',
+      description: 'Develop cross-platform mobile applications.',
+      icon: <FaMobileAlt className='mx-auto text-3xl text-primary' />,
     },
     {
-      title: `E-commerce`,
-      description: `Online store setup & management: listings, payment, shipping, inventory.`,
-      image: '/services/ecommerce.png',
+      title: 'Full Stack Development',
+      description:
+        'Create end-to-end web solutions, covering both front-end and back-end.',
+      icon: <FaLayerGroup className='mx-auto text-3xl text-primary' />,
     },
     {
-      title: `SEO`,
-      description: `Improve website ranking on Google via SEO optimization.`,
-      image: '/services/seo.png',
+      title: 'API Development',
+      description: 'Build robust APIs using different technologies.',
+      icon: <FaNetworkWired className='mx-auto text-3xl text-primary' />,
     },
     {
-      title: `Branding`,
-      description: `Brand dev: logos, colors, fonts, messaging for differentiation.`,
-      image: '/services/branding.png',
+      title: 'Database Management',
+      description: 'Optimize DBs with SQL/NoSQL: PostgreSQL, MongoDB.',
+      icon: <FaDatabase className='mx-auto text-3xl text-primary' />,
     },
     {
-      title: `USSD`,
-      description: `Mobile tech for interactive services: evc payments, info, acct. check.`,
-      image: '/services/ussd.png',
+      title: 'Server Configuration and Deployment',
+      description: 'Setup servers, deploy apps: Docker, AWS, Digitalocean.',
+      icon: <FaServer className='mx-auto text-3xl text-primary' />,
+    },
+    {
+      title: 'UI/UX Design and Development',
+      description:
+        'Design visually appealing user interfaces and develop interactive experiences.',
+      icon: <FaPaintBrush className='mx-auto text-3xl text-primary' />,
+    },
+    {
+      title: 'E-commerce Solutions',
+      description: 'Build secure and scalable e-commerce platforms.',
+      icon: <FaShoppingCart className='mx-auto text-3xl text-primary' />,
+    },
+    {
+      title: 'Custom Software Development',
+      description:
+        'Create tailor-made software solutions to meet specific business requirements.',
+      icon: <FaCogs className='mx-auto text-3xl text-primary' />,
+    },
+    {
+      title: 'Code Review and Refactoring',
+      description:
+        'Review & refactor code to enhance quality, readability, and maintainability.',
+      icon: <FaCode className='mx-auto text-3xl text-primary' />,
     },
   ]
   return (
@@ -43,19 +78,15 @@ export default function Services() {
       </h2>
 
       <div className='flex flex-wrap justify-center items-center text-center'>
-        {newServices.map((service, i) => (
+        {services.map((service, i) => (
           <div
             key={i}
             className='border border-primary sm:border-0 sm:shadow-sm sm:hover:shadow-xl sm:hover:shadow-primary sm:shadow-primary rounded-2xl sm:w-[30%] m-3 w-full duration-1000 bg-white'
           >
-            <Image
-              priority
-              width={80}
-              height={80}
-              src={service?.image}
-              alt={service?.title}
-              className='mx-auto p-2'
-            />
+            <div className='mx-auto w-14 h-14 rounded-full flex justify-center items-center border-2 border-primary border-t-0 border-l-0 border-r-0 mt-2 shadow-3xl'>
+              {service?.icon}
+            </div>
+
             <div className='p-3 text-center'>
               <h5 className='text-center font-bold'>{service?.title}</h5>
               <p className='text-center'>{service?.description}</p>

@@ -1,8 +1,8 @@
 import Meta from '@/components/Meta'
 import './globals.css'
-import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
 import Nav from '@/components/Nav'
+import { Viewport } from 'next'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -11,6 +11,13 @@ const roboto = Roboto({
 
 export const metadata = {
   ...Meta({}),
+}
+
+export const viewport: Viewport = {
+  themeColor: 'white',
+  initialScale: 1,
+  maximumScale: 1,
+  width: 'device-width',
 }
 
 export default function RootLayout({
