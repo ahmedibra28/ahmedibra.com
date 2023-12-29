@@ -81,7 +81,7 @@ export default function Services() {
         {services.map((service, i) => (
           <div
             key={i}
-            className='border border-primary sm:border-0 sm:shadow-sm sm:hover:shadow-xl sm:hover:shadow-primary sm:shadow-primary rounded-2xl sm:w-[30%] m-3 w-full duration-1000 bg-white'
+            className='border border-primary sm:border-0 shadow-sm hover:shadow-lg hover:shadow-white shadow-primary rounded-2xl sm:w-[30%] m-3 w-full duration-1000 bg-white'
           >
             <div className='mx-auto w-14 h-14 rounded-full flex justify-center items-center border-2 border-primary border-t-0 border-l-0 border-r-0 mt-2 shadow-3xl'>
               {service?.icon}

@@ -114,7 +114,7 @@ export default function Contact() {
   ]
   return (
     <div
-      className='mb-20 sm:mb-32 container px-4 mx-auto scroll-m-28 w-full sm:w-4/5 lg:w-[65%]'
+      className='sm:mb-32 container px-4 mx-auto scroll-m-28 w-full sm:w-4/5 lg:w-[65%]'
       id='contact'
     >
       <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase  mb-4 mt-5 sm:mt-0 text-secondary'>
@@ -159,100 +159,120 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className='pt-3'>
+      <div className='pt-3 bg-white rounded'>
         <form onSubmit={(e) => handleSubmit(e as FormEvent)} className=''>
           <div className='p-5 mx-auto'>
             <p className='mb-3 text-center w-full sm:w-[80%] mx-auto'>
               Please fill out the contact form below to get in touch with me,
               and I will do my best to respond to you as soon as I can.
             </p>
-            <div className='my-5'>
-              <label htmlFor='name'>Name</label>
-              <input
-                required
-                onChange={(e) => setName(e.target.value)}
-                value={name}
-                type='text'
-                className='w-full p-2 rounded border bg-white focus:outline-primary'
-                id='name'
-                placeholder='Enter name'
-              />
-            </div>
 
-            <div className='my-1'>
-              <label htmlFor='email' className='text-muted'>
-                Email
-              </label>
-              <input
-                required
-                type='email'
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
-                className='w-full p-2 rounded border bg-white focus:outline-primary'
-                id='email'
-                placeholder='Enter email address'
-                aria-describedby='emailHelp'
-              />
-            </div>
-            <div
-              id='emailHelp'
-              className='form-text mb-4 text-xs'
-            >{`I'll never share your email with anyone else.`}</div>
+            <div className='flex flex-col md:flex-row flex-wrap justify-between items-centers'>
+              <div className='w-full md:w-[48%]'>
+                <div className='my-3'>
+                  <label className='font-bold' htmlFor='name'>
+                    Name
+                  </label>
+                  <input
+                    required
+                    onChange={(e) => setName(e.target.value)}
+                    value={name}
+                    type='text'
+                    className='w-full p-2 rounded border bg-gray-100 focus:outline-primary'
+                    id='name'
+                    placeholder='Enter name'
+                  />
+                </div>
 
-            <div className='my-1'>
-              <label htmlFor='phone'>Phone</label>
-              <input
-                required
-                type='text'
-                onChange={(e) => setPhone(e.target.value)}
-                value={phone}
-                className='w-full p-2 rounded border bg-white focus:outline-primary'
-                id='phone'
-                placeholder='Enter phone'
-                aria-describedby='phoneHelp'
-              />
-            </div>
-            <div
-              id='phoneHelp'
-              className='form-text mb-5 text-xs'
-            >{`Your phone number will never be given to a third party.`}</div>
-
-            <div className='my-3'>
-              <label htmlFor='message'>Message</label>
-              <textarea
-                required
-                cols={30}
-                rows={9}
-                onChange={(e) => setMessage(e.target.value)}
-                value={message}
-                className='w-full p-2 rounded border bg-white focus:outline-primary'
-                id='message'
-                placeholder='Enter message'
-              />
-            </div>
-            <div className='my-5'>
-              <h5 className='text-lg font-bold'>Services</h5>
-              <ul className='list-group'>
-                {services?.map((service) => (
-                  <li
-                    key={service?._id}
-                    className='list-group-item rounded-0 mb-2'
-                  >
-                    <input
-                      onChange={service?.onChange}
-                      className='form-check-input mr-2 checkbox-primary'
-                      type='checkbox'
-                      value=''
-                      checked={service?.checked}
-                      id={service?._id}
-                    />
-                    <label className='form-check-label' htmlFor={service?._id}>
-                      {service?.name}
+                <div className=''>
+                  <div className='my-1'>
+                    <label className='font-bold' htmlFor='email'>
+                      Email
                     </label>
-                  </li>
-                ))}
-              </ul>
+                    <input
+                      required
+                      type='email'
+                      onChange={(e) => setEmail(e.target.value)}
+                      value={email}
+                      className='w-full p-2 rounded border bg-gray-100 focus:outline-primary'
+                      id='email'
+                      placeholder='Enter email address'
+                      aria-describedby='emailHelp'
+                    />
+                  </div>
+                  <div
+                    id='emailHelp'
+                    className='form-text mb-4 text-xs'
+                  >{`I'll never share your email with anyone else.`}</div>
+                </div>
+
+                <div className=''>
+                  <div className='my-1'>
+                    <label className='font-bold' htmlFor='phone'>
+                      Phone
+                    </label>
+                    <input
+                      required
+                      type='text'
+                      onChange={(e) => setPhone(e.target.value)}
+                      value={phone}
+                      className='w-full p-2 rounded border bg-gray-100 focus:outline-primary'
+                      id='phone'
+                      placeholder='Enter phone'
+                      aria-describedby='phoneHelp'
+                    />
+                  </div>
+                  <div
+                    id='phoneHelp'
+                    className='form-text mb-5 text-xs'
+                  >{`Your phone number will never be given to a third party.`}</div>
+                </div>
+              </div>
+
+              <div className='my-3 '>
+                <label className='font-bold' htmlFor='message'>
+                  Message
+                </label>
+                <textarea
+                  required
+                  cols={30}
+                  rows={9}
+                  onChange={(e) => setMessage(e.target.value)}
+                  value={message}
+                  className='w-full p-2 rounded border bg-gray-100 focus:outline-primary'
+                  id='message'
+                  placeholder='Enter message'
+                />
+              </div>
+
+              <div className='my-5 w-full md:w-[48%]'>
+                <h5 className='text-lg font-bold'>Services</h5>
+                <ul className='list-group'>
+                  {services?.map((service) => (
+                    <li
+                      key={service?._id}
+                      className='list-group-item rounded-0'
+                    >
+                      <input
+                        onChange={service?.onChange}
+                        className='form-check-input mr-2 checkbox-primary'
+                        type='checkbox'
+                        value=''
+                        checked={service?.checked}
+                        id={service?._id}
+                      />
+                      <label
+                        className='form-check-label text-sm'
+                        htmlFor={service?._id}
+                      >
+                        {service?.name}
+                      </label>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
+
             <div className='my-3 text-center'>
               {success && (
                 <div className='alert alert-success my-3' role='alert'>
@@ -266,7 +286,7 @@ export default function Contact() {
               )}
               <button
                 disabled={loading}
-                className='btn btn-ghost bg-white rounded-full py-2 px-8 shadow-lg hover:scale-90 duration-1000'
+                className='btn btn-ghost w-56 bg-primary text-white rounded-lg py-2 px-8 shadow-lg hover:scale-90 duration-1000'
               >
                 {loading ? <span>Loading... </span> : <span>Send Message</span>}
               </button>

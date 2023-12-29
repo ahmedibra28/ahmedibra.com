@@ -2,24 +2,55 @@ import React from 'react'
 import BlurImage from './BlurImage'
 
 export default function Portfolio() {
+  const baseDomain =
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:3000'
+      : 'https://ahmedibra.com'
+
+  // const items = [
+  //   {
+  //     title: 'Dankaab App',
+  //     description: `The cargo management system is a software solution designed to streamline the process of managing cargo shipments, from booking to delivery, and to provide real-time visibility into cargo status and location.`,
+  //     image: '/projects/dankaab.svg',
+  //     new: true,
+  //   },
+  //   {
+  //     title: 'Soomar App',
+  //     description: `The cargo management system is a software solution designed to streamline the process of managing cargo shipments, from booking to delivery, and to provide real-time visibility into cargo status and location.`,
+  //     image: '/projects/soomar.svg',
+  //     new: false,
+  //   },
+  //   {
+  //     title: 'Wadaag App',
+  //     description: `This app offers a ride-sharing platform that connects passengers traveling in the same direction, enabling them to share a ride and split the fare, resulting in a more cost-effective and eco-friendly
+  //     transportation option`,
+  //     image: '/projects/wadaag.svg',
+  //     new: false,
+  //   },
+  // ]
   const items = [
     {
       title: 'Dankaab App',
-      description: `The cargo management system is a software solution designed to streamline the process of managing cargo shipments, from booking to delivery, and to provide real-time visibility into cargo status and location.`,
-      image: '/projects/dankaab.svg',
+      description: `Dankaab App is a simple ecommerce mobile application. It allows users to browse products, add items to a cart, and purchase orders.`,
+      image: '/projects/dankaab-app.png',
       new: true,
     },
     {
       title: 'Soomar App',
-      description: `The cargo management system is a software solution designed to streamline the process of managing cargo shipments, from booking to delivery, and to provide real-time visibility into cargo status and location.`,
-      image: '/projects/soomar.svg',
+      description: `Soomar is a mobile marketplace app that allows users to easily find and purchase products on-the-go.`,
+      image: '/projects/soomar-app.png',
       new: false,
     },
     {
       title: 'Wadaag App',
-      description: `This app offers a ride-sharing platform that connects passengers traveling in the same direction, enabling them to share a ride and split the fare, resulting in a more cost-effective and eco-friendly
-      transportation option`,
-      image: '/projects/wadaag.svg',
+      description: `Wadaag is a versatile all-in-one mobile app for transportation, shopping and housing needs. Users can get a ride, find goods and services, or book rental accommodation - all in one simple app.`,
+      image: '/projects/wadaag-app.png',
+      new: false,
+    },
+    {
+      title: 'Kinyozi App',
+      description: `Kinyozi App is a user-friendly mobile application that simplifies barbershop appointments. It enables customers to effortlessly schedule appointments with their preferred barbers, ensuring a personalized grooming experience.`,
+      image: '/projects/kinyozi-app.png',
       new: false,
     },
   ]
@@ -34,29 +65,28 @@ export default function Portfolio() {
 
       <p className='text-center mb-4'>{`Some of the most recent projects I've completed for my clients`}</p>
 
-      <div className='flex flex-wrap justify-between items-center mx-auto px-4 sm:px-0 gap-y-5'>
+      <div className='flex flex-wrap justify-center items-center mx-auto px-4 sm:px-0 gap-y-5'>
         {items?.map((item, index) => (
           <div
             key={index}
-            className='card w-full md:w-[48%] bg-white shadow-lg duration-1000 border overflow-hidden'
+            className='card w-full md:w-[40%] shadow-xl bg-white mx-auto'
           >
-            <figure className='bg-gradient-to-r from-white to-primary'>
-              <BlurImage
-                src={item.image}
-                alt={item.title}
-                width={2000}
-                height={1000}
-                className='w-full hover:scale-105 duration-1000 object-contain'
-              />
-            </figure>
             <div className='card-body'>
-              <h2 className='card-title'>
-                {item.title}
-                {item.new && (
-                  <div className='badge badge-secondary text-xs'>NEW</div>
-                )}
-              </h2>
-              {/* <p>{item.description}</p> */}
+              <figure className='mr-auto mb-3'>
+                <BlurImage
+                  src={baseDomain + item.image}
+                  alt={item.title}
+                  width={2000}
+                  height={1000}
+                  className='w-16 hover:scale-105 duration-1000 object-contain rounded-lg'
+                />
+              </figure>
+
+              <h2 className='font-bold'>Wadaag App</h2>
+              <p className='text-gray-600'>{item.description}</p>
+              <div className='card-actions justify-end'>
+                <button className='btn btn-ghost'>Learn more</button>
+              </div>
             </div>
           </div>
         ))}

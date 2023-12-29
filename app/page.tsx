@@ -16,10 +16,10 @@ export default function Home() {
         development.
       </div>
 
-      <div className='flex flex-col md:flex-row justify-center md:justify-between items-center my-20 gap-4'>
+      <div className='flex flex-col-reverse md:flex-row justify-center md:justify-between items-center my-20 gap-4'>
         <div className='w-[90%] md:w-[48%] lg:w-[30%] mx-auto'>
           <p
-            className='text-center rounded-fulls flex justify-center items-center shadow-2xl flex-col gap-y-5 pt-5 mx-auto hover:scale-105 duration-1000 px-10'
+            className='text-center flex justify-center items-center shadow-2xl rounded-lg flex-col gap-y-5 pt-5 mx-auto hover:scale-105 duration-1000 px-10'
             style={{ width: 300, height: 300 }}
           >
             If you are in search of a skilled and adaptable developer, please do
@@ -33,19 +33,19 @@ export default function Home() {
             </Link>
           </p>
         </div>
-        <div className='w-[90%] md:w-[48%] lg:w-[30%] mx-auto hidden md:block'>
+        <div className='w-[90%] md:w-[48%] lg:w-[30%] mx-auto'>
           <BlurImage
             src='https://github.com/ahmedibra28.png'
             alt='Ahmed Ibrahim'
             width={500}
             height={500}
-            className='rounded-full w-[90%] shadow-2xl mx-auto hover:scale-105 duration-1000'
+            className='rounded-lg w-[83%] shadow-2xl mx-auto hover:scale-105 duration-1000'
           />
         </div>
       </div>
 
       <div className='text-center'>
-        <button className='btn bg-white border-0 shadow-2xl capitalize text-primary rounded-full w-44 hover:scale-90 duration-1000'>
+        <button className='btn bg-white border-0 shadow-2xl capitalize text-primary rounded-lg w-56 hover:scale-90 duration-1000'>
           <FaInfoCircle />
           Learn More
         </button>
