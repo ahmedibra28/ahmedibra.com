@@ -31,25 +31,25 @@ export default function Portfolio() {
   const items = [
     {
       title: 'Dankaab App',
-      description: `Dankaab App is a simple ecommerce mobile application. It allows users to browse products, add items to a cart, and purchase orders.`,
+      description: `is a simple ecommerce mobile application. It allows users to browse products, add items to a cart, and purchase orders.`,
       image: '/projects/dankaab-app.png',
       new: true,
     },
     {
       title: 'Soomar App',
-      description: `Soomar is a mobile marketplace app that allows users to easily find and purchase products on-the-go.`,
+      description: `is a mobile marketplace app that allows users to easily find and purchase products on-the-go.`,
       image: '/projects/soomar-app.png',
       new: false,
     },
     {
       title: 'Wadaag App',
-      description: `Wadaag is a versatile all-in-one mobile app for transportation, shopping and housing needs. Users can get a ride, find goods and services, or book rental accommodation - all in one simple app.`,
+      description: `is a versatile all-in-one mobile app for transportation, shopping and housing needs. Users can get a ride, find goods and services, or book rental accommodation - all in one simple app.`,
       image: '/projects/wadaag-app.png',
       new: false,
     },
     {
       title: 'Kinyozi App',
-      description: `Kinyozi App is a user-friendly mobile application that simplifies barbershop appointments. It enables customers to effortlessly schedule appointments with their preferred barbers, ensuring a personalized grooming experience.`,
+      description: `is a user-friendly mobile application that simplifies barbershop appointments. It enables customers to effortlessly schedule appointments with their preferred barbers, ensuring a personalized grooming experience.`,
       image: '/projects/kinyozi-app.png',
       new: false,
     },
@@ -82,10 +82,14 @@ export default function Portfolio() {
                 />
               </figure>
 
-              <h2 className='font-bold'>Wadaag App</h2>
-              <p className='text-gray-600'>{item.description}</p>
+              <p className='text-gray-600'>
+                <span className='font-bold'>{item.title}</span>{' '}
+                {item.description}
+              </p>
               <div className='card-actions justify-end'>
-                <button className='btn btn-ghost'>Learn more</button>
+                <button className='btn btn-ghost underline font-normal'>
+                  Read more
+                </button>
               </div>
             </div>
           </div>
