@@ -4,6 +4,7 @@ import { Roboto } from 'next/font/google'
 import Nav from '@/components/Nav'
 import { Viewport } from 'next'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/react'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -65,6 +66,7 @@ export default function RootLayout({
         <div>
           <Nav />
           {children}
+          <Analytics />
         </div>
 
         <div className='flex flex-row h-screen fixed top-0 left-0 right-0 -z-50'>
