@@ -26,7 +26,7 @@ export default function Home() {
             not hesitate to contact me.
             <Link
               href={'/#contact'}
-              className='btn bg-primary capitalize text-white rounded-full w-44'
+              className='btn bg-primary capitalize text-secondary rounded-full w-44'
             >
               <FaEnvelope />
               Get in touch
@@ -37,15 +37,16 @@ export default function Home() {
           <BlurImage
             src='https://github.com/ahmedibra28.png'
             alt='Ahmed Ibrahim'
-            width={500}
-            height={500}
-            className='rounded-lg w-[83%] shadow-2xl mx-auto hover:scale-105 duration-1000'
+            width={300}
+            height={300}
+            className='rounded-lg w-72 shadow-2xl mx-auto hover:scale-105 duration-1000'
+            quality={75}
           />
         </div>
       </div>
 
       <div className='text-center'>
-        <button className='btn bg-white border-0 shadow-2xl capitalize text-primary rounded-lg w-56 hover:scale-90 duration-1000'>
+        <button className='btn bg-white border-0 shadow-2xl capitalize text-secondary rounded-full w-56 hover:scale-90 duration-1000'>
           <FaInfoCircle />
           Learn More
         </button>

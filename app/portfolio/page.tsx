@@ -1,28 +1,34 @@
-import React from 'react'
-import BlurImage from './BlurImage'
-import { FaAngleRight } from 'react-icons/fa'
-import Link from 'next/link'
+import BlurImage from '@/components/BlurImage'
+import Meta from '@/components/Meta'
 import { projects } from '@/lib/projects'
+import React from 'react'
 
-export default function Portfolio() {
+export const metadata = {
+  ...Meta({
+    title: 'Projects by Ahmed Ibrahim',
+    description: `Browse through all the projects built by Ahmed Ibrahim, a full-stack developer with years of experience. From web development to cloud hosting and mobile apps, find inspiration and valuable insights from his journey.`,
+    author: 'Ahmed Ibrahim',
+    keyword: `All projects, Ahmed Ibrahim, full-stack developer, web development, cloud hosting, mobile apps, journey, insights, inspiration, HTML, CSS, JavaScript, React.js, Node.js, MongoDB, Django, Bootstrap, AWS, DigitalOcean, Google Cloud, Linode, React Native, Wadaag App, ride-sharing app, Somalia`,
+    image: '/logo.png',
+  }),
+}
+
+export default async function Page() {
   const baseDomain =
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:3000'
       : 'https://ahmedibra.com'
 
   return (
-    <div
-      className='mb-20 sm:mb-32 container px-4 mx-auto scroll-m-28'
-      id='portfolio'
-    >
+    <div className='mb-20 sm:mb-32 mx-auto scroll-m-28 max-w-6xl'>
       <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase mb-4 mt-5 sm:mt-0 text-secondary'>
-        Recent Projects
+        Projects
       </h2>
 
       <p className='text-center mb-4'>{`Some of the most recent projects I've completed for my clients`}</p>
 
-      <div className='flex flex-wrap justify-center items-center mx-auto px-4 sm:px-0 gap-y-5'>
-        {projects?.slice(0, 4)?.map((item, index) => (
+      <div className='flex flex-wrap justify-between items-center mx-auto px-4 sm:px-0 gap-y-5'>
+        {projects?.map((item, index) => (
           <div
             key={index}
             className='card w-full md:w-[40%] shadow-lg bg-white mx-auto'
@@ -50,15 +56,6 @@ export default function Portfolio() {
             </div>
           </div>
         ))}
-      </div>
-      <div className='text-center mt-10'>
-        <Link
-          href='/portfolio'
-          className='btn bg-white border-0 shadow-2xl capitalize text-secondary rounded-full w-56 hover:scale-90 duration-1000'
-        >
-          <FaAngleRight />
-          <span className='ml-2'>View All Projects</span>
-        </Link>
       </div>
     </div>
   )

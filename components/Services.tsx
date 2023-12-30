@@ -88,7 +88,7 @@ export default function Services() {
             </div>
 
             <div className='p-3 text-center'>
-              <h5 className='text-center font-bold'>{service?.title}</h5>
+              <label className='text-center font-bold'>{service?.title}</label>
               <p className='text-center'>{service?.description}</p>
             </div>
           </div>

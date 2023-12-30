@@ -129,7 +129,7 @@ export default function Contact() {
           {[
             {
               icon: <FaMapMarkedAlt className='text-4xl text-warning' />,
-              title: <a className=''>Makka al mukarramah</a>,
+              title: <span className=''>Makka al mukarramah</span>,
             },
             {
               icon: <FaPhoneAlt className='text-4xl text-warning' />,
@@ -246,7 +246,7 @@ export default function Contact() {
               </div>
 
               <div className='my-5 w-full md:w-[48%]'>
-                <h5 className='text-lg font-bold'>Services</h5>
+                <label className='text-lg font-bold'>Services</label>
                 <ul className='list-group'>
                   {services?.map((service) => (
                     <li
@@ -286,7 +286,7 @@ export default function Contact() {
               )}
               <button
                 disabled={loading}
-                className='btn btn-ghost w-56 bg-primary text-white rounded-lg py-2 px-8 shadow-lg hover:scale-90 duration-1000'
+                className='btn btn-ghost w-56 bg-primary text-secondary rounded-full py-2 px-8 shadow-lg hover:scale-90 duration-1000'
               >
                 {loading ? <span>Loading... </span> : <span>Send Message</span>}
               </button>

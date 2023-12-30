@@ -60,7 +60,7 @@ const Nav: NextComponentType = (props) => {
         </div>
         <Link
           href='/#home'
-          className='btn btn-ghost normal-case text-xls h-auto  hover:bg-transparent'
+          className='btn btn-ghost normal-case text-xls h-auto  hover:bg-transparent hidden md:block'
         >
           <Image
             width={64}
@@ -69,14 +69,6 @@ const Nav: NextComponentType = (props) => {
             alt='hero image'
             className='mr-1 w-[70%] md:w-auto duration-1000 hidden md:block'
           />
-          <div className='flexs flex-col -space-y-1 hidden md:flex'>
-            <span className='text-primary text-xl md:text-2xl duration-1000'>
-              Ahmed
-            </span>
-            <span className='text-secondary text-xl md:text-2xl duration-1000'>
-              Ibrahim
-            </span>
-          </div>
         </Link>
       </div>
       <div className='navbar-center hidden lg:flex'>
@@ -89,13 +81,17 @@ const Nav: NextComponentType = (props) => {
         </ul>
       </div>
       <div className='navbar-end m-2'>
-        <a href='https://github.com/ahmedibra28' target='_blank'>
-          <button className='md:btn bg-transparent border-0 md:border md:bg-primary text-white md:rounded-full md:w-32'>
+        <a
+          href='https://github.com/ahmedibra28'
+          target='_blank'
+          aria-label='GitHub Profile'
+        >
+          <div className='md:btn bg-transparent border-0 md:border md:bg-primary text-secondary md:rounded-full md:w-32'>
             <div className='indicator flex justify-center items-center gap-2'>
-              <FaGithub className='text-secondary md:text-white text-3xl lg:text-2xl duration-1000' />
+              <FaGithub className='text-secondary md:text-secondary text-3xl lg:text-2xl duration-1000' />
               <span className='capitalize hidden md:block'>GitHub</span>
             </div>
-          </button>
+          </div>
         </a>
       </div>
     </div>

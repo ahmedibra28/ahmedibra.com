@@ -61,7 +61,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
           </figure>
         </div>
 
-        <div className='card-body'>
+        <div className='card-body bg-white'>
           <h5 className='card-title fw-bold mb-3'>{post?.meta?.title}</h5>
           <div className='space-y-5 w-full'>{post?.content}</div>
         </div>
