@@ -40,9 +40,9 @@ const Nav: NextComponentType = (props) => {
     <div className='h-12 md:bg-white bg-transparent md:shadow-2xl md:sticky top-0 z-50 w-[95%] md:max-w-6xl mx-auto rounded-full my-5 md:my-10 md:h-[100px] flex justify-between items-center duration-1000 px-4'>
       <div className='navbar-start flex items-center'>
         <div className='md:hidden z-50'>
-          <Menubar className='border-none'>
+          <Menubar className='border-none' aria-label='menu'>
             <MenubarMenu>
-              <MenubarTrigger className='outline-none'>
+              <MenubarTrigger aria-label='menu' className='outline-none'>
                 <FaBars className='text-2xl' />
               </MenubarTrigger>
               <MenubarContent>
