@@ -4,6 +4,7 @@ import Contact from '@/components/Contact'
 import Portfolio from '@/components/Portfolio'
 import Services from '@/components/Services'
 import Skills from '@/components/Skills'
+import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { FaEnvelope, FaInfoCircle } from 'react-icons/fa'
 
@@ -24,12 +25,14 @@ export default function Home() {
           >
             If you are in search of a skilled and adaptable developer, please do
             not hesitate to contact me.
-            <Link
-              href={'/#contact'}
-              className='btn bg-primary capitalize text-secondary rounded-full w-44'
-            >
-              <FaEnvelope />
-              Get in touch
+            <Link href={'/#contact'}>
+              <Button
+                variant='default'
+                className='bg-my-primary border-my-primary w-44 rounded-full text-my-secondary hover:text-white'
+              >
+                <FaEnvelope className='mr-2' />
+                Get in touch
+              </Button>
             </Link>
           </p>
         </div>
@@ -45,14 +48,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='text-center'>
-        <button className='btn bg-white border-0 shadow-2xl capitalize text-secondary rounded-full w-56 hover:scale-90 duration-1000'>
-          <FaInfoCircle />
-          Learn More
-        </button>
-      </div>
-
-      <div className='mb-20' />
+      <div className='mb-20 pt-1' />
       <Clients />
 
       <div className='mb-20' />

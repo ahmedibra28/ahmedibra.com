@@ -7,7 +7,7 @@ const AuthorSection = ({ item }: { item: PostMeta }) => {
   return (
     <>
       <div className='flex items-center'>
-        <div className='rounded-full w-12 ring ring-primary mr-3'>
+        <div className='rounded-full w-12 ring ring-my-primary mr-3'>
           <Image
             src={item?.avatar}
             alt='author'
@@ -18,19 +18,17 @@ const AuthorSection = ({ item }: { item: PostMeta }) => {
           />
         </div>
         <div className='ms-2' style={{ fontSize: '80%' }}>
-          <label className='text-muted'>{item?.author}</label>
+          <label className=''>{item?.author}</label>
           <p className='text-sm'>
-            <small className='text-muted'>
-              {DateTime(item?.createdAt).format('MMM D')}
-            </small>
+            <small>{DateTime(item?.createdAt).format('MMM D')}</small>
             <span className='mx-2'>-</span>
             {/* @ts-ignore */}
-            <small className='text-muted'>{item?.stats?.text}</small>
+            <small>{item?.stats?.text}</small>
             <br />
             {item?.tags?.map((t) => (
               <small
                 key={t}
-                className='badge bg-primary ms-1 text-gray-50 text-xs border border-primary mr-1'
+                className='px-1 py-0.5 rounded-full bg-my-primary ms-1 text-gray-50 text-xs border border-my-primary mr-1'
               >
                 {t}
               </small>

@@ -1,5 +1,5 @@
-import BlurImage from '@/components/BlurImage'
 import Meta from '@/components/Meta'
+import ProjectCard from '@/components/ProjectCard'
 import { projects } from '@/lib/projects'
 import React from 'react'
 
@@ -14,14 +14,9 @@ export const metadata = {
 }
 
 export default async function Page() {
-  const baseDomain =
-    process.env.NODE_ENV === 'development'
-      ? 'http://localhost:3000'
-      : 'https://ahmedibra.com'
-
   return (
     <div className='mb-20 sm:mb-32 mx-auto scroll-m-28 max-w-6xl'>
-      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase mb-4 mt-5 sm:mt-0 text-secondary'>
+      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase mb-4 mt-5 sm:mt-0 text-my-secondary'>
         Projects
       </h2>
 
@@ -29,32 +24,7 @@ export default async function Page() {
 
       <div className='flex flex-wrap justify-between items-center mx-auto px-4 sm:px-0 gap-y-5'>
         {projects?.map((item, index) => (
-          <div
-            key={index}
-            className='card w-full md:w-[40%] shadow-lg bg-white mx-auto'
-          >
-            <div className='card-body'>
-              <figure className='mr-auto mb-3'>
-                <BlurImage
-                  src={baseDomain + item.image}
-                  alt={item.title}
-                  width={2000}
-                  height={1000}
-                  className='w-16 hover:scale-105 duration-1000 object-contain rounded-lg'
-                />
-              </figure>
-
-              <p className='text-gray-600'>
-                <span className='font-bold'>{item.title}</span>{' '}
-                {item.description}
-              </p>
-              <div className='card-actions justify-end'>
-                <button className='btn btn-ghost underline font-normal'>
-                  Read more
-                </button>
-              </div>
-            </div>
-          </div>
+          <ProjectCard item={item} key={index} />
         ))}
       </div>
     </div>

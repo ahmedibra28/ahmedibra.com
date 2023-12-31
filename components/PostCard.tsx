@@ -5,7 +5,7 @@ import AuthorSection from './AuthorSection'
 
 const PostCard = ({ post }: { post: PostMeta }) => {
   return (
-    <div className='card bg-base-100 rounded-lg'>
+    <div className='bg-white p-4 rounded-lg'>
       <figure className='h-56'>
         <Image
           src={post?.image}
@@ -17,9 +17,9 @@ const PostCard = ({ post }: { post: PostMeta }) => {
         />
       </figure>
 
-      <div className='card-body'>
+      <div className='card-body p-4 pt-10'>
         <AuthorSection item={post} />
-        <h2 className='card-title text-center'>{post?.title}</h2>
+        <h2 className='font-bold text-center mb-2'>{post?.title}</h2>
         <p className='text-sm text-center'>{post?.excerpt}</p>
       </div>
     </div>

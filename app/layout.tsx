@@ -71,7 +71,7 @@ export default function RootLayout({
 
         <div className='flex flex-row h-screen fixed top-0 left-0 right-0 -z-50'>
           <div className='w-1/2'></div>
-          <div className='w-1/2 bg-primary'></div>
+          <div className='w-1/2 bg-my-primary'></div>
         </div>
       </body>
     </html>

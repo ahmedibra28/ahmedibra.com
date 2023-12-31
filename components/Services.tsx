@@ -16,56 +16,56 @@ export default function Services() {
     {
       title: 'Web Development',
       description: 'Build scalable and responsive web applications.',
-      icon: <FaHtml5 className='mx-auto text-3xl text-primary' />,
+      icon: <FaHtml5 className='mx-auto text-3xl text-my-primary' />,
     },
     {
       title: 'Mobile App Development',
       description: 'Develop cross-platform mobile applications.',
-      icon: <FaMobileAlt className='mx-auto text-3xl text-primary' />,
+      icon: <FaMobileAlt className='mx-auto text-3xl text-my-primary' />,
     },
     {
       title: 'Full Stack Development',
       description:
         'Create end-to-end web solutions, covering both front-end and back-end.',
-      icon: <FaLayerGroup className='mx-auto text-3xl text-primary' />,
+      icon: <FaLayerGroup className='mx-auto text-3xl text-my-primary' />,
     },
     {
       title: 'API Development',
       description: 'Build robust APIs using different technologies.',
-      icon: <FaNetworkWired className='mx-auto text-3xl text-primary' />,
+      icon: <FaNetworkWired className='mx-auto text-3xl text-my-primary' />,
     },
     {
       title: 'Database Management',
       description: 'Optimize DBs with SQL/NoSQL: PostgreSQL, MongoDB.',
-      icon: <FaDatabase className='mx-auto text-3xl text-primary' />,
+      icon: <FaDatabase className='mx-auto text-3xl text-my-primary' />,
     },
     {
       title: 'Server Configuration and Deployment',
       description: 'Setup servers, deploy apps: Docker, AWS, Digitalocean.',
-      icon: <FaServer className='mx-auto text-3xl text-primary' />,
+      icon: <FaServer className='mx-auto text-3xl text-my-primary' />,
     },
     {
       title: 'UI/UX Design and Development',
       description:
         'Design visually appealing user interfaces and develop interactive experiences.',
-      icon: <FaPaintBrush className='mx-auto text-3xl text-primary' />,
+      icon: <FaPaintBrush className='mx-auto text-3xl text-my-primary' />,
     },
     {
       title: 'E-commerce Solutions',
       description: 'Build secure and scalable e-commerce platforms.',
-      icon: <FaShoppingCart className='mx-auto text-3xl text-primary' />,
+      icon: <FaShoppingCart className='mx-auto text-3xl text-my-primary' />,
     },
     {
       title: 'Custom Software Development',
       description:
         'Create tailor-made software solutions to meet specific business requirements.',
-      icon: <FaCogs className='mx-auto text-3xl text-primary' />,
+      icon: <FaCogs className='mx-auto text-3xl text-my-primary' />,
     },
     {
       title: 'Code Review and Refactoring',
       description:
         'Review & refactor code to enhance quality, readability, and maintainability.',
-      icon: <FaCode className='mx-auto text-3xl text-primary' />,
+      icon: <FaCode className='mx-auto text-3xl text-my-primary' />,
     },
   ]
   return (
@@ -73,7 +73,7 @@ export default function Services() {
       className='mb-20 sm:mb-32 container px-4 mx-auto scroll-m-28'
       id='services'
     >
-      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase mb-4 mt-5 sm:mt-0 text-secondary'>
+      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase mb-4 mt-5 sm:mt-0 text-my-secondary'>
         Available Services
       </h2>
 
@@ -81,9 +81,9 @@ export default function Services() {
         {services.map((service, i) => (
           <div
             key={i}
-            className='border border-primary sm:border-0 shadow-sm hover:shadow-lg hover:shadow-white shadow-primary rounded-2xl sm:w-[30%] m-3 w-full duration-1000 bg-white'
+            className='border border-my-primary sm:border-0 shadow-sm hover:shadow-lg hover:shadow-white shadow-my-primary rounded-2xl sm:w-[30%] m-3 w-full duration-1000 bg-white'
           >
-            <div className='mx-auto w-14 h-14 rounded-full flex justify-center items-center border-2 border-primary border-t-0 border-l-0 border-r-0 mt-2 shadow-3xl'>
+            <div className='mx-auto w-14 h-14 rounded-full flex justify-center items-center border-2 border-my-primary border-t-0 border-l-0 border-r-0 mt-2 shadow-3xl'>
               {service?.icon}
             </div>
 
