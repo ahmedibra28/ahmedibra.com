@@ -34,6 +34,15 @@ export default function RootLayout({
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_M_ID}`}
           strategy='lazyOnload'
         />
+
+        {process.env.NODE_ENV === 'production' && (
+          <script
+            async
+            src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5359776387436359'
+            crossOrigin='anonymous'
+          ></script>
+        )}
+
         <Script id='google-analytics' strategy='lazyOnload'>
           {`
           window.dataLayer = window.dataLayer || [];
@@ -71,7 +80,7 @@ export default function RootLayout({
 
         <div className='flex flex-row h-screen fixed top-0 left-0 right-0 -z-50'>
           <div className='w-1/2'></div>
-          <div className='w-1/2 bg-my-primary'></div>
+          <div className='w-1/2 bg-my-primarys'></div>
         </div>
       </body>
     </html>
