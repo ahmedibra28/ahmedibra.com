@@ -6,15 +6,14 @@ import Services from '@/components/Services'
 import Skills from '@/components/Skills'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { FaEnvelope, FaInfoCircle } from 'react-icons/fa'
+import { FaEnvelope } from 'react-icons/fa'
 
 export default function Home() {
   return (
     <div className='max-w-6xl mx-auto scroll-m-44' id='home'>
       <div className='text-center text-2xl mx-2'>
-        Experienced <strong>full-stack developer</strong> with{' '}
-        <strong>10+ years of expertise</strong> <br /> in web and mobile app
-        development.
+        <b>Full-stack developer</b> with over <b>5 years</b> of experience
+        building web and mobile applications.
       </div>
 
       <div className='flex flex-col-reverse md:flex-row justify-center md:justify-between items-center my-20 gap-4'>

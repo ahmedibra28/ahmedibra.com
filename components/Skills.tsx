@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-  SiBun,
   SiCss3,
   SiDjango,
   SiGo,
@@ -13,6 +12,7 @@ import {
   SiTypescript,
 } from 'react-icons/si'
 import { BiLogoPostgresql } from 'react-icons/bi'
+import { FaNode } from 'react-icons/fa'
 
 export default function Skills() {
   const frontend = [
@@ -31,7 +31,7 @@ export default function Skills() {
     },
     { name: 'Python', icon: <SiPython className='text-3xl mr-2' /> },
     { name: 'Golang', icon: <SiGo className='text-3xl mr-2' /> },
-    { name: 'Bun ', icon: <SiBun className='text-3xl mr-2' /> },
+    { name: 'NodeJS', icon: <FaNode className='text-3xl mr-2' /> },
     { name: 'Django', icon: <SiDjango className='text-3xl mr-2' /> },
   ]
   return (

@@ -114,7 +114,7 @@ export default function Contact() {
   ]
   return (
     <div
-      className='sm:mb-32 container px-4 mx-auto scroll-m-28 w-full sm:w-4/5 lg:w-[65%]'
+      className='sm:mb-32 container px-4 mx-auto scroll-m-40 w-full sm:w-4/5 lg:w-[65%]'
       id='contact'
     >
       <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase  mb-4 mt-5 sm:mt-0 text-my-secondary'>

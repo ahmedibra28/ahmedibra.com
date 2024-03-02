@@ -1,23 +1,32 @@
-import { NextComponentType } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
-import { FaBars, FaGithub } from 'react-icons/fa'
-import { Button } from './ui/button'
+'use client'
 
+import React, { Fragment } from 'react'
 import {
-  Menubar,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarTrigger,
-} from '@/components/ui/menubar'
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from '@/components/ui/navigation-menu'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuPortal,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
+import { FaBars, FaGithub, FaLinkedinIn } from 'react-icons/fa'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
-const Nav: NextComponentType = (props) => {
+import Link from 'next/link'
+
+export default function Navigation() {
   const items: { title: string; link: string }[] = [
-    {
-      title: 'Home',
-      link: '/#home',
-    },
     {
       title: 'Services',
       link: '/#services',
@@ -36,61 +45,113 @@ const Nav: NextComponentType = (props) => {
     },
   ]
 
-  return (
-    <div className='h-12 md:bg-white bg-transparent md:shadow-2xl md:sticky top-0 z-50 w-[95%] md:max-w-6xl mx-auto rounded-full my-5 md:my-10 md:h-[100px] flex justify-between items-center duration-1000 px-4'>
-      <div className='navbar-start flex items-center'>
-        <div className='md:hidden z-50'>
-          <Menubar className='border-none' aria-label='menu'>
-            <MenubarMenu>
-              <MenubarTrigger aria-label='menu' className='outline-none'>
-                <FaBars className='text-2xl' />
-              </MenubarTrigger>
-              <MenubarContent>
-                {items?.map((item, index) => (
-                  <MenubarItem key={index}>
-                    <Link href={item.link}>{item.title}</Link>
-                  </MenubarItem>
-                ))}
-              </MenubarContent>
-            </MenubarMenu>
-          </Menubar>
-        </div>
-
-        <Link
-          href='/#home'
-          className='btn btn-ghost normal-case text-xls h-auto hover:bg-transparent hidden md:block'
-        >
-          <Image
-            width={64}
-            height={64}
-            src='/logo.png'
-            alt='hero image'
-            className='mr-1 w-[70%] md:w-auto duration-1000 hidden md:block'
-          />
+  const renderItems = () => {
+    return items.map((item) => (
+      <NavigationMenuItem key={item.title}>
+        <Link href={item.link} legacyBehavior passHref>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            {item.title}
+          </NavigationMenuLink>
         </Link>
-      </div>
-      <div className='navbar-center hidden md:flex'>
-        <ul className='flex space-x-4 px-1'>
-          {items?.map((item, index) => (
-            <li key={index}>
-              <Link href={item.link}>{item.title}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      </NavigationMenuItem>
+    ))
+  }
 
-      <a
-        href='https://github.com/ahmedibra28'
-        target='_blank'
-        aria-label='GitHub Profile'
-      >
-        <Button variant='outline' className='rounded-full border-my-primary'>
-          <FaGithub className='text-my-secondary md:text-my-secondary text-3xl lg:text-2xl duration-1000 mr-2' />
-          GitHub
-        </Button>
-      </a>
-    </div>
+  const renderDropdownItems = () => {
+    return items.map((item) => (
+      <DropdownMenuItem key={item.title}>
+        <Link href={item.link} legacyBehavior passHref>
+          {item.title}
+        </Link>
+      </DropdownMenuItem>
+    ))
+  }
+
+  return (
+    <nav className='border-b border-x-0 border-t-0 mb-20 py-4 sticky top-0 bg-white z-50'>
+      <div className='container flex min-h-20 lg:flex-col gap-y-2 items-center justify-between'>
+        <Link href={'/'} aria-label='Home'>
+          <Avatar className='size-16'>
+            <AvatarImage alt='logo' src='https://github.com/ahmedibra28.png' />
+            <AvatarFallback>AI</AvatarFallback>
+          </Avatar>
+        </Link>
+
+        <Fragment>
+          {/* for mobile and tab */}
+          <div className='lg:hidden'>
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                aria-label='Open'
+                className='text-2xl focus:hidden'
+              >
+                <FaBars className='text-primary' />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                {renderDropdownItems()}
+                <DropdownMenuItem>
+                  <a
+                    href='https://github.com/ahmedibra28'
+                    target='_blank'
+                    aria-label='GitHub Profile'
+                  >
+                    <span className='flex items-center gap-x-1'>
+                      <FaGithub className='' /> Github
+                    </span>
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <a
+                    href='https://www.linkedin.com/in/ahmedibra28'
+                    target='_blank'
+                    aria-label='LinkedIn Profile'
+                  >
+                    <span className='flex items-center gap-x-1'>
+                      <FaLinkedinIn className='' /> LinkedIn
+                    </span>
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+
+          {/* for large screen */}
+          <div className='hidden flex-row gap-x-1 lg:flex'>
+            <NavigationMenu>
+              <NavigationMenuList>{renderItems()}</NavigationMenuList>
+            </NavigationMenu>
+
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <a
+                    className={navigationMenuTriggerStyle()}
+                    href='https://github.com/ahmedibra28'
+                    target='_blank'
+                    aria-label='GitHub Profile'
+                  >
+                    <span className='flex items-center gap-x-1'>
+                      <FaGithub className='' /> Github
+                    </span>
+                  </a>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <a
+                    className={navigationMenuTriggerStyle()}
+                    href='https://www.linkedin.com/in/ahmedibra28'
+                    target='_blank'
+                    aria-label='LinkedIn Profile'
+                  >
+                    <span className='flex items-center gap-x-1'>
+                      <FaLinkedinIn className='' /> LinkedIn
+                    </span>
+                  </a>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
+        </Fragment>
+      </div>
+    </nav>
   )
 }
-
-export default Nav

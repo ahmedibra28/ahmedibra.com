@@ -70,7 +70,7 @@ export default function Services() {
   ]
   return (
     <div
-      className='mb-20 sm:mb-32 container px-4 mx-auto scroll-m-28'
+      className='mb-20 sm:mb-32 container px-4 mx-auto scroll-m-40'
       id='services'
     >
       <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase mb-4 mt-5 sm:mt-0 text-my-secondary'>

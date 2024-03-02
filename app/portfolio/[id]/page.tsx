@@ -45,7 +45,7 @@ export default async function Page({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className='mb-20 sm:mb-32 mx-auto scroll-m-28 max-w-6xl'>
+    <div className='mb-20 sm:mb-32 mx-auto scroll-m-40 max-w-6xl'>
       <div className='max-w-6xl mx-auto'>
         <div className='card w-full md:w-[80%] mx-auto'>
           <AuthorSection

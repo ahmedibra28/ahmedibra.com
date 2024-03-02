@@ -19,7 +19,7 @@ export default async function Page() {
   const posts = (await getAllPostsMeta()) as PostMeta[]
 
   return (
-    <div className='my-7 sm:mb-32 container px-4 mx-auto scroll-m-20 lg:max-w-6xl'>
+    <div className='my-7 sm:mb-32 container px-4 mx-auto scroll-m-40 lg:max-w-6xl'>
       <div className='flex flex-row justify-between flex-wrap'>
         {posts?.map((post) => (
           <div
