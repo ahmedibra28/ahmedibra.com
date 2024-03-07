@@ -2,27 +2,39 @@ import Image from 'next/image'
 import React from 'react'
 import { PostMeta } from '../types'
 import AuthorSection from './AuthorSection'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
 
 const PostCard = ({ post }: { post: PostMeta }) => {
   return (
-    <div className='bg-white p-4 rounded-lg'>
-      <figure className='h-56'>
-        <Image
-          src={post?.image}
-          width={1000}
-          height={1000}
-          quality={100}
-          alt={post?.title}
-          className='object-cover'
-        />
-      </figure>
-
-      <div className='card-body p-4 pt-10'>
-        <AuthorSection item={post} />
-        <h2 className='font-bold text-center mb-2'>{post?.title}</h2>
-        <p className='text-sm text-center'>{post?.excerpt}</p>
-      </div>
-    </div>
+    <>
+      <Card className='grid lg:grid-cols-2'>
+        <CardHeader className='lg:p-0'>
+          <Image
+            src={post?.image}
+            width={1000}
+            height={1000}
+            quality={100}
+            alt={post?.title}
+            className='object-cover rounded'
+          />
+        </CardHeader>
+        <CardContent className='my-auto'>
+          <CardTitle className='text-lg mb-2 leading-5 line-clamp-2'>
+            {post?.title}
+          </CardTitle>
+          <CardDescription className='line-clamp-2'>
+            {post?.excerpt}
+          </CardDescription>
+        </CardContent>
+      </Card>
+    </>
   )
 }
 

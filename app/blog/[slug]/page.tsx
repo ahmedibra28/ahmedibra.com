@@ -4,6 +4,7 @@ import { PostMeta } from '@/types'
 import Image from 'next/image'
 import readingTime from 'reading-time'
 import Meta from '@/components/Meta'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 const getPageContent = async (slug: string) => {
   const { meta, content } = await getPostBySlug(slug)
@@ -35,36 +36,34 @@ const Page = async ({ params }: { params: { slug: string } }) => {
   }
 
   return (
-    <div className='max-w-6xl mx-auto'>
+    <div className='max-w-6xl mx-auto px-4'>
       <div className='w-full md:w-[80%] mx-auto'>
-        <AuthorSection
-          item={{
-            author: post?.meta?.author,
-            avatar: post?.meta?.avatar,
-            tags: post?.meta?.tags,
-            createdAt: post?.meta?.createdAt,
-            // @ts-ignore
-            stats: readingTime(post?.content),
-          }}
-        />
-
-        <div className='mt-3 mb-5 px-2 mx-auto'>
-          <figure>
+        <Card className='mb-3'>
+          <CardHeader>
+            <AuthorSection
+              item={{
+                author: post?.meta?.author,
+                avatar: post?.meta?.avatar,
+                tags: post?.meta?.tags,
+                createdAt: post?.meta?.createdAt,
+                // @ts-ignore
+                stats: readingTime(post?.content),
+              }}
+            />
             <Image
               src={post?.meta?.image}
               quality={100}
               width={1000}
               height={1000}
               alt={post?.meta?.title}
-              className='w-full object-cover'
+              className='w-full object-cover rounded'
             />
-          </figure>
-        </div>
-
-        <div className='card-body bg-white p-4'>
-          <h5 className='font-bold mb-3 text-2xl'>{post?.meta?.title}</h5>
-          <div className='space-y-5 w-full'>{post?.content}</div>
-        </div>
+          </CardHeader>
+          <CardContent>
+            <CardTitle>{post?.meta?.title}</CardTitle>
+            <div className='space-y-5 my-5 w-full'>{post?.content}</div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   )

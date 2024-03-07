@@ -60,6 +60,8 @@ export default function RootLayout({
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GTM}');`}
         </Script>
+
+        <link rel='icon' href='https://github.com/ahmedibra28.png' />
       </head>
       <body className={`${roboto.className}`}>
         <noscript

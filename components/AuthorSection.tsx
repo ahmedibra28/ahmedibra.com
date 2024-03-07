@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import { PostMeta } from '../types'
 import DateTime from '@/lib/dateTime'
+import { Badge } from '@/components/ui/badge'
 
 const AuthorSection = ({ item }: { item: PostMeta }) => {
   return (
@@ -20,23 +21,22 @@ const AuthorSection = ({ item }: { item: PostMeta }) => {
         <div className='ms-2' style={{ fontSize: '80%' }}>
           <label className=''>{item?.author}</label>
           <p className='text-sm'>
-            <small>{DateTime(item?.createdAt).format('MMM D')}</small>
-            <span className='mx-2'>-</span>
+            <small>{DateTime(item?.createdAt).format('MMM D YYYY')}</small>
+            {/* <span className='mx-2'>-</span> */}
             {/* @ts-ignore */}
-            <small>{item?.stats?.text}</small>
+            {/* <small>{item?.stats?.text}</small> */}
             <br />
-            {item?.tags?.map((t) => (
-              <small
-                key={t}
-                className='px-1 py-0.5 rounded-full bg-my-primary ms-1 text-gray-50 text-xs border border-my-primary mr-1'
-              >
-                {t}
-              </small>
-            ))}
+            <div className='hidden md:flex gap-x-1'>
+              {item?.tags?.map((t) => (
+                // @ts-ignore
+                <Badge key={t} variant='outline'>
+                  {t}
+                </Badge>
+              ))}
+            </div>
           </p>
         </div>
       </div>
-      <hr className='my-2' />
     </>
   )
 }
