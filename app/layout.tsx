@@ -62,6 +62,7 @@ export default function RootLayout({
         </Script>
 
         <link rel='icon' href='https://github.com/ahmedibra28.png' />
+        <meta name='google-adsense-account' content='ca-pub-5359776387436359' />
       </head>
       <body className={`${roboto.className}`}>
         <noscript
