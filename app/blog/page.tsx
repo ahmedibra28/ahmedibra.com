@@ -20,16 +20,11 @@ export default async function Page() {
 
   return (
     <div className='my-7 sm:mb-32 container px-4 mx-auto scroll-m-40 lg:max-w-6xl'>
-      <div className='flex flex-row justify-between flex-wrap'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
         {posts?.map((post) => (
-          <div
-            key={post.slug}
-            className='shadow mb-10  md:w-[70%] sm:w-[80%] lg:w-[48%] mx-auto lg:mx-0'
-          >
-            <Link href={`/blog/${post.slug}`}>
-              <PostCard post={post} />
-            </Link>
-          </div>
+          <Link key={post.slug} href={`/blog/${post.slug}`}>
+            <PostCard post={post} />
+          </Link>
         ))}
       </div>
     </div>

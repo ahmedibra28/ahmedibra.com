@@ -51,7 +51,10 @@ const Page = async ({ params }: { params: { slug: string } }) => {
               }}
             />
             <Image
-              src={post?.meta?.image}
+              src={
+                post?.meta?.image ||
+                'https://st3.depositphotos.com/23594922/31822/v/450/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg'
+              }
               quality={100}
               width={1000}
               height={1000}
@@ -61,7 +64,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
           </CardHeader>
           <CardContent>
             <CardTitle>{post?.meta?.title}</CardTitle>
-            <div className='space-y-5 my-5 w-full'>{post?.content}</div>
+            <div className='space-y-5 my-5 w-full prose'>{post?.content}</div>
           </CardContent>
         </Card>
       </div>

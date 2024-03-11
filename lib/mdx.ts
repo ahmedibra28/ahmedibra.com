@@ -1,7 +1,6 @@
 import fs from 'fs'
 import path from 'path'
 import { compileMDX } from 'next-mdx-remote/rsc'
-import readingTime from 'reading-time'
 
 const rootDirectory = path.join(process.cwd(), 'app', 'content')
 
@@ -15,8 +14,6 @@ export const getPostBySlug = async (slug: string) => {
     source: fileContent,
     options: { parseFrontmatter: true },
   })
-
-  // const stats = readingTime(content)
 
   return { meta: { ...frontmatter, slug: realSlug }, content }
 }
