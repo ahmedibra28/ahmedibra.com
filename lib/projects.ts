@@ -34,8 +34,16 @@ export const projects = [
   {
     id: '5',
     title: 'Sahal Book',
-    description: `Comprehensive accounting software for Small and Medium Businesses`,
+    description: `Comprehensive accounting software for Small and Medium Businesses.`,
     image: '/projects/sahalbook.png',
+    new: false,
+    content: `<h1>Heading 1</h1>`,
+  },
+  {
+    id: '6',
+    title: 'Sado Somalia',
+    description: `is an NGO website that empowers communities through compassionate aid and sustainable initiatives.`,
+    image: '/projects/sado-web.png',
     new: false,
     content: `<h1>Heading 1</h1>`,
   },

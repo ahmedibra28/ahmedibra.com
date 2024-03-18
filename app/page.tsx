@@ -26,8 +26,8 @@ export default function Home() {
             not hesitate to contact me.
             <Link href={'/#contact'}>
               <Button
-                variant='default'
-                className='bg-my-primary border-my-primary w-44 rounded-full text-my-secondary hover:text-white'
+                variant='outline'
+                className=' border-my-primary w-44 rounded-full text-my-secondary hover:text-my-primary hover:bg-my-secondary'
               >
                 <FaEnvelope className='mr-2' />
                 Get in touch

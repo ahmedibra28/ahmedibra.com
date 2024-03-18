@@ -1,5 +1,4 @@
 import React from 'react'
-import BlurImage from './BlurImage'
 import { FaAngleRight } from 'react-icons/fa'
 import Link from 'next/link'
 import { projects } from '@/lib/projects'
@@ -26,8 +25,8 @@ export default function Portfolio() {
       <div className='text-center mt-10'>
         <Link href='/portfolio'>
           <Button
-            variant='default'
-            className='bg-white shadow-2xl w-44 rounded-full text-my-secondary hover:text-white'
+            variant='outline'
+            className=' border-my-primary w-44 rounded-full text-my-secondary hover:text-my-primary hover:bg-my-secondary'
           >
             <FaAngleRight />
             <span className='ml-2'>View All Projects</span>

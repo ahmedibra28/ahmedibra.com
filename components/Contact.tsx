@@ -1,7 +1,14 @@
 'use client'
 import { send } from '@/server/Contact'
 import { FormEvent, useState } from 'react'
-import { FaMapMarkedAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
+import {
+  FaMapMarkedAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaSpinner,
+  FaPaperPlane,
+} from 'react-icons/fa'
+import { Button } from './ui/button'
 
 export default function Contact() {
   const [name, setName] = useState<string>('')
@@ -284,12 +291,22 @@ export default function Contact() {
                   {error}
                 </div>
               )}
-              <button
+
+              <Button
                 disabled={loading}
-                className='btn btn-ghost w-56 bg-my-primary text-my-secondary rounded-full py-2 px-8 shadow-lg hover:scale-90 duration-1000'
+                variant='outline'
+                className=' border-my-primary w-44 rounded-full text-my-secondary hover:text-my-primary hover:bg-my-secondary'
               >
-                {loading ? <span>Loading... </span> : <span>Send Message</span>}
-              </button>
+                {loading ? (
+                  <>
+                    <FaSpinner className='animate-spin mr-2' /> Loading...
+                  </>
+                ) : (
+                  <>
+                    <FaPaperPlane className='mr-2' /> Send Message
+                  </>
+                )}
+              </Button>
             </div>
           </div>
         </form>
