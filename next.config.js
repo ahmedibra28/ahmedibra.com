@@ -1,19 +1,9 @@
-import nextMDX from '@next/mdx'
-
-const withMDX = nextMDX({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [],
-    rehypePlugins: [],
-  },
-})
+const { withContentlayer } = require('next-contentlayer')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-  experimental: {
-    mdxRs: true,
-  },
+  reactStrictMode: true,
+  swcMinify: true,
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'ahmedibra.com' },
@@ -28,4 +18,4 @@ const nextConfig = {
   },
 }
 
-export default withMDX(nextConfig)
+module.exports = withContentlayer(nextConfig)

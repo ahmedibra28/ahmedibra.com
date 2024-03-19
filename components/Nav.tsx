@@ -3,21 +3,15 @@
 import React, { Fragment } from 'react'
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuPortal,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { FaBars, FaGithub, FaLinkedinIn } from 'react-icons/fa'
@@ -36,8 +30,8 @@ export default function Navigation() {
       link: '/#portfolio',
     },
     {
-      title: 'Blog',
-      link: '/blog',
+      title: 'Posts',
+      link: '/posts',
     },
     {
       title: 'Contact',

@@ -1,8 +1,6 @@
-import AuthorSection from '@/components/AuthorSection'
 import Meta from '@/components/Meta'
 import { projects } from '@/lib/projects'
 import React from 'react'
-import readingTime from 'reading-time'
 
 const getPageContent = async (id: string) => {
   const meta = projects.find((item) => item.id === id)
@@ -48,17 +46,6 @@ export default async function Page({ params }: { params: { id: string } }) {
     <div className='mb-20 sm:mb-32 mx-auto scroll-m-40 max-w-6xl'>
       <div className='max-w-6xl mx-auto'>
         <div className='card w-full md:w-[80%] mx-auto'>
-          <AuthorSection
-            item={{
-              author: 'Ahmed Ibrahim',
-              avatar: 'https://github.com/ahmedibra28.png',
-              tags: ['Client Project'],
-              createdAt: '2021-08-01',
-              // @ts-ignore
-              stats: readingTime(project?.meta?.content),
-            }}
-          />
-
           <div className='card-body bg-white p-4'>
             <h5 className='font-bold text-2xl mb-3'>{project?.meta?.title}</h5>
             <div className='space-y-5 w-full'>{project?.meta?.description}</div>

@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import React from 'react'
-import { PostMeta } from '../types'
 import {
   Card,
   CardContent,
@@ -10,8 +9,9 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import DateTime from '@/lib/dateTime'
+import { Post } from '@/.contentlayer/generated'
 
-const PostCard = ({ post }: { post: PostMeta }) => {
+const PostCard = ({ post }: { post: Post }) => {
   return (
     <>
       <Card>
@@ -36,8 +36,8 @@ const PostCard = ({ post }: { post: PostMeta }) => {
             {post?.excerpt}
           </CardDescription>
         </CardContent>
-        <CardFooter>
-          <CardDescription>
+        <CardFooter className='flex justify-end'>
+          <CardDescription className='text-xs'>
             {DateTime(post?.createdAt).format('MMM D YYYY')}
           </CardDescription>
         </CardFooter>
