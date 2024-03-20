@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/card'
 import DateTime from '@/lib/dateTime'
 import { Post } from '@/.contentlayer/generated'
+import { url } from '@/lib/url'
 
 const PostCard = ({ post }: { post: Post }) => {
   return (
@@ -17,10 +18,7 @@ const PostCard = ({ post }: { post: Post }) => {
       <Card>
         <CardHeader>
           <Image
-            src={
-              post?.image ||
-              'https://st3.depositphotos.com/23594922/31822/v/450/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg'
-            }
+            src={url + post?.image}
             width={1000}
             height={1000}
             quality={100}

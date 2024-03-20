@@ -17,7 +17,9 @@ const Meta = ({
 }: Props) => {
   const url = `https://ahmedibra.com${asPath}`
   const image = outsideImage
-    ? `https://ahmedibra.com${outsideImage}`
+    ? outsideImage.startsWith('http')
+      ? outsideImage
+      : `https://ahmedibra.com${outsideImage}`
     : `https://github.com/ahmedibra28.png`
 
   return {

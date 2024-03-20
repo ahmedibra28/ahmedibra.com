@@ -6,6 +6,7 @@ import { Mdx } from '@/components/mdx-components'
 import Image from 'next/image'
 import Meta from '@/components/Meta'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { url } from '@/lib/url'
 
 interface PostProps {
   params: {
@@ -36,7 +37,7 @@ export async function generateMetadata({ params }: PostProps): Promise<any> {
       title: post?.title,
       description: post?.excerpt,
       keyword: post?.keyword,
-      image: post?.image,
+      image: url + post?.image,
     }),
   }
 }
@@ -59,10 +60,7 @@ export default async function PostPage({ params }: PostProps) {
       <Card className='mb-3 border-none'>
         <CardHeader className='py-0 my-0'>
           <Image
-            src={
-              post?.image ||
-              'https://st3.depositphotos.com/23594922/31822/v/450/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg'
-            }
+            src={url + post?.image}
             quality={100}
             width={1000}
             height={1000}

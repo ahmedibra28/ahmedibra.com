@@ -15,6 +15,7 @@ const nextConfig = {
       { protocol: 'https', hostname: 'images.pexels.com' },
       { protocol: 'https', hostname: 'st3.depositphotos.com' },
       { protocol: 'https', hostname: 'i.ibb.co' },
+      { protocol: 'https', hostname: 'pub-0644e55b2b3c44eaa5275d507f491d9d.r2.dev' },
     ],
   },
 }
