@@ -3,11 +3,6 @@ import BlurImage from './BlurImage'
 
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 
-const baseDomain =
-  process.env.NODE_ENV === 'development'
-    ? 'http://localhost:3000'
-    : 'https://ahmedibra.com'
-
 export default function ProjectCard({
   item,
 }: {
@@ -18,7 +13,7 @@ export default function ProjectCard({
       <Card className='w-full md:w-[40%] shadow-lg bg-white mx-auto border-none'>
         <CardHeader>
           <BlurImage
-            src={baseDomain + item.image}
+            src={item.image}
             alt={item.title}
             width={2000}
             height={1000}

@@ -15,7 +15,7 @@ export const metadata = {
 
 export default async function Page() {
   return (
-    <div className='mb-20 sm:mb-32 mx-auto scroll-m-32 max-w-6xl'>
+    <div className='mb-20 sm:mb-32 mx-auto scroll-m-32 max-w-6xl mt-5'>
       <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase mb-4 mt-5 sm:mt-0 text-my-secondary'>
         Projects
       </h2>
