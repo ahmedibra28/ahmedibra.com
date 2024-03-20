@@ -62,7 +62,7 @@ export default function Navigation() {
   }
 
   return (
-    <nav className='border-b border-x-0 border-t-0 mb-10 py-4 sticky top-0 bg-white z-50'>
+    <nav className='border-b border-x-0 border-t-0 py-4 sticky top-0 bg-white z-50'>
       <div className='container flex min-h-20 lg:flex-col gap-y-2 items-center justify-between'>
         <Link href={'/'} aria-label='Home'>
           <Avatar className='size-16'>

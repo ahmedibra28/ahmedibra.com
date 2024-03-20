@@ -55,9 +55,9 @@ export default async function PostPage({ params }: PostProps) {
   }
 
   return (
-    <article className='prose dark:prose-invert max-w-screen-lg mx-auto'>
+    <article className='prose dark:prose-invert max-w-screen-md mx-auto'>
       <Card className='mb-3 border-none'>
-        <CardHeader className='py-0'>
+        <CardHeader className='py-0 my-0'>
           <Image
             src={
               post?.image ||
@@ -71,7 +71,7 @@ export default async function PostPage({ params }: PostProps) {
           />
         </CardHeader>
         <CardContent>
-          <CardTitle>{post?.title}</CardTitle>
+          <CardTitle className='my-0'>{post?.title}</CardTitle>
 
           <div className='my-5'>
             <Mdx code={post.body.code} />

@@ -3,6 +3,8 @@ import { allPosts } from '@/.contentlayer/generated'
 import Link from 'next/link'
 import PostCard from '@/components/PostCard'
 import Meta from '@/components/Meta'
+import { sortByDate } from '@/lib'
+// import { sortByDate } from '@/lib'
 
 export const metadata = {
   ...Meta({
@@ -15,7 +17,7 @@ export const metadata = {
   }),
 }
 export default async function Page() {
-  const posts = allPosts
+  const posts = allPosts.sort(sortByDate)
 
   return (
     <div className='my-7 sm:mb-32 container px-4 mx-auto scroll-m-40 lg:max-w-6xl'>
