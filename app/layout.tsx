@@ -64,7 +64,7 @@ export default function RootLayout({
         <link rel='icon' href='https://github.com/ahmedibra28.png' />
         <meta name='google-adsense-account' content='ca-pub-5359776387436359' />
       </head>
-      <body className={`${roboto.className}`}>
+      <body className={`${roboto.className} bg-white text-gray-700`}>
         <noscript
           dangerouslySetInnerHTML={{
             __html: `<iframe
@@ -79,11 +79,6 @@ export default function RootLayout({
           <Nav />
           {children}
           <Analytics />
-        </div>
-
-        <div className='flex flex-row h-screen fixed top-0 left-0 right-0 -z-50'>
-          <div className='w-1/2'></div>
-          <div className='w-1/2 bg-my-primarys'></div>
         </div>
       </body>
     </html>
