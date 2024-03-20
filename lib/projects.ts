@@ -45,7 +45,7 @@ export const projects = [
     id: '6',
     title: 'Sado Somalia',
     description: `is an NGO website that empowers communities through compassionate aid and sustainable initiatives.`,
-    image: '/projects/sado-web.png',
+    image: url + '/projects/sado-web.png',
     new: false,
     content: `<h1>Heading 1</h1>`,
   },
