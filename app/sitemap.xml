@@ -6,31 +6,31 @@
       <priority>0.7</priority>
     </url>
     <url>
-      <loc>https://ahmedibra.com/about</loc>
-      <lastmod>2023-04-07T10:23:22.119Z</lastmod>
+      <loc>https://ahmedibra.com/coming-soon</loc>
+      <lastmod>2024-03-20T8:23:22.119Z</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.7</priority>
     </url>
     <url>
-      <loc>https://ahmedibra.com/blog</loc>
+      <loc>https://ahmedibra.com/posts</loc>
       <lastmod>2023-04-08T10:43:33.119Z</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.7</priority>
     </url>
     <url>
-      <loc>https://ahmedibra.com/blog/my-journey-towards-becoming-a-full-stack-developer-a-guide-for-aspiring-developers</loc>
+      <loc>https://ahmedibra.com/posts/my-journey-towards-becoming-a-full-stack-developer-a-guide-for-aspiring-developers</loc>
       <lastmod>2023-04-09T10:14:22.119Z</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.7</priority>
     </url>
     <url>
-      <loc>https://ahmedibra.com/blog/how-to-stay-up-to-date-with-web-design-trends</loc>
+      <loc>https://ahmedibra.com/posts/how-to-stay-up-to-date-with-web-design-trends</loc>
       <lastmod>2023-04-14T13:49:00.119Z</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.7</priority>
     </url>
     <url>
-      <loc>https://ahmedibra.com/blog/learning-golang-as-a-complementary-language-for-web-development-my-experience-as-a-full-stack-developer</loc>
+      <loc>https://ahmedibra.com/posts/learning-golang-as-a-complementary-language-for-web-development-my-experience-as-a-full-stack-developer</loc>
       <lastmod>2023-05-29T09:11:15.119Z</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.7</priority>
