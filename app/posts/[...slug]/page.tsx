@@ -68,6 +68,7 @@ export default async function PostPage({ params }: PostProps) {
             height={1000}
             alt={post?.title}
             className='w-full object-cover rounded'
+            unoptimized
           />
         </CardHeader>
         <CardContent>

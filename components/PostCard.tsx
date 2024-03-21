@@ -24,6 +24,7 @@ const PostCard = ({ post }: { post: Post }) => {
             quality={100}
             alt={post?.title}
             className='object-cover rounded h-44'
+            unoptimized
           />
         </CardHeader>
         <CardContent>
