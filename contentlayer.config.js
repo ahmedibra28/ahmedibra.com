@@ -27,6 +27,9 @@ export const Page = defineDocumentType(() => ({
     description: {
       type: "string",
     },
+    image: {
+      type: "string",
+    },
   },
   computedFields,
 }))
@@ -39,7 +42,7 @@ export const Post = defineDocumentType(() => ({
     title: { type: "string", required: true },
     tags: { type: "list", of: { type: "string" } },
     image: { type: "string", required: true },
-    keyword: { type: "string", required: true },
+    keywords: { type: "string", required: true },
     author: { type: "string", required: true },
     avatar: { type: "string", required: true },
     excerpt: { type: "string", required: true },

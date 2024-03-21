@@ -4,9 +4,10 @@ import { allPosts } from 'contentlayer/generated'
 import { Mdx } from '@/components/mdx-components'
 
 import Image from 'next/image'
-import Meta from '@/components/Meta'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { url } from '@/lib/url'
+import { BASE_URL } from '@/lib/constants'
+import { Metadata } from 'next'
+import meta from '@/lib/meta'
 
 interface PostProps {
   params: {
@@ -25,21 +26,22 @@ async function getPostFromParams(params: PostProps['params']) {
   return post
 }
 
-export async function generateMetadata({ params }: PostProps): Promise<any> {
+export async function generateMetadata({
+  params,
+}: PostProps): Promise<Metadata> {
   const post = await getPostFromParams(params)
 
   if (!post) {
     return {}
   }
 
-  return {
-    ...Meta({
-      title: post?.title,
-      description: post?.excerpt,
-      keyword: post?.keyword,
-      image: url + post?.image,
-    }),
-  }
+  return meta({
+    title: post.title,
+    description: post.excerpt,
+    openGraphImage: BASE_URL + post.image,
+    keywords: post.keywords,
+    author: post.author,
+  })
 }
 
 export async function generateStaticParams(): Promise<PostProps['params'][]> {
@@ -60,7 +62,7 @@ export default async function PostPage({ params }: PostProps) {
       <Card className='mb-3 border-none'>
         <CardHeader className='py-0 my-0'>
           <Image
-            src={url + post?.image}
+            src={BASE_URL + post?.image}
             quality={100}
             width={1000}
             height={1000}

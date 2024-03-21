@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import { allPages } from 'contentlayer/generated'
 
 import { Mdx } from '@/components/mdx-components'
+import meta from '@/lib/meta'
 
 interface PageProps {
   params: {
@@ -30,10 +31,11 @@ export async function generateMetadata({
     return {}
   }
 
-  return {
+  return meta({
     title: page.title,
-    description: page.description,
-  }
+    description: page.description || '',
+    openGraphImage: page?.image || 'https://github.com/ahmedibra28.png',
+  })
 }
 
 export async function generateStaticParams(): Promise<PageProps['params'][]> {

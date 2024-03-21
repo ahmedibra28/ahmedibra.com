@@ -2,63 +2,63 @@
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 import BlurImage from './BlurImage'
-import { url } from '@/lib/url'
+import { BASE_URL } from '@/lib/constants'
 
 const clients: { _id: string; name: string; logo: string }[] = [
   {
     _id: '1',
     name: 'Yardimeli Hospital',
-    logo: url + '/clients/yardimeli.png',
+    logo: BASE_URL + '/clients/yardimeli.png',
   },
   {
     _id: '2',
     name: 'CeRID Org.',
-    logo: url + '/clients/cerid.png',
+    logo: BASE_URL + '/clients/cerid.png',
   },
   {
     _id: '3',
     name: 'Farshaxan Media',
-    logo: url + '/clients/farshaxan.png',
+    logo: BASE_URL + '/clients/farshaxan.png',
   },
   {
     _id: '4',
     name: 'SaMTEC College',
-    logo: url + '/clients/samtec.png',
+    logo: BASE_URL + '/clients/samtec.png',
   },
   {
     _id: '5',
     name: 'Valleyseed Enterprise',
-    logo: url + '/clients/valleyseed.png',
+    logo: BASE_URL + '/clients/valleyseed.png',
   },
   {
     _id: '6',
     name: 'WIRDO Org.',
-    logo: url + '/clients/wirdo.png',
+    logo: BASE_URL + '/clients/wirdo.png',
   },
   {
     _id: '7',
     name: 'Ligo Medical',
-    logo: url + '/clients/ligo.png',
+    logo: BASE_URL + '/clients/ligo.png',
   },
   {
     _id: '8',
     name: 'Mamos Business',
-    logo: url + '/clients/mamos.png',
+    logo: BASE_URL + '/clients/mamos.png',
   },
   {
     _id: '9',
     name: 'SADO Org.',
-    logo: url + '/clients/sado.png',
+    logo: BASE_URL + '/clients/sado.png',
   },
   {
     _id: '10',
     name: 'Wadaag',
-    logo: url + '/clients/wadaag.png',
+    logo: BASE_URL + '/clients/wadaag.png',
   },
   {
     _id: '11',
     name: 'eBallan',
-    logo: url + '/clients/eballan.png',
+    logo: BASE_URL + '/clients/eballan.png',
   },
 ]
 

@@ -1,19 +1,21 @@
-import Meta from '@/components/Meta'
 import './globals.css'
 import { Roboto } from 'next/font/google'
 import Nav from '@/components/Nav'
 import { Viewport } from 'next'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react'
+import meta from '@/lib/meta'
 
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['100', '300', '400', '500', '700', '900'],
 })
 
-export const metadata = {
-  ...Meta({}),
-}
+export const metadata = meta({
+  title: 'Full-Stack Developer In Somalia | Ahmed Ibrahim',
+  description: `I'm a Full Stack Developer with 5+ years of experience in designing and developing user interfaces, testing, debugging, and training staff within modern technologies. Proven ability in optimizing web and mobile functionalities that improve data retrieval and workflow efficiencies.`,
+  openGraphImage: 'https://github.com/ahmedibra28.png',
+})
 
 export const viewport: Viewport = {
   themeColor: 'white',
