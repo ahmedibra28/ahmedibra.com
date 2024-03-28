@@ -35,6 +35,7 @@ export async function generateMetadata({
     title: page.title,
     description: page.description || '',
     openGraphImage: page?.image || 'https://github.com/ahmedibra28.png',
+    canonical: `/pages/` + page.slugAsParams,
   })
 }
 

@@ -41,6 +41,7 @@ export async function generateMetadata({
     openGraphImage: BASE_URL + post.image,
     keywords: post.keywords,
     author: post.author,
+    canonical: `/posts/` + post.slugAsParams,
   })
 }
 

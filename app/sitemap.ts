@@ -5,9 +5,11 @@ import { MetadataRoute } from 'next'
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = allPosts.sort(sortByDate)
 
+  const baseUrl = 'https://ahmedibra.com'
+
   const postEntries: MetadataRoute.Sitemap = posts.map(
     ({ slug, createdAt }) => ({
-      url: `https://ahmedibra.com${slug}`,
+      url: `${baseUrl}${slug}`,
       lastModified: new Date(createdAt),
       changeFrequency: 'daily',
       priority: 0.7,
@@ -16,16 +18,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticEntries: MetadataRoute.Sitemap = [
     {
-      url: `https://ahmedibra.com`,
+      url: `${baseUrl}`,
       lastModified: new Date('2024-03-01'),
-      changeFrequency: 'weekly',
-      priority: 0.5,
+      changeFrequency: 'daily',
+      priority: 0.7,
     },
     {
-      url: `https://ahmedibra.com/posts`,
+      url: `${baseUrl}/posts`,
       lastModified: new Date(posts[0]?.createdAt),
       changeFrequency: 'daily',
       priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/resume.pdf`,
+      lastModified: new Date('2024-02-15'),
+      changeFrequency: 'weekly',
+      priority: 0.5,
     },
   ]
 

@@ -11,6 +11,7 @@ export const metadata = meta({
   `,
   openGraphImage: 'https://github.com/ahmedibra28.png',
   keywords: `All posts, Ahmed Ibrahim, full-stack developer, web development, cloud hosting, mobile apps, journey, insights, inspiration, HTML, CSS, JavaScript, React.js, Node.js, MongoDB, Django, Bootstrap, AWS, DigitalOcean, Google Cloud, Linode, React Native, Wadaag App, ride-sharing app, Somalia`,
+  canonical: `/posts`,
 })
 export default async function Page() {
   const posts = allPosts.sort(sortByDate)

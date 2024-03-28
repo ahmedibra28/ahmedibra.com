@@ -8,6 +8,7 @@ export const metadata = meta({
   description: `Browse through all the projects built by Ahmed Ibrahim, a full-stack developer with years of experience. From web development to cloud hosting and mobile apps, find inspiration and valuable insights from his journey.`,
   keywords: `All projects, Ahmed Ibrahim, full-stack developer, web development, cloud hosting, mobile apps, journey, insights, inspiration, HTML, CSS, JavaScript, React.js, Node.js, MongoDB, Django, Bootstrap, AWS, DigitalOcean, Google Cloud, Linode, React Native, Wadaag App, ride-sharing app, Somalia`,
   openGraphImage: 'https://github.com/ahmedibra28.png',
+  canonical: `/portfolio`,
 })
 
 export default async function Page() {

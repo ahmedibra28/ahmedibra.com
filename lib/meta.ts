@@ -5,6 +5,7 @@ interface Props {
   description: string
   openGraphImage: string
   author?: string
+  canonical?: string
 }
 
 const domain = 'https://ahmedibra.com'
@@ -38,7 +39,7 @@ export default function meta({
       'max-snippet': -1,
     },
     alternates: {
-      canonical: '/',
+      canonical: props?.canonical || '/',
       languages: {
         'en-US': '/en-US',
       },
