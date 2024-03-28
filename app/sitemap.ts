@@ -30,6 +30,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/portfolio`,
+      lastModified: new Date('2024-03-28'),
+      changeFrequency: 'weekly',
+      priority: 0.5,
+    },
+    {
       url: `${baseUrl}/resume.pdf`,
       lastModified: new Date('2024-02-15'),
       changeFrequency: 'weekly',
