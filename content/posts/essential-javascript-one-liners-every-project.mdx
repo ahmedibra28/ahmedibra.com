@@ -1,0 +1,253 @@
+---
+    title: "10 Essential JavaScript One-Liners for Every Project"
+    tags: 
+    - 'javascript' 
+    - 'programming' 
+    - 'development' 
+    - 'code snippets' 
+    - 'one-liners'
+    image: "/10-javascript.png"
+    keywords: "javaScript, concise code, one-liners, programming, development, essential, projects, efficiency, productivity, code optimization, ahmedibra, full stack developer, somalia, mogadishu, news, blog"
+    excerpt: "JavaScript is a powerful language that can achieve a lot with just a few lines of code. Sometimes, you can get the job done in just one line, and these are called one-liners. Here are ten essential one-liners that you should consider using in your projects."
+    author: "Ahmed Ibrahim"
+    avatar: "https://github.com/ahmedibra28.png"
+    createdAt: "2024-04-11"
+---
+
+JavaScript is a strong language that can accomplish many tasks with minimal code.
+
+Sometimes, you only need to write a single line of code, and these are called one-liners.
+
+Here, we will explore 10 important one-liners that are valuable for almost any JavaScript project you work on.
+
+### 1. Capitalizing Text
+
+```js
+const capitalize = (str) => `${str.charAt(0).toUpperCase()}${str.slice(1)}`
+```
+
+Capitalizing text is not a built-in feature in JavaScript. However, you can create a `capitalize` function that accepts a string as input and returns the string with the first letter capitalized. This one-liner effectively accomplishes that by taking the first character of the string, converting it to uppercase, and then appending the rest of the string using the `slice` method.
+
+This function is particularly useful when you need to capitalize text for various purposes, such as displaying users' names or formatting titles.
+
+Example usage:
+
+```js
+const name = 'ahmed'
+
+capitalize(name) // "Ahmed";
+```
+
+In the given example, the `capitalize` function is used to capitalize the name "robert," resulting in "Robert."
+
+By utilizing `capitalize`, you can easily ensure that the first letter of a string is capitalized, providing a consistent and visually appealing format for your text.
+
+### 2. Calculating Percentages
+
+```javascript
+const calculatePercent = (value, total) => Math.round((value / total) * 100)
+```
+
+Calculating percentages involves simple mathematical operations. It is often used to determine progress or display information related to proportions.
+
+The `calculatePercent` function takes two parameters: `value` and `total`. It divides the `value` by the `total`, multiplies the result by 100, and then rounds it to the nearest whole number using `Math.round()`.
+
+Example usage:
+
+```javascript
+const questionsCorrect = 6
+const questionsTotal = 11
+
+calculatePercent(questionsCorrect, questionsTotal) // 55
+```
+
+In the provided example, the `calculatePercent` function is used to calculate the percentage of correct answers out of a total of 11 questions. The result is rounded to the nearest whole number, resulting in 55%.
+
+By utilizing `calculatePercent`, you can easily determine the percentage value of a particular quantity in relation to a total, providing valuable information for progress tracking or displaying proportions.
+
+### 3. Getting a Random Element
+
+```javascript
+const getRandomItem = (items) => items[Math.floor(Math.random() * items.length)]
+```
+
+Obtaining a random element from an array can be useful in scenarios where you want to provide unique or varied content to your users.
+
+The `getRandomItem` function utilizes the `Math.random()` function, which generates a random decimal value between 0 and 1. This value is then multiplied by the length of the provided array (`items.length`) to obtain a random index. The corresponding element at that index is then returned.
+
+Example usage:
+
+```javascript
+const items = ['Nicely done!', 'Good job!', 'Good work!', 'Correct!']
+
+getRandomItem(items) // "Good job!"
+```
+
+In the given example, the `getRandomItem` function is used to retrieve a random congratulatory message from the `items` array. Each time the function is called, it returns a different randomly selected message.
+
+By employing `getRandomItem`, you can dynamically present users with unique and engaging content, ensuring a more personalized and enjoyable experience.
+
+### 4. Removing Duplicate Elements
+
+```js
+const removeDuplicates = (arr) => [...new Set(arr)]
+```
+
+Removing duplicate values from an array is a common task in JavaScript to ensure data uniqueness or eliminate redundancy.
+
+The `removeDuplicates` function utilizes the `Set` constructor, which automatically eliminates duplicate primitive values. By creating a new `Set` instance from the array and spreading its values into a new array using the spread operator `...`, we obtain an array with the duplicate values removed.
+
+Example usage:
+
+```js
+const friendList = ['Jeff', 'Jane', 'Jane', 'Rob']
+
+removeDuplicates(friendList) // ['Jeff', 'Jane', 'Rob']
+```
+
+In the provided example, the `removeDuplicates` function is used to remove duplicate names from the `friendList` array. The resulting array contains unique names without any duplicates.
+
+By employing `removeDuplicates`, you can easily ensure the uniqueness of values within an array, preventing redundancy and maintaining clean data structures.
+
+### 5. Sorting Elements by a Specific Property
+
+```js
+const sortBy = (arr, key) =>
+  arr.sort((a, b) => (a[key] > b[key] ? 1 : a[key] < b[key] ? -1 : 0))
+```
+
+Sorting elements in an array based on a specific property is frequently required when displaying or organizing data.
+
+The `sortBy` function uses the native `sort` method available on arrays. It compares the elements in the array by the provided `key` and sorts the array in ascending order based on that property.
+
+Example usage:
+
+```js
+const lessons = [
+  { position: 1, name: 'Intro' },
+  { position: 0, name: 'Basics' },
+]
+
+sortBy(lessons, 'position')
+// Sorts the array based on the 'position' property:
+// {position: 0, name: 'Basics'},
+// {position: 1, name: 'Intro'}
+```
+
+In the given example, the `sortBy` function is used to sort the `lessons` array based on the 'position' property. The resulting array is ordered in ascending order according to the 'position' values.
+
+By utilizing `sortBy`, you can easily organize and display data in a specific order based on a chosen property, ensuring proper arrangement and clarity.
+
+### 6. Checking Equality of Arrays/Objects
+
+```js
+const isEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b)
+```
+
+While it's straightforward to check equality with JavaScript primitives like numbers and strings, determining equality between arrays and objects can be more challenging. Luckily, there's a clever trick you can employ using `JSON.stringify` to convert arrays or objects into JSON strings. If all the elements match, the `isEqual` function will return `true`.
+
+This approach proves very useful when dealing with multiple inputs from a user, such as when comparing their answers to the correct solution for a question.
+
+Example usage:
+
+```js
+isEqual([1, '2'], [1, 2]) // false
+isEqual([1, 2], [1, 2]) // true
+```
+
+With `isEqual`, you can easily check if two arrays or objects have the same elements, providing a convenient way to validate user inputs or perform equality checks in your JavaScript projects.
+
+### 7. Counting Number of Occurrences
+
+```js
+const countOccurrences = (arr, value) =>
+  arr.reduce((a, v) => (v === value ? a + 1 : a), 0)
+```
+
+Another handy one-liner for arrays is counting the number of occurrences of a specific element. This function utilizes the `reduce()` method. It iterates over each element in the array and increments a counter by one whenever the element matches the value being counted.
+
+An example use case could be a poll where you want to determine the most popular response.
+
+```js
+const pollResponses = ['Yes', 'Yes', 'No']
+const response = 'Yes'
+
+countOccurrences(pollResponses, response) // 2
+```
+
+By using `countOccurrences`, you can easily determine the frequency of a particular element in an array. This can be valuable for various scenarios, such as analyzing survey responses, vote counts, or any situation where you need to keep track of occurrences.
+
+### 8. Delaying Execution for a Specified Time
+
+```js
+const wait = async (milliseconds) =>
+  new Promise((resolve) => setTimeout(resolve, milliseconds))
+```
+
+In certain cases within your application, you may need to introduce a delay or wait for a specific period of time. For instance, you might want to pause an animation or wait for a critical operation to complete.
+
+The `wait` function allows you to specify the desired duration in milliseconds. By utilizing a promise and the `setTimeout` function, the execution is delayed for the given time. You can then use the `then` callback or the `await` keyword to ensure that the wait operation has finished before proceeding with subsequent actions.
+
+Example usage:
+
+```js
+wait(2000).then(() => goToSignupPage())
+```
+
+In this example, the `wait` function introduces a delay of 2000 milliseconds (2 seconds) before invoking the `goToSignupPage` function.
+
+By employing `wait`, you can control the timing and flow of your JavaScript code, ensuring that certain actions occur after a specific period of time has elapsed.
+
+### 9. Extracting Property Values from an Array of Objects
+
+```js
+const pluck = (objs, key) => objs.map((obj) => obj[key])
+```
+
+When you need to extract specific data from an array of objects and are only interested in obtaining values for a particular property, you can utilize the `pluck` function.
+
+This function accepts an array of objects (`objs`) and a property key (`key`) that exists within each object. It employs the `map` method to iterate over the array and retrieve the values of the specified property, creating a new array containing only those values.
+
+For instance, if you have an array of user data and want to extract only their names into a separate array, `pluck` can assist you in achieving this.
+
+```js
+const users = [
+  { name: 'Abe', age: 45 },
+  { name: 'Jennifer', age: 27 },
+]
+
+pluck(users, 'name') // ['Abe', 'Jennifer']
+```
+
+In the example above, the `pluck` function is used to extract the 'name' property values from the 'users' array, resulting in a new array containing only the names of the users.
+
+By employing `pluck`, you can easily extract specific property values from an array of objects, enabling you to manipulate or utilize that data in a more focused manner.
+
+### 10. Inserting an Element at a Specific Position
+
+```js
+const insert = (arr, index, newItem) => [
+  ...arr.slice(0, index),
+  newItem,
+  ...arr.slice(index),
+]
+```
+
+When you need to insert an element at a precise location within an array, you can employ the `insert` function provided.
+
+To use this function, you need to pass three arguments: the array you wish to modify, the index at which you want to insert the element, and the element itself.
+
+This function is a useful alternative to using the `.splice()` method because it does not mutate the original array. Instead, it creates a new array by utilizing the `slice` method. The array is divided into two parts around the specified index, and the new element is inserted between them.
+
+Example usage:
+
+```js
+const items = [1, 2, 4, 5]
+
+// Insert the number 3 at index 2:
+insert(items, 2, 3) // [1, 2, 3, 4, 5]
+```
+
+In the given example, the `insert` function is used to insert the number 3 at index 2 in the `items` array. The resulting array contains the inserted element at the specified position.
+
+By utilizing `insert`, you can easily add elements to specific positions in an array without mutating the original array, providing a clean and non-destructive approach.
