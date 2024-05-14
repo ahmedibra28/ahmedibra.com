@@ -10,7 +10,7 @@ export default function ProjectCard({
 }) {
   return (
     <>
-      <Card className='w-full md:w-[40%] shadow-lg bg-white mx-auto border-none'>
+      <Card className='w-full md:w-[40%] shadow-lg mx-auto'>
         <CardHeader>
           <BlurImage
             src={item.image}
@@ -21,7 +21,7 @@ export default function ProjectCard({
           />
         </CardHeader>
         <CardContent>
-          <p className='text-gray-600'>
+          <p className=''>
             <span className='font-bold'>{item.title}</span> {item.description}
           </p>
         </CardContent>

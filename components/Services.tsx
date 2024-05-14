@@ -73,7 +73,7 @@ export default function Services() {
       className='mb-20 sm:mb-32 container px-4 mx-auto scroll-m-40'
       id='services'
     >
-      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase mb-4 mt-5 sm:mt-0 text-my-secondary'>
+      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase mb-4 mt-5 sm:mt-0'>
         Available Services
       </h2>
 
@@ -81,7 +81,7 @@ export default function Services() {
         {services.map((service, i) => (
           <div
             key={i}
-            className='border border-my-primary sm:border-0 shadow-sm hover:shadow-lg hover:shadow-white shadow-my-primary rounded-2xl sm:w-[30%] m-3 w-full duration-1000 bg-white'
+            className='border border-my-primary sm:border-0 shadow-sm hover:shadow-lg hover:shadow-white shadow-my-primary rounded-2xl sm:w-[30%] m-3 w-full duration-1000'
           >
             <div className='mx-auto w-14 h-14 rounded-full flex justify-center items-center border-2 border-my-primary border-t-0 border-l-0 border-r-0 mt-2 shadow-3xl'>
               {service?.icon}

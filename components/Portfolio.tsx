@@ -11,7 +11,7 @@ export default function Portfolio() {
       className='mb-20 sm:mb-32 container px-4 mx-auto scroll-m-40'
       id='portfolio'
     >
-      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase mb-4 mt-5 sm:mt-0 text-my-secondary'>
+      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase mb-4 mt-5 sm:mt-0'>
         Recent Projects
       </h2>
 
@@ -26,7 +26,7 @@ export default function Portfolio() {
         <Link href='/portfolio'>
           <Button
             variant='outline'
-            className=' border-my-primary w-44 rounded-full text-my-secondary hover:text-my-primary hover:bg-my-secondary'
+            className=' border-my-primary w-44 rounded-full  hover:text-my-primary hover:bg-my-secondary'
           >
             <FaAngleRight />
             <span className='ml-2'>View All Projects</span>

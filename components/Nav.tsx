@@ -18,6 +18,7 @@ import { FaBars, FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 import Link from 'next/link'
+import { ModeToggle } from '@/components/mode-toggle'
 
 export default function Navigation() {
   const items: { title: string; link: string }[] = [
@@ -62,7 +63,7 @@ export default function Navigation() {
   }
 
   return (
-    <nav className='border-b border-x-0 border-t-0 py-4 sticky top-0 bg-white z-50'>
+    <nav className='border-b border-x-0 border-t-0 py-4 sticky top-0 z-50 dark:bg-[#020817] bg-white'>
       <div className='container flex min-h-20 lg:flex-col gap-y-2 items-center justify-between'>
         <Link href={'/'} aria-label='Home'>
           <Avatar className='size-16'>
@@ -73,7 +74,12 @@ export default function Navigation() {
 
         <Fragment>
           {/* for mobile and tab */}
-          <div className='lg:hidden'>
+          <div className='lg:hidden grid grid-cols-2 gap-x-2'>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <ModeToggle />
+              </NavigationMenuList>
+            </NavigationMenu>
             <DropdownMenu>
               <DropdownMenuTrigger
                 aria-label='Open'
@@ -111,6 +117,11 @@ export default function Navigation() {
 
           {/* for large screen */}
           <div className='hidden flex-row gap-x-1 lg:flex'>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <ModeToggle />
+              </NavigationMenuList>
+            </NavigationMenu>
             <NavigationMenu>
               <NavigationMenuList>{renderItems()}</NavigationMenuList>
             </NavigationMenu>

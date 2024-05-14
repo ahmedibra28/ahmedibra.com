@@ -124,7 +124,7 @@ export default function Contact() {
       className='sm:mb-32 container px-4 mx-auto scroll-m-40 w-full sm:w-4/5 lg:w-[65%]'
       id='contact'
     >
-      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase  mb-4 mt-5 sm:mt-0 text-my-secondary'>
+      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase  mb-4 mt-5 sm:mt-0'>
         Get in touch!
       </h2>
       <p className='text-center py-2'>
@@ -135,11 +135,11 @@ export default function Contact() {
         <div className='flex flex-wrap flex-col items-center sm:flex-row flex-grow justify-between mx-auto'>
           {[
             {
-              icon: <FaMapMarkedAlt className='text-4xl text-my-secondary' />,
+              icon: <FaMapMarkedAlt className='text-4xl' />,
               title: <span className=''>Makka al mukarramah</span>,
             },
             {
-              icon: <FaPhoneAlt className='text-4xl text-my-secondary' />,
+              icon: <FaPhoneAlt className='text-4xl' />,
               title: (
                 <a className='' href='tel:+252615301507'>
                   +252 (0) 61 530 1507
@@ -147,7 +147,7 @@ export default function Contact() {
               ),
             },
             {
-              icon: <FaEnvelope className='text-4xl text-my-secondary' />,
+              icon: <FaEnvelope className='text-4xl' />,
               title: (
                 <a className='' href='mailto:info@ahmedibra.com'>
                   info@ahmedibra.com
@@ -157,7 +157,7 @@ export default function Contact() {
           ].map((item, i) => (
             <div
               key={i}
-              className='flex flex-wrap flex-col justify-center items-center shadow shadow-my-primary hover:shadow-xl hover:shadow-my-primary w-4/5 sm:w-[80%] md:w-[32%] p-4 m-5 md:m-0 mx-auto bg-white rounded-lg duration-1000'
+              className='flex flex-wrap flex-col justify-center items-center shadow shadow-my-primary hover:shadow-xl hover:shadow-my-primary w-4/5 sm:w-[80%] md:w-[32%] p-4 m-5 md:m-0 mx-auto rounded-lg duration-1000'
             >
               <div className='card-img-top'>{item.icon}</div>
               <div className='card-text my-2 text-center'>{item.title}</div>
@@ -166,7 +166,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className='pt-3 bg-white rounded'>
+      <div className='pt-3 rounded'>
         <form onSubmit={(e) => handleSubmit(e as FormEvent)} className=''>
           <div className='p-5 mx-auto'>
             <p className='mb-3 text-center w-full sm:w-[80%] mx-auto'>
@@ -185,7 +185,7 @@ export default function Contact() {
                     onChange={(e) => setName(e.target.value)}
                     value={name}
                     type='text'
-                    className='w-full p-2 rounded border bg-gray-100 focus:outline-my-primary'
+                    className='w-full p-2 rounded border focus:outline-my-primary'
                     id='name'
                     placeholder='Enter name'
                   />
@@ -201,7 +201,7 @@ export default function Contact() {
                       type='email'
                       onChange={(e) => setEmail(e.target.value)}
                       value={email}
-                      className='w-full p-2 rounded border bg-gray-100 focus:outline-my-primary'
+                      className='w-full p-2 rounded border focus:outline-my-primary'
                       id='email'
                       placeholder='Enter email address'
                       aria-describedby='emailHelp'
@@ -223,7 +223,7 @@ export default function Contact() {
                       type='text'
                       onChange={(e) => setPhone(e.target.value)}
                       value={phone}
-                      className='w-full p-2 rounded border bg-gray-100 focus:outline-my-primary'
+                      className='w-full p-2 rounded border focus:outline-my-primary'
                       id='phone'
                       placeholder='Enter phone'
                       aria-describedby='phoneHelp'
@@ -246,7 +246,7 @@ export default function Contact() {
                   rows={9}
                   onChange={(e) => setMessage(e.target.value)}
                   value={message}
-                  className='w-full p-2 rounded border bg-gray-100 focus:outline-my-primary'
+                  className='w-full p-2 rounded border focus:outline-my-primary'
                   id='message'
                   placeholder='Enter message'
                 />
@@ -295,7 +295,7 @@ export default function Contact() {
               <Button
                 disabled={loading}
                 variant='outline'
-                className=' border-my-primary w-44 rounded-full text-my-secondary hover:text-my-primary hover:bg-my-secondary'
+                className=' border-my-primary w-44 rounded-full hover:text-my-primary hover:bg-my-secondary'
               >
                 {loading ? (
                   <>

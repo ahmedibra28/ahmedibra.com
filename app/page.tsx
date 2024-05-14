@@ -19,7 +19,7 @@ export default function Home() {
       <div className='flex flex-col-reverse md:flex-row justify-center md:justify-between items-center my-20 gap-4'>
         <div className='w-[90%] md:w-[48%] lg:w-[30%] mx-auto'>
           <p
-            className='text-center flex justify-center items-center shadow-2xl rounded-lg flex-col gap-y-5 pt-5 mx-auto hover:scale-105 duration-1000 px-10'
+            className='text-center flex justify-center items-center shadow-2xl rounded-lg flex-col gap-y-5 pt-5 mx-auto hover:scale-105 duration-1000 px-10 dark:shadow-gray-800'
             style={{ width: 300, height: 300 }}
           >
             If you are in search of a skilled and adaptable developer, please do
@@ -27,7 +27,7 @@ export default function Home() {
             <Link href={'/#contact'}>
               <Button
                 variant='outline'
-                className=' border-my-primary w-44 rounded-full text-my-secondary hover:text-my-primary hover:bg-my-secondary'
+                className=' border-my-primary w-44 rounded-full'
               >
                 <FaEnvelope className='mr-2' />
                 Get in touch
@@ -41,7 +41,7 @@ export default function Home() {
             alt='Ahmed Ibrahim'
             width={300}
             height={300}
-            className='rounded-lg w-72 shadow-2xl mx-auto hover:scale-105 duration-1000'
+            className='rounded-lg w-72 shadow-2xl mx-auto hover:scale-105 duration-1000 dark:shadow-gray-500'
             quality={75}
           />
         </div>

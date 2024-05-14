@@ -89,7 +89,7 @@ const responsive = {
 export default function Clients() {
   return (
     <div className='mb-20 sm:mb-32 '>
-      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase text-my-secondary mb-4 mt-5 sm:mt-0 duration-1000'>
+      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase mb-4 mt-5 sm:mt-0 duration-1000'>
         Clients
       </h2>
       <p className='text-center container px-4 mx-auto w-full md:w-[75%] duration-1000'>

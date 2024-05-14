@@ -5,6 +5,7 @@ import { Viewport } from 'next'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react'
 import meta from '@/lib/meta'
+import Providers from '@/providers/providers'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -66,7 +67,7 @@ export default function RootLayout({
         <link rel='icon' href='https://github.com/ahmedibra28.png' />
         <meta name='google-adsense-account' content='ca-pub-5359776387436359' />
       </head>
-      <body className={`${roboto.className} bg-white text-gray-700`}>
+      <body className={`${roboto.className}`}>
         <noscript
           dangerouslySetInnerHTML={{
             __html: `<iframe
@@ -78,8 +79,10 @@ export default function RootLayout({
           }}
         />
         <div>
-          <Nav />
-          {children}
+          <Providers>
+            <Nav />
+            {children}
+          </Providers>
           <Analytics />
         </div>
       </body>

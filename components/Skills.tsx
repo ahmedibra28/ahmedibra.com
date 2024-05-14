@@ -39,7 +39,7 @@ export default function Skills() {
       className='mb-20 sm:mb-32 container px-4 mx-auto scroll-m-20'
       id='skills'
     >
-      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase text-my-secondary mb-4 mt-5 sm:mt-0'>
+      <h2 className='text-center text-3xl font-bold sm:text-5xl uppercase mb-4 mt-5 sm:mt-0'>
         The Tech I use
       </h2>
 
@@ -60,7 +60,7 @@ export default function Skills() {
             {frontend.map((skill) => (
               <li
                 key={skill.name}
-                className='rounded-full flex items-center p-2 mb-3 hover:text-my-primary hover:border-my-primary hover:animate-pulse shadow-sm shadow-my-primary w-[45%] mx-auto bg-white duration-1000'
+                className='rounded-full flex items-center p-2 mb-3 hover:text-my-primary hover:border-my-primary hover:animate-pulse shadow-sm shadow-my-primary w-[45%] mx-auto duration-1000'
               >
                 <span className='flex flex-row items-center text-sm'>
                   {skill.icon} <span>{skill.name}</span>
@@ -76,7 +76,7 @@ export default function Skills() {
             {backend.map((skill) => (
               <li
                 key={skill.name}
-                className='rounded-full flex items-center p-2 mb-3 hover:text-my-primary hover:border-my-primary hover:animate-pulse shadow-sm shadow-my-primary w-[45%] mx-auto bg-white duration-1000'
+                className='rounded-full flex items-center p-2 mb-3 hover:text-my-primary hover:border-my-primary hover:animate-pulse shadow-sm shadow-my-primary w-[45%] mx-auto duration-1000'
               >
                 <span className='flex flex-row items-center text-sm'>
                   {skill.icon} <span>{skill.name}</span>
