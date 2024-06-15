@@ -6,6 +6,7 @@ import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react'
 import meta from '@/lib/meta'
 import Providers from '@/providers/providers'
+import { CSPostHogProvider } from './providers'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -67,25 +68,27 @@ export default function RootLayout({
         <link rel='icon' href='https://github.com/ahmedibra28.png' />
         <meta name='google-adsense-account' content='ca-pub-5359776387436359' />
       </head>
-      <body className={`${roboto.className}`}>
-        <noscript
-          dangerouslySetInnerHTML={{
-            __html: `<iframe
+      <CSPostHogProvider>
+        <body className={`${roboto.className}`}>
+          <noscript
+            dangerouslySetInnerHTML={{
+              __html: `<iframe
                       src='https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM}'
                       height='0'
                       width='0'
                       style='display:none;visibility:hidden'
                     />`,
-          }}
-        />
-        <div>
-          <Providers>
-            <Nav />
-            {children}
-          </Providers>
-          <Analytics />
-        </div>
-      </body>
+            }}
+          />
+          <div>
+            <Providers>
+              <Nav />
+              {children}
+            </Providers>
+            <Analytics />
+          </div>
+        </body>
+      </CSPostHogProvider>
     </html>
   )
 }
