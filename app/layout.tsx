@@ -15,7 +15,7 @@ const roboto = Roboto({
 
 export const metadata = meta({
   title: 'Full-Stack Developer In Somalia | Ahmed Ibrahim',
-  description: `I'm a Full Stack Developer with 5+ years of experience in designing and developing user interfaces, testing, debugging, and training staff within modern technologies. Proven ability in optimizing web and mobile functionalities that improve data retrieval and workflow efficiencies.`,
+  description: `I'm a Full Stack Developer with 6+ years of experience in designing and developing user interfaces, testing, debugging, and training staff within modern technologies. Proven ability in optimizing web and mobile functionalities that improve data retrieval and workflow efficiencies.`,
   openGraphImage: 'https://github.com/ahmedibra28.png',
 })
 

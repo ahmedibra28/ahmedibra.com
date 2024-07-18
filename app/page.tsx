@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className='max-w-6xl mx-auto scroll-m-44' id='home'>
       <div className='text-center text-2xl mx-2 mt-10'>
-        <b>Full-stack developer</b> with over <b>5 years</b> of experience
+        <b>Full-stack developer</b> with over <b>6 years</b> of experience
         building web and mobile applications.
       </div>
 
