@@ -17,7 +17,7 @@ export default function ProjectCard({
             alt={item.title}
             width={2000}
             height={1000}
-            className='w-16 hover:scale-105 duration-1000 object-contain rounded-lg'
+            className='w-16 hover:scale-105 duration-1000 object-contain rounded-lg border bg-white'
           />
         </CardHeader>
         <CardContent>

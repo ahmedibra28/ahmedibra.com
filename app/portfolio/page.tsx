@@ -21,7 +21,7 @@ export default async function Page() {
       <p className='text-center mb-4'>{`Some of the most recent projects I've completed for my clients`}</p>
 
       <div className='flex flex-wrap justify-between items-center mx-auto px-4 sm:px-0 gap-y-5'>
-        {projects?.map((item, index) => (
+        {projects?.reverse().map((item, index) => (
           <ProjectCard item={item} key={index} />
         ))}
       </div>

@@ -18,7 +18,7 @@ export default function Portfolio() {
       <p className='text-center mb-4'>{`Some of the most recent projects I've completed for my clients`}</p>
 
       <div className='flex flex-wrap justify-center items-center mx-auto px-4 sm:px-0 gap-y-5'>
-        {projects?.slice(0, 4)?.map((item, index) => (
+        {projects?.slice(0, 6)?.map((item, index) => (
           <ProjectCard item={item} key={index} />
         ))}
       </div>

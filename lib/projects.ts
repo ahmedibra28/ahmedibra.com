@@ -49,4 +49,12 @@ export const projects = [
     new: false,
     content: `<h1>Heading 1</h1>`,
   },
+  {
+    id: '7',
+    title: 'TopTayo Data Recharging',
+    description: `is a mobile app that allows users to recharge their data plans with a single tap offline & online.`,
+    image: BASE_URL + '/projects/toptayo-app.png',
+    new: true,
+    content: `<h1>Heading 1</h1>`,
+  },
 ]
